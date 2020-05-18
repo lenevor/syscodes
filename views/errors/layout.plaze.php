@@ -15,7 +15,7 @@
 		
 		<!-- Styles -->
 		<style type="text/css">
-		   <?= preg_replace('#[\r\n\t ]+#', ' ', file_get_contents(basePath('syscode/views/errors/css/style.css'))) ?>
+		   <?= preg_replace('#[\r\n\t ]+#', ' ', file_get_contents(basePath('vendor/lenevor/syscode/views/errors/css/style.css'))) ?>
 		</style>
 
 	</head>
