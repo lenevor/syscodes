@@ -22,9 +22,9 @@
  * @since       0.1.1 
  */
 
-namespace Syscode;
+namespace Syscodes;
 
-use Syscode\Config\AutoloadConfig;
+use Syscodes\Config\AutoloadConfig;
 
 /**
  * Lenevor Autoloader
@@ -73,7 +73,7 @@ class Autoloader
      *
      * @return array
      *
-     * @uses   \Syscode\Config\AutoloadConfig
+     * @uses   \Syscodes\Config\AutoloadConfig
      */
     public function initialize(AutoloadConfig $config)
     {

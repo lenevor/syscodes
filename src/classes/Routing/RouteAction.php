@@ -22,11 +22,12 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
 use LogicException;
 use UnexpectedValueException;
-use Syscode\Support\{ Arr, Str };
+use Syscodes\Support\Arr;
+use Syscodes\Support\Str;
 
 /**
  * Solve the actions obtained from a route.

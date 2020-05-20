@@ -22,7 +22,7 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
 use InvalidArgumentException;
 

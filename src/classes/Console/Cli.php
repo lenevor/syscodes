@@ -22,12 +22,12 @@
  * @since       0.1.1
  */
 
-namespace Syscode\Console;
+namespace Syscodes\Console;
 
 use Exception;
-use Syscode\Support\Arr;
-use Syscode\Contracts\Core\Lenevor;
-use Syscode\Core\Http\Exceptions\LenevorException;
+use Syscodes\Support\Arr;
+use Syscodes\Contracts\Core\Lenevor;
+use Syscodes\Core\Http\Exceptions\LenevorException;
 
 /**
  * Set of static methods useful for CLI request handling.
@@ -158,7 +158,7 @@ class Cli
  	 *
  	 * @return string  The color coded string
  	 *
- 	 * @throws \Syscode\Core\Exceptions\LenevorException
+ 	 * @throws \Syscodes\Core\Exceptions\LenevorException
  	 */
  	public static function color(string $text, string $foreground, string $background = null, string $format = null)
  	{
@@ -223,7 +223,7 @@ class Cli
 	 * 
 	 * @return string
 	 * 
-	 * @uses   \Syscode\Contracts\Core\Lenevor
+	 * @uses   \Syscodes\Contracts\Core\Lenevor
 	 * 
 	 * @throws \Exception
 	 */
@@ -308,7 +308,7 @@ class Cli
 	 *
 	 * @return mixed
 	 * 
-	 * @use    \Syscode\Contract\Core\Lenevor
+	 * @use    \Syscodes\Contract\Core\Lenevor
 	 */
  	public static function option($name, $default = null)
  	{

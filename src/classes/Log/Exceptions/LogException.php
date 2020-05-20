@@ -22,7 +22,7 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Log\Exceptions;
+namespace Syscodes\Log\Exceptions;
 
 use InvalidArgumentException;
 

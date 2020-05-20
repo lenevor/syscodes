@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Container\Exceptions;
+namespace Syscodes\Container\Exceptions;
 
 use InvalidArgumentException;
 use Psr\Container\ContainerExceptionInterface;

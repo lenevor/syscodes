@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Lang class facade.
@@ -31,7 +31,7 @@ namespace Syscode\Support\Facades;
  * 
  * @method static string|array getLine($line, array $args = [])
  * 
- * @see \Syscode\Translation\Translator
+ * @see \Syscodes\Translation\Translator
  */
 class Lang extends Facade
 {

@@ -23,7 +23,7 @@
  */
 
 $sysDir  = dirname(__FILE__);
-$rootDir = dirname(dirname(dirname($sysDir)));
+$rootDir = dirname($sysDir);
 
 // Location to the paths config file
 $config = require $rootDir.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'paths.php';
@@ -48,13 +48,13 @@ require $sysDir.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'classes'.DIRECTOR
 require $sysDir.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'classes'.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'AutoloadConfig.php';
 
 // Aliases of the class autoloader 
-class_alias('Syscode\\Autoloader', 'Autoloader');
+class_alias('Syscodes\\Autoloader', 'Autoloader');
 
 // Define the core classes to the autoloader
 (new Autoloader)
-    ->initialize(new Syscode\Config\AutoloadConfig())
+    ->initialize(new Syscodes\Config\AutoloadConfig())
     ->register();
 
 // Load environment settings from .env files into $_SERVER and $_ENV 
-(new Syscode\Config\ParserEnv($rootDir))
+(new Syscodes\Config\ParserEnv($rootDir))
     ->load();

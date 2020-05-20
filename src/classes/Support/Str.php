@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support;
+namespace Syscodes\Support;
 
 /**
  * Allows convert a string in diferentes modes of text presentation, either, 
@@ -201,7 +201,7 @@ class Str
      *
      * @return tring
      *
-     * @uses   \Syscode\Support\Str::length
+     * @uses   \Syscodes\Support\Str::length
      */
     public static function limit($value, $limit, $end = '...')
     {

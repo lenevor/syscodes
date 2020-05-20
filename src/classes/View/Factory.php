@@ -22,15 +22,15 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View;
+namespace Syscodes\View;
 
-use Syscode\Support\Arr;
-use Syscode\Support\Str;
+use Syscodes\Support\Arr;
+use Syscodes\Support\Str;
 use InvalidArgumentException;
-use Syscode\Contracts\Events\Dispatcher;
-use Syscode\View\Engines\EngineResolver;
-use Syscode\Contracts\Container\Container;
-use Syscode\Contracts\View\Factory as FactoryContract;
+use Syscodes\Contracts\Events\Dispatcher;
+use Syscodes\View\Engines\EngineResolver;
+use Syscodes\Contracts\Container\Container;
+use Syscodes\Contracts\View\Factory as FactoryContract;
 
 /**
  * This class allows parser of a view.
@@ -47,28 +47,28 @@ class Factory implements FactoryContract
 	/**
 	 * The IoC container instance.
 	 * 
-	 * @var \Syscode\Contracts\Container\Container $container
+	 * @var \Syscodes\Contracts\Container\Container $container
 	 */
 	protected $container;
 
 	/**
 	 * The engine implementation.
 	 * 
-	 * @var \Syscode\View\Engines\EngineResolver $engines
+	 * @var \Syscodes\View\Engines\EngineResolver $engines
 	 */
 	protected $engines;
 
 	/**
 	 * The event dispatcher instance.
 	 * 
-	 * @var \Syscode\Contracts\Events\Dispatcher $events
+	 * @var \Syscodes\Contracts\Events\Dispatcher $events
 	 */
 	protected $events;
 
 	/**
 	 * The view finder implementation.
 	 * 
-	 * @var \Syscode\View\FileViewFinder $finder
+	 * @var \Syscodes\View\FileViewFinder $finder
 	 */
 	protected $finder;
 
@@ -89,9 +89,9 @@ class Factory implements FactoryContract
 	/**
 	 * Constructor: Create a new Parser class instance.
 	 * 
-	 * @param  \Syscode\View\Engines\EngineResolver  $engine
-	 * @param  \Syscode\View\FileViewFinder  $finder
-	 * @param  \Syscode\Contracts\Events\Dispatcher  $events
+	 * @param  \Syscodes\View\Engines\EngineResolver  $engine
+	 * @param  \Syscodes\View\FileViewFinder  $finder
+	 * @param  \Syscodes\Contracts\Events\Dispatcher  $events
 	 *
 	 * @return void
 	 */
@@ -152,7 +152,7 @@ class Factory implements FactoryContract
 	 * @param  string  $file  View filename
 	 * @param  array  $data  Array of values
 	 * 
-	 * @return \Syscode\Contracts\View\View
+	 * @return \Syscodes\Contracts\View\View
 	 */
 	protected function viewInstance($view, $data)
 	{
@@ -200,7 +200,7 @@ class Factory implements FactoryContract
 	/**
 	 * Call the creator for a given view.
 	 * 
-	 * @param  \Syscode\View\View  $view
+	 * @param  \Syscodes\View\View  $view
 	 * 
 	 * @return void
 	 */
@@ -307,7 +307,7 @@ class Factory implements FactoryContract
 	/**
 	 * Get the IoC container instance.
 	 * 
-	 * @return \Syscode\Contracts\Container\Container
+	 * @return \Syscodes\Contracts\Container\Container
 	 */
 	public function getContainer()
 	{
@@ -317,7 +317,7 @@ class Factory implements FactoryContract
 	/**
 	 * Set the IoC container instance.
 	 * 
-	 * @param  \Syscode\Contracts\Container\Container  $container
+	 * @param  \Syscodes\Contracts\Container\Container  $container
 	 * 
 	 * @return void
 	 */

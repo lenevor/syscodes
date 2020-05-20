@@ -22,7 +22,7 @@
  * @since       0.6.0
  */
 
-namespace Syscode\Contracts\Support;
+namespace Syscodes\Contracts\Support;
 
 /**
  * Gets a html string.

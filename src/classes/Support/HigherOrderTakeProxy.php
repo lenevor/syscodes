@@ -22,7 +22,7 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Support;
+namespace Syscodes\Support;
 
 /**
  * Allows a new take proxy instance.

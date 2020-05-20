@@ -22,10 +22,10 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Debug\Util;
+namespace Syscodes\Debug\Util;
 
-use Syscode\Debug\Benchmark;
-use Syscode\Debug\FrameHandler\Frame;
+use Syscodes\Debug\Benchmark;
+use Syscodes\Debug\FrameHandler\Frame;
 
 /**
  * Exposes useful tools for working with/in templates.
@@ -148,7 +148,7 @@ class TemplateHandler
 	/**
 	 * Format the args of the given Frame as a human readable html string.
 	 * 
-	 * @param  \Syscode\Debug\FrameHandler\Frame  $frame
+	 * @param  \Syscodes\Debug\FrameHandler\Frame  $frame
 	 * 
 	 * @return string  The rendered html
 	 */

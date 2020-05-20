@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Redis class facade.
@@ -31,7 +31,7 @@ namespace Syscode\Support\Facades;
  * 
  * @method static \Predis\Connection\SingleConnectionInterface connection(string $name = null)
  * 
- * @see \Syscode\Redis\RedisManager
+ * @see \Syscodes\Redis\RedisManager
  */
 class Redis extends Facade
 {

@@ -22,10 +22,10 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database\Query\Grammar;
+namespace Syscodes\Database\Query\Grammar;
 
-use Syscode\Database\Query\Builder;
-use Syscode\Database\Query\Grammar;
+use Syscodes\Database\Query\Builder;
+use Syscodes\Database\Query\Grammar;
 
 /**
  * Allows make the grammar's for get results of the database
@@ -38,7 +38,7 @@ class MySqlGrammar extends Grammar
     /**
      * Compile a select query into sql.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * 
      * @return string
      */
@@ -57,7 +57,7 @@ class MySqlGrammar extends Grammar
     /**
      * Compile an insert statement into SQL.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  array  $values
      * 
      * @return string
@@ -75,7 +75,7 @@ class MySqlGrammar extends Grammar
     /**
      * Compile an update statement without joins into SQL.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  string  $table
      * @param  string  $columns
      * @param  string  $where
@@ -102,7 +102,7 @@ class MySqlGrammar extends Grammar
     /**
      * Compile an delete statement without joins into SQL.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  string  $table
      * @param  string  $where
      * 
@@ -140,7 +140,7 @@ class MySqlGrammar extends Grammar
     /**
      * Compile the lock into SQL.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  bool|string  $value
      * 
      * @return string

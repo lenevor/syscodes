@@ -22,7 +22,7 @@
  * @since       0.6.0
  */
 
-namespace Syscode\Contracts\View;
+namespace Syscodes\Contracts\View;
 
 /**
  * Returns the location of a view.

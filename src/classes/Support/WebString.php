@@ -22,9 +22,9 @@
  * @since       0.6.0
  */
 
-namespace Syscode\Support;
+namespace Syscodes\Support;
 
-use Syscode\Contracts\Support\Webable;
+use Syscodes\Contracts\Support\Webable;
 
 /**
  * Uses a html string for show data.

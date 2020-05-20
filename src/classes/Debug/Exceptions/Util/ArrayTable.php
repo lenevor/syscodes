@@ -22,9 +22,9 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Debug\Util;
+namespace Syscodes\Debug\Util;
 
-use Syscode\Contracts\Debug\Table;
+use Syscodes\Contracts\Debug\Table;
 
 /**
  * Gets an associated label with its respective data array.

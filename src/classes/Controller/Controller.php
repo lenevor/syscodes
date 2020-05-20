@@ -22,7 +22,7 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Controller;
+namespace Syscodes\Controller;
 
 use BadMethodCallException;
 

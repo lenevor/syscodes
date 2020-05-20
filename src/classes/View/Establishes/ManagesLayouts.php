@@ -22,10 +22,10 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Establishes;
+namespace Syscodes\View\Establishes;
 
 use InvalidArgumentException;
-use Syscode\Contracts\View\View;
+use Syscodes\Contracts\View\View;
 
 /**
  * Trait ManagesLayouts.

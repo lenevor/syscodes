@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\View\Exceptions;
+namespace Syscodes\View\Exceptions;
 
 use InvalidArgumentException;
 

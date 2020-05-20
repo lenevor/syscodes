@@ -22,12 +22,12 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View;
+namespace Syscodes\View;
 
-use Syscode\Support\Finder;
-use Syscode\Filesystem\Filesystem;
-use Syscode\Contracts\View\ViewFinder;
-use Syscode\View\Exceptions\ViewException;
+use Syscodes\Support\Finder;
+use Syscodes\Filesystem\Filesystem;
+use Syscodes\Contracts\View\ViewFinder;
+use Syscodes\View\Exceptions\ViewException;
 
 /**
  * Allows location of a view.
@@ -55,7 +55,7 @@ class FileViewFinder implements ViewFinder
     /**
      * Constructor. Create a new FileViewFinder class instance.
      * 
-     * @param  \Syscode\Filesystem\Filesystem  $files
+     * @param  \Syscodes\Filesystem\Filesystem  $files
      * @param  array|null  $extensions  (null by default) 
      * 
      * @return void
@@ -94,7 +94,7 @@ class FileViewFinder implements ViewFinder
      * 
      * @return string
      * 
-     * @throws \Syscode\View\Exceptions\ViewException
+     * @throws \Syscodes\View\Exceptions\ViewException
      */
     protected function findPaths($name)
     {

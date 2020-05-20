@@ -22,7 +22,7 @@
  * @since       0.1.0
 */
 
-namespace Syscode\Contracts\Debug;
+namespace Syscodes\Contracts\Debug;
 
 /**
  * Returns data for an associative array.

@@ -22,9 +22,9 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Session;
+namespace Syscodes\Session;
 
-use Syscode\Support\ServiceProvider;
+use Syscodes\Support\ServiceProvider;
 
 /**
  * For loading the classes from the container of services.

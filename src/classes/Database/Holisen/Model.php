@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Database\Holisen;
+namespace Syscodes\Database\Holisen;
 
 use PDO;
 

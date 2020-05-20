@@ -22,9 +22,9 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Engines;
+namespace Syscodes\View\Engines;
 
-use Syscode\Contracts\View\Engine;
+use Syscodes\Contracts\View\Engine;
 
 /**
  * The file engine.

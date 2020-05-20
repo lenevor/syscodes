@@ -22,11 +22,11 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Http;
+namespace Syscodes\Http;
 
 use InvalidArgumentException;
-use Syscode\Http\Contributors\Parameters;
-use Syscode\Http\Exceptions\HttpURIException;
+use Syscodes\Http\Contributors\Parameters;
+use Syscodes\Http\Exceptions\HttpURIException;
 
 /**
  * Abstraction for a uniform resource identifier (URI).
@@ -124,7 +124,7 @@ class URI
 	 * 
 	 * @return void
 	 * 
-	 * @throws \Syscode\Http\Exceptions\HttpURIException
+	 * @throws \Syscodes\Http\Exceptions\HttpURIException
 	 */
 	public function __construct(string $uri = null)
 	{
@@ -141,7 +141,7 @@ class URI
 	 * 
 	 * @return mixed
 	 * 
-	 * @throws \Syscode\Http\Exceptions\HttpURIException
+	 * @throws \Syscodes\Http\Exceptions\HttpURIException
 	 */
 	public function setUri(string $uri = null)
 	{

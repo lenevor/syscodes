@@ -22,7 +22,7 @@
  * @since       0.1.1
  */
 
-namespace Syscode\Contracts\View;
+namespace Syscodes\Contracts\View;
 
 /**
  * Gets the contents of a view.
@@ -46,7 +46,7 @@ interface Factory
      * @param  string  $view
      * @param  array  $data
      * 
-     * @return \Syscode\Contracts\View\View
+     * @return \Syscodes\Contracts\View\View
      */
     public function make($view, $data = []);
 }

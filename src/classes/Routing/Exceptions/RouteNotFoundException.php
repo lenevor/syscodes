@@ -22,9 +22,9 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Routing\Exceptions;
+namespace Syscodes\Routing\Exceptions;
 
-use Syscode\Core\Http\Exceptions\NotFoundHttpException;
+use Syscodes\Core\Http\Exceptions\NotFoundHttpException;
 
 /**
  * RouteNotFoundException.

@@ -22,14 +22,14 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
 use Closure;
-use Syscode\Support\Str;
+use Syscodes\Support\Str;
 use InvalidArgumentException;
-use Syscode\Container\Container;
-use Syscode\Controller\ControllerDispatcher;
-use Syscode\Http\Exceptions\HttpResponseException;
+use Syscodes\Container\Container;
+use Syscodes\Controller\ControllerDispatcher;
+use Syscodes\Http\Exceptions\HttpResponseException;
 
 /**
  * A Route describes a route and its parameters.
@@ -50,7 +50,7 @@ class Route
 	/**
 	 * The container instance used by the route.
 	 * 
-	 * @var \Syscode\Container\Container $container
+	 * @var \Syscodes\Container\Container $container
 	 */
 	protected $container;
 
@@ -269,7 +269,7 @@ class Route
 	/**
 	 * Get the dispatcher for the route's controller.
 	 * 
-	 * @return \Syscode\Controller\ControllerDispacther
+	 * @return \Syscodes\Controller\ControllerDispacther
 	 */
 	private function controllerDispatcher()
 	{

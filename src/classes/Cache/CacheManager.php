@@ -22,20 +22,20 @@
  * @since       0.3.2
  */
 
-namespace Syscode\Cache;
+namespace Syscodes\Cache;
 
 use Closure;
-use Syscode\Cache\Store\ApcStore;
-use Syscode\Cache\Store\FileStore;
-use Syscode\Cache\Store\NullStore;
-use Syscode\Contracts\Cache\Store;
-use Syscode\Cache\Store\ApcWrapper;
-use Syscode\Cache\Store\ArrayStore;
-use Syscode\Cache\Store\RedisStore;
-use Syscode\Cache\Store\DatabaseStore;
-use Syscode\Cache\Store\MemcachedStore;
-use Syscode\Cache\Exceptions\CacheException;
-use Syscode\Contracts\Cache\Manager as ManagerContract;
+use Syscodes\Cache\Store\ApcStore;
+use Syscodes\Cache\Store\FileStore;
+use Syscodes\Cache\Store\NullStore;
+use Syscodes\Contracts\Cache\Store;
+use Syscodes\Cache\Store\ApcWrapper;
+use Syscodes\Cache\Store\ArrayStore;
+use Syscodes\Cache\Store\RedisStore;
+use Syscodes\Cache\Store\DatabaseStore;
+use Syscodes\Cache\Store\MemcachedStore;
+use Syscodes\Cache\Exceptions\CacheException;
+use Syscodes\Contracts\Cache\Manager as ManagerContract;
 
 /**
  * Class cache manager.
@@ -70,7 +70,7 @@ class CacheManager implements ManagerContract
     /**
      * Constructor. Create a new cache manager instance.
      * 
-     * @param  \Syscode\Contracts\Core\Application  $app
+     * @param  \Syscodes\Contracts\Core\Application  $app
      * 
      * @return void  
      */
@@ -84,7 +84,7 @@ class CacheManager implements ManagerContract
      * 
      * @param  string|null
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     public function driver($driver = null)
     {
@@ -96,7 +96,7 @@ class CacheManager implements ManagerContract
      * 
      * @param  string|null  $name
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     public function store(string $name = null)
     {
@@ -110,7 +110,7 @@ class CacheManager implements ManagerContract
      * 
      * @param  string  $name
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     public function get($name)
     {
@@ -122,7 +122,7 @@ class CacheManager implements ManagerContract
      * 
      * @param  string  $name
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      * 
      * @throws \CacheException
      */
@@ -183,7 +183,7 @@ class CacheManager implements ManagerContract
      * 
      * @param  array  $config
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     protected function createApcDriver(array $config)
     {
@@ -195,7 +195,7 @@ class CacheManager implements ManagerContract
     /**
      * Create an instance of the Array cache driver.
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     protected function createArrayDriver()
     {
@@ -207,7 +207,7 @@ class CacheManager implements ManagerContract
      * 
      * @param  array  $config
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     protected function createDatabaseDriver(array $config)
     {
@@ -219,7 +219,7 @@ class CacheManager implements ManagerContract
      * 
      * @param  array  $config
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     protected function createFileDriver(array $config)
     {
@@ -231,7 +231,7 @@ class CacheManager implements ManagerContract
      * 
      * @param  array  $config
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     protected function createMemcachedDriver(array $config)
     {
@@ -250,7 +250,7 @@ class CacheManager implements ManagerContract
     /**
      * Create an instance of the Null cache driver.
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     protected function createNullDriver()
     {
@@ -262,7 +262,7 @@ class CacheManager implements ManagerContract
      * 
      * @param  array  $config
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     protected function createRedisDriver(array $config)
     {
@@ -288,9 +288,9 @@ class CacheManager implements ManagerContract
     /**
      * Create a new cache repository with the given implementation.
      * 
-     * @param  \Syscode\Contracts\Cache\Store  $store
+     * @param  \Syscodes\Contracts\Cache\Store  $store
      *
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     public function getRepository(Store $store)
     {

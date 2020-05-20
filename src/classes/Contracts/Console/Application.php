@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Contracts\Console;
+namespace Syscodes\Contracts\Console;
 
 /**
  * It allows to show the line header and the start of the Lenevor command console.

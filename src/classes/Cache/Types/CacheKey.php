@@ -22,9 +22,9 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Cache\Types;
+namespace Syscodes\Cache\Types;
 
-use Syscode\Contracts\Cache\Key;
+use Syscodes\Contracts\Cache\Key;
 
 /**
  * This class generate a key random.

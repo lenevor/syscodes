@@ -22,12 +22,12 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Log;
+namespace Syscodes\Log;
 
 use Psr\Log\LoggerInterface;
-use Syscode\Contracts\Log\Handler;
-use Syscode\Log\Handlers\FileLogger;
-use Syscode\Log\Exceptions\LogException;
+use Syscodes\Contracts\Log\Handler;
+use Syscodes\Log\Handlers\FileLogger;
+use Syscodes\Log\Exceptions\LogException;
 
 /**
  * The Lenevor Logger of errors.
@@ -46,7 +46,7 @@ class LogManager implements LoggerInterface
     /**
      * Constructor. The LogManager class instance.
      * 
-     * @param  \Syscode\Contracts\Core\Application  $app
+     * @param  \Syscodes\Contracts\Core\Application  $app
      * 
      * @return void
      */
@@ -100,7 +100,7 @@ class LogManager implements LoggerInterface
      * 
      * @return \Psr\Log\LoggerInterface
      * 
-     * @throws \Syscode\Log\Exceptions\LogException
+     * @throws \Syscodes\Log\Exceptions\LogException
      */
     protected function resolve($name)
     {
@@ -148,9 +148,9 @@ class LogManager implements LoggerInterface
     /**
      * Create a new log with the given implementation.
      * 
-     * @param  \Syscode\Contracts\Log\Handler  $logger
+     * @param  \Syscodes\Contracts\Log\Handler  $logger
      *
-     * @return \Syscode\Contracts\Log\Handler
+     * @return \Syscodes\Contracts\Log\Handler
      */
     public function getLogger(Handler $logger)
     {

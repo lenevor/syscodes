@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Filesystem\Exceptions;
+namespace Syscodes\Filesystem\Exceptions;
 
 use RuntimeException;
 

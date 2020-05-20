@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
  
-namespace Syscode\Http\Contributors;
+namespace Syscodes\Http\Contributors;
 
 /**
  * This class is responsible for loading the different HTTP status codes existing. 

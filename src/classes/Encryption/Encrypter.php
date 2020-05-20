@@ -22,12 +22,12 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Encryption;
+namespace Syscodes\Encryption;
 
 use RuntimeException;
-use Syscode\Encryption\Exceptions\DecryptException;
-use Syscode\Encryption\Exceptions\EncryptException;
-use Syscode\Contracts\Encryption\Encrypter as EncrypterContract;
+use Syscodes\Encryption\Exceptions\DecryptException;
+use Syscodes\Encryption\Exceptions\EncryptException;
+use Syscodes\Contracts\Encryption\Encrypter as EncrypterContract;
 
 /**
  * Lenevor Encryption Manager.
@@ -114,7 +114,7 @@ class Encrypter implements EncrypterContract
      * 
      * @return string
      * 
-     * @throws \Syscode\Encryption\Exceptions\EncryptionException
+     * @throws \Syscodes\Encryption\Exceptions\EncryptionException
      */
     public function encrypt($value, $serialize = true)
     {
@@ -176,7 +176,7 @@ class Encrypter implements EncrypterContract
      * 
      * @return mixed
      * 
-     * @throws \Syscode\Encryption\Enxceptions\DecryptException
+     * @throws \Syscodes\Encryption\Enxceptions\DecryptException
      */
     public function decrypt($value, $unserialize = true)
     {
@@ -201,7 +201,7 @@ class Encrypter implements EncrypterContract
      * 
      * @return array
      * 
-     * @throws \Syscode\Encryption\Enxceptions\DecryptException
+     * @throws \Syscodes\Encryption\Enxceptions\DecryptException
      */
     public function getJsonPayload($value)
     {
@@ -270,7 +270,7 @@ class Encrypter implements EncrypterContract
      * 
      * @return string
      * 
-     * @throws \Syscode\Encryption\Enxceptions\DecryptException
+     * @throws \Syscodes\Encryption\Enxceptions\DecryptException
      */
     public function decryptString($value)
     {

@@ -22,7 +22,7 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Support;
+namespace Syscodes\Support;
 
 /**
  * Loads all the services provider of system.
@@ -34,14 +34,14 @@ abstract class ServiceProvider
     /**
      * The application instance.
      * 
-     * @var \Syscode\Contracts\Core\Application $app
+     * @var \Syscodes\Contracts\Core\Application $app
      */
     protected $app;
 
     /**
      * Constructor. Create a new service provider instance.
      * 
-     * @param  \Syscode\Contracts\Core\Applicacion  $app
+     * @param  \Syscodes\Contracts\Core\Applicacion  $app
      * 
      * @return void
      */

@@ -22,7 +22,7 @@
  * @since       0.1.1
  */
 
-namespace Syscode\Core\Http\Exceptions;
+namespace Syscodes\Core\Http\Exceptions;
 
 use Throwable;
 

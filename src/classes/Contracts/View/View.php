@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Contracts\View;
+namespace Syscodes\Contracts\View;
 
 /**
  * Returns the data by reference to have values imposed by the user.

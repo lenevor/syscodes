@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Support\Chronos\traits;
+namespace Syscodes\Support\Chronos\traits;
 
 use DateTime;
 use DateTimeZone;
@@ -60,7 +60,7 @@ trait Utilities
      * @param  \DateTime|string  $time
      * @param  \DateTimeZone|string|null  $timezone  (null by default)
      * 
-     * @return \DateTime|\Syscode\Support\Chronos\Time
+     * @return \DateTime|\Syscodes\Support\Chronos\Time
      */
     protected function getConvertedUTC($time, string $timezone = null)
     {

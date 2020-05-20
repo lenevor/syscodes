@@ -22,19 +22,19 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Core\Http;
+namespace Syscodes\Core\Http;
 
 use Closure;
 use Exception;
 use Throwable;
-use Syscode\Http\Http; 
-use Syscode\Support\Facades\Route;
-use Syscode\Support\Facades\Facade;
-use Syscode\Support\Facades\Response;
-use Syscode\Contracts\Core\Application;
-use Syscode\Contracts\Debug\ExceptionHandler;
-use Syscode\Contracts\Core\Lenevor as LenevorContract;
-use Syscode\Debug\FatalExceptions\FatalThrowableError;
+use Syscodes\Http\Http; 
+use Syscodes\Support\Facades\Route;
+use Syscodes\Support\Facades\Facade;
+use Syscodes\Support\Facades\Response;
+use Syscodes\Contracts\Core\Application;
+use Syscodes\Contracts\Debug\ExceptionHandler;
+use Syscodes\Contracts\Core\Lenevor as LenevorContract;
+use Syscodes\Debug\FatalExceptions\FatalThrowableError;
 /**
  * The Lenevor class is the heart of the system framework.
  * 
@@ -45,7 +45,7 @@ class Lenevor implements LenevorContract
 	/**
 	 * The application implementation.
 	 * 
-	 * @var \Syscode\Contracts\Core\Application $app
+	 * @var \Syscodes\Contracts\Core\Application $app
 	 */
 	protected $app;
 	
@@ -55,12 +55,12 @@ class Lenevor implements LenevorContract
 	 * @var array $bootstrappers
 	 */
 	protected $bootstrappers = [
-		\Syscode\Core\Bootstrap\BootDetectEnvironment::class,
-		\Syscode\Core\Bootstrap\BootConfiguration::class,
-		\Syscode\Core\Bootstrap\BootHandleExceptions::class,
-		\Syscode\Core\Bootstrap\BootRegisterFacades::class,
-		\Syscode\Core\Bootstrap\BootRegisterProviders::class,
-		\Syscode\Core\Bootstrap\BootProviders::class,
+		\Syscodes\Core\Bootstrap\BootDetectEnvironment::class,
+		\Syscodes\Core\Bootstrap\BootConfiguration::class,
+		\Syscodes\Core\Bootstrap\BootHandleExceptions::class,
+		\Syscodes\Core\Bootstrap\BootRegisterFacades::class,
+		\Syscodes\Core\Bootstrap\BootRegisterProviders::class,
+		\Syscodes\Core\Bootstrap\BootProviders::class,
 	];
 	
 	/**
@@ -87,7 +87,7 @@ class Lenevor implements LenevorContract
 	/**
 	 * Constructor. Lenevor class instance.
 	 * 
-	 * @param  \Syscode\Contracts\Core\Application  $app
+	 * @param  \Syscodes\Contracts\Core\Application  $app
 	 * 
 	 * @return void
 	 */
@@ -159,12 +159,12 @@ class Lenevor implements LenevorContract
  	/**
 	 * The dispatcher of routes.
 	 * 
-	 * @param  \Syscode\Http\Request  $request
+	 * @param  \Syscodes\Http\Request  $request
 	 * 	  
  	 * @return void
  	 */
  	protected function dispatcher($request)
- 	{		
+ 	{
  		return Route::resolve($request);
 	}
 	
@@ -182,9 +182,9 @@ class Lenevor implements LenevorContract
 	 * Initializes the framework, this can only be called once.
 	 * Launch the application.
 	 * 
-	 * @param  \Syscode\http\Request  $request
+	 * @param  \Syscodes\http\Request  $request
 	 *
-	 * @return \Syscode\Support\Facades\Response
+	 * @return \Syscodes\Support\Facades\Response
 	 */
 	public function handle($request)
 	{
@@ -211,9 +211,9 @@ class Lenevor implements LenevorContract
 	/**
 	 * Send the given request through the router.
 	 * 
-	 * @param  \Syscode\Http\Request  $request
+	 * @param  \Syscodes\Http\Request  $request
 	 * 
-	 * @return \Syscode\Support\Facades\Response
+	 * @return \Syscodes\Support\Facades\Response
 	 */
 	protected function sendRequestThroughRouter($request)
 	{
@@ -248,10 +248,10 @@ class Lenevor implements LenevorContract
 	/**
 	 * Render the exception to a response.
 	 * 
-	 * @param  \Syscode\Http\Request  $request
+	 * @param  \Syscodes\Http\Request  $request
 	 * @param  \Exception  $e
 	 * 
-	 * @return \Syscode\Http\Response
+	 * @return \Syscodes\Http\Response
 	 */
 	protected function renderException($request, Exception $e)
 	{

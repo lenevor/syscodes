@@ -22,11 +22,11 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Core\Bootstrap;
+namespace Syscodes\Core\Bootstrap;
 
 use Exception;
-use Syscode\Config\ParserEnv;
-use Syscode\Contracts\Core\Application;
+use Syscodes\Config\ParserEnv;
+use Syscodes\Contracts\Core\Application;
 
 /**
  * Initialize boot of a ParseEnv instance.
@@ -38,14 +38,14 @@ class BootDetectEnvironment
     /**
      * The application implementation.
      *
-     * @var \Syscode\Contracts\Core\Application $app
+     * @var \Syscodes\Contracts\Core\Application $app
      */
     protected $app;
     
     /**
      * Bootstrap the given application.
      *
-     * @param  \Syscode\Contracts\Core\Application  $app
+     * @param  \Syscodes\Contracts\Core\Application  $app
      * 
      * @return void
      */
@@ -62,7 +62,7 @@ class BootDetectEnvironment
     /**
      * Create a ParseEnv instance.
      * 
-     * @param  \Syscode\Contracts\Core\Application  $app
+     * @param  \Syscodes\Contracts\Core\Application  $app
      * 
      * @return new ParserEnv
      */

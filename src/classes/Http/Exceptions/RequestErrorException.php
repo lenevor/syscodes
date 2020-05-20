@@ -22,9 +22,9 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Http\Exceptions;
+namespace Syscodes\Http\Exceptions;
 
-use Syscode\Core\Http\Exceptions\LenevorException;
+use Syscodes\Core\Http\Exceptions\LenevorException;
 
 /**
  * RequestErrorException.

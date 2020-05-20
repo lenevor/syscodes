@@ -22,9 +22,9 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Http\Exceptions;
+namespace Syscodes\Http\Exceptions;
 
-use Syscode\Core\Http\Exceptions\LenevorException;
+use Syscodes\Core\Http\Exceptions\LenevorException;
 
 /**
  * HttpURIException.
@@ -38,7 +38,7 @@ class HttpURIException extends LenevorException
      * 
      * @param  string  $uri
      * 
-     * @return \Syscode\Http\Exceptions\HttpURIException
+     * @return \Syscodes\Http\Exceptions\HttpURIException
      */
     public static function UnableToParseURI(string $uri)
     {
@@ -50,7 +50,7 @@ class HttpURIException extends LenevorException
      * 
      * @param  int  $port
      * 
-     * @return \Syscode\Http\Exceptions\HttpURIException
+     * @return \Syscodes\Http\Exceptions\HttpURIException
      */
     public static function InvalidPort(int $port)
     {

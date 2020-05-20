@@ -22,10 +22,10 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Debug\Handlers;
+namespace Syscodes\Debug\Handlers;
 
-use Syscode\Contracts\Debug\Handler;
-use Syscode\Debug\FrameHandler\Supervisor;
+use Syscodes\Contracts\Debug\Handler;
+use Syscodes\Debug\FrameHandler\Supervisor;
 
 /**
  * Abstract implementation of a Handler.
@@ -48,7 +48,7 @@ class MainHandler
     /**
      * Get debug.
      * 
-     * @var \Syscode\Contracts\Debug\Handler $debug
+     * @var \Syscodes\Contracts\Debug\Handler $debug
      */
     protected $debug;
     
@@ -69,7 +69,7 @@ class MainHandler
     /**
      * Gets Debug class with you interface.
      * 
-     * @return \Syscode\Contracts\Debug\Handler  Interface
+     * @return \Syscodes\Contracts\Debug\Handler  Interface
      */
     public function getDebug()
     {
@@ -79,7 +79,7 @@ class MainHandler
     /**
      * Sets debug.
      * 
-     * @param  \Syscode\Contracts\Debug\Handler  $debug
+     * @param  \Syscodes\Contracts\Debug\Handler  $debug
      * 
      * @return void
      */
@@ -113,7 +113,7 @@ class MainHandler
     /**
      * Gets supervisor already specified.
      * 
-     * @return \Syscode\Debug\Engine\Supervisor
+     * @return \Syscodes\Debug\Engine\Supervisor
      */
     public function getSupervisor()
     {
@@ -123,7 +123,7 @@ class MainHandler
     /**
      * Sets supervisor.
      * 
-     * @param  \Syscode\Debug\Engine\Supervisor  $supervisor
+     * @param  \Syscodes\Debug\Engine\Supervisor  $supervisor
      * 
      * @return void
      */

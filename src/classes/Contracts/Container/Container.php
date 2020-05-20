@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Contracts\Container;
+namespace Syscodes\Contracts\Container;
 
 use Closure;
 use Psr\Container\ContainerInterface;

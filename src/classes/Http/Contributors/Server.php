@@ -22,7 +22,7 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Http\Contributors;
+namespace Syscodes\Http\Contributors;
 
 /**
  * Loads the server request.

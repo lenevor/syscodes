@@ -22,7 +22,7 @@
  * @since       0.1.0 
  */
 
-namespace Syscode\Config;
+namespace Syscodes\Config;
 
 use InvalidArgumentException;
 

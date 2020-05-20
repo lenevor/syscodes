@@ -22,7 +22,7 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database\Query;
+namespace Syscodes\Database\Query;
 
 /**
  * Allows identify the ID field and results of SELECT query in a table.
@@ -34,7 +34,7 @@ class Processor
     /**
      * Process the results of a "select" query.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  array  $results
      * 
      * @return array
@@ -47,7 +47,7 @@ class Processor
     /**
      * Process an  "insert get ID" query.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  string  $sql
      * @param  array  $values
      * @param  string  $sequence  (null by default)

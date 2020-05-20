@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Http class facade.
@@ -39,7 +39,7 @@ namespace Syscode\Support\Facades;
  * @method static string parseBaseUrl()
  * @method static string parsePathInfo()
  * 
- * @see \Syscode\Http\Http
+ * @see \Syscodes\Http\Http
  */
 class Http extends Facade
 {

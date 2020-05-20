@@ -22,7 +22,7 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Contracts\Routing;
+namespace Syscodes\Contracts\Routing;
 
 /**
  * This class allows you to control the use of the HTTP response 
@@ -39,7 +39,7 @@ interface RouteResponse
      * @param  int  $status   (200 by default)
      * @param  array  $headers
      * 
-     * @return \Syscode\Http\Response
+     * @return \Syscodes\Http\Response
      */
     public function make($body = '', $status = 200, array $headers = []);
 
@@ -49,7 +49,7 @@ interface RouteResponse
      * @param  int  $status   (204 by default)
      * @param  array  $headers
      * 
-     * @return \Syscode\Http\Response
+     * @return \Syscodes\Http\Response
      */
     public function noContent($status = 204, array $headers = []);
 
@@ -61,7 +61,7 @@ interface RouteResponse
      * @param  int  $status  (200 by default)
      * @param  array  $headers
      * 
-     * @return  \Syscode\Http\Response
+     * @return  \Syscodes\Http\Response
      */
     public function view($view, array $data = [], $status = 200, array $headers = []);
 
@@ -73,7 +73,7 @@ interface RouteResponse
      * @param  array  $headers
      * @param  int  $options  (0 by default)
      * 
-     * @return \Syscode\Http\JsonResponse
+     * @return \Syscodes\Http\JsonResponse
      */
     public function json($data = [], $status = 200, array $headers = [], $options = 0);
 
@@ -85,7 +85,7 @@ interface RouteResponse
      * @param  array  $headers
      * @param  bool|null  $secure  (null by default)
      * 
-     * @return \Syscode\Http\RedirectResponse
+     * @return \Syscodes\Http\RedirectResponse
      */
     public function redirectTo($path, $status = 302, $headers = [], $secure = null);
 }

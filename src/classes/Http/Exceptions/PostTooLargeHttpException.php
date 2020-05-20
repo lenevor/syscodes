@@ -22,10 +22,10 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Http\Exceptions;
+namespace Syscodes\Http\Exceptions;
 
 use Throwable;
-use Syscode\Core\Http\Exceptions\HttpException;
+use Syscodes\Core\Http\Exceptions\HttpException;
 
 /**
  * The request entity returns when it is longer than the limits 

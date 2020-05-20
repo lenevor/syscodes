@@ -22,10 +22,10 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Transpilers;
+namespace Syscodes\View\Transpilers;
 
-use Syscode\Support\Arr;
-use Syscode\Support\Str;
+use Syscodes\Support\Arr;
+use Syscodes\Support\Str;
 
 class PlazeTranspiler extends Transpiler implements TranspilerInterface
 {

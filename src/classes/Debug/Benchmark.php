@@ -22,9 +22,9 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Debug;
+namespace Syscodes\Debug;
 
-use Syscode\Core\Http\Exceptions\LenevorException;
+use Syscodes\Core\Http\Exceptions\LenevorException;
 
 /**
  * Provides a simple way to measure the amount of time

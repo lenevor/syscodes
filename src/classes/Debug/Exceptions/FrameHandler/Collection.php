@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Debug\FrameHandler;
+namespace Syscodes\Debug\FrameHandler;
 
 use Countable;
 use Exception;

@@ -22,7 +22,7 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the URL class facade.
@@ -39,10 +39,10 @@ namespace Syscode\Support\Facades;
  * @method static void forcedSchema(string $schema)
  * @method static void forcedRoot(string $root)
  * @method static bool isValidUrl(string $path)
- * @method static \Syscode\Http\Request getRequest()
- * @method static void setRequest(\Syscode\Http\Request $request)
+ * @method static \Syscodes\Http\Request getRequest()
+ * @method static void setRequest(\Syscodes\Http\Request $request)
  * 
- * @see \Syscode\Routing\UrlGenerator
+ * @see \Syscodes\Routing\UrlGenerator
  */
 class URL extends Facade
 {

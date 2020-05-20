@@ -22,9 +22,9 @@
  * @since       0.7.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
-use Syscode\Support\Chronos;
+use Syscodes\Support\Chronos;
 
 /**
  * Initialize the Database class facade.
@@ -33,8 +33,8 @@ use Syscode\Support\Chronos;
  *
  * @method static 
  * 
- * @see \Syscode\Database\Connection
- * @see \Syscode\Database\DatabaseManager
+ * @see \Syscodes\Database\Connection
+ * @see \Syscodes\Database\DatabaseManager
  */
 class DB extends Facade
 {

@@ -22,7 +22,7 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database\Query;
+namespace Syscodes\Database\Query;
 
 /**
  * Allows get the clause for add a join of atrributes in query sql.
@@ -103,7 +103,7 @@ class JoinClause
      * @param  string|null  $operator  (null by default)
      * @param  string|null  $second  (null by default)
      * 
-     * @return \Syscode\Database\Query\JoinClause
+     * @return \Syscodes\Database\Query\JoinClause
      */
     public function orOn($first, $operator = null, $second = null)
     {
@@ -118,7 +118,7 @@ class JoinClause
      * @param  string|null  $second  (null by default)
      * @param  string  $boolean  ('and' by default)
      * 
-     * @return \Syscode\Database\Query\JoinClause
+     * @return \Syscodes\Database\Query\JoinClause
      */
     public function where($first, $operator = null, $second = null, $boolean = 'and')
     {
@@ -132,7 +132,7 @@ class JoinClause
      * @param  string|null  $operator  (null by default)
      * @param  string|null  $second  (null by default)
      * 
-     * @return \Syscode\Database\Query\JoinClause
+     * @return \Syscodes\Database\Query\JoinClause
      */
     public function orWhere($first, $operator = null, $second = null)
     {
@@ -145,7 +145,7 @@ class JoinClause
      * @param  string  $column
      * @param  string|null  $operator  (null by default)
      * 
-     * @return \Syscode\Database\Query\JoinClause
+     * @return \Syscodes\Database\Query\JoinClause
      */
     public function whereNull($column, $boolean = 'and')
     {

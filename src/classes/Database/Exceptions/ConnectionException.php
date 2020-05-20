@@ -22,7 +22,7 @@
  * @since       0.7.0
  */
 
-namespace Syscode\Database\Exceptions;
+namespace Syscodes\Database\Exceptions;
 
 use Exception;
 use PDOException;

@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Cache\Utils;
+namespace Syscodes\Cache\Utils;
 
 use Serializable;
 

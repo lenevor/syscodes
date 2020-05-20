@@ -22,7 +22,7 @@
  * @since       0.7.0
  */
 
-namespace Syscode\Database;
+namespace Syscodes\Database;
 
 use Closure;
 
@@ -38,7 +38,7 @@ interface ConnectionInterface
      * 
      * @param  string  $table
      * 
-     * @return \Syscode\Database\Query\Builder
+     * @return \Syscodes\Database\Query\Builder
      */
     public function table($table);
 
@@ -47,7 +47,7 @@ interface ConnectionInterface
      * 
      * @param  mixed  $value
      * 
-     * @return \Syscode\Database\Query\Expression
+     * @return \Syscodes\Database\Query\Expression
      */
     public function raw($value);
 

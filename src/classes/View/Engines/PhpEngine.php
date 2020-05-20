@@ -22,12 +22,12 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Engines;
+namespace Syscodes\View\Engines;
 
 use Exception;
 use Throwable;
-use Syscode\Contracts\View\Engine;
-use Syscode\Debug\FatalExceptions\FatalThrowableError;
+use Syscodes\Contracts\View\Engine;
+use Syscodes\Debug\FatalExceptions\FatalThrowableError;
 
 /**
  * The file PHP engine.

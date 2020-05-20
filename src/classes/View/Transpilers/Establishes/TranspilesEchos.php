@@ -22,7 +22,7 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Transpilers\Establishes;
+namespace Syscodes\View\Transpilers\Establishes;
 
 /**
  * Trait CompilesEchos.

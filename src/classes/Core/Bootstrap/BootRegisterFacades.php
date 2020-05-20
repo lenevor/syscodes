@@ -22,11 +22,11 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Core\Bootstrap;
+namespace Syscodes\Core\Bootstrap;
 
-use Syscode\Core\AliasLoader;
-use Syscode\Support\Facades\Facade;
-use Syscode\Contracts\Core\Application;
+use Syscodes\Core\AliasLoader;
+use Syscodes\Support\Facades\Facade;
+use Syscodes\Contracts\Core\Application;
 
 /**
  * Initialize boot the register facades from setting file called services.
@@ -38,7 +38,7 @@ class BootRegisterFacades
     /**
      * Bootstrap the given application.
      *
-     * @param  \Syscode\Contracts\Core\Application  $app
+     * @param  \Syscodes\Contracts\Core\Application  $app
      * 
      * @return void
      */

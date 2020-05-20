@@ -22,9 +22,9 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Contracts\Core;
+namespace Syscodes\Contracts\Core;
 
-use Syscode\Contracts\Container\Container;
+use Syscodes\Contracts\Container\Container;
 
 /**
  * Allows the loading of service providers and functions to activate 
@@ -125,10 +125,10 @@ interface Application extends Container
     /**
      * Register a service provider.
      * 
-     * @param  \Syscode\Support\ServiceProvider|string  $provider
+     * @param  \Syscodes\Support\ServiceProvider|string  $provider
      * @param  bool  $force
      * 
-     * @return \Syscode\Support\ServiceProvider
+     * @return \Syscodes\Support\ServiceProvider
      */
     public function register($provider, $force = false);
 
@@ -137,7 +137,7 @@ interface Application extends Container
      * 
      * @param  string  $provider
      * 
-     * @return \Syscode\Support\ServiceProvider
+     * @return \Syscodes\Support\ServiceProvider
      */
     public function resolveProviderClass($provider);
 

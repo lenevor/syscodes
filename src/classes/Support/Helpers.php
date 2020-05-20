@@ -22,11 +22,11 @@
  * @since       0.1.0
  */
 
-use Syscode\Version;
-use Syscode\Support\Arr;
-use Syscode\Support\Str;
-use Syscode\Core\Http\Lenevor;
-use Syscode\Support\HigherOrderTakeProxy;
+use Syscodes\Version;
+use Syscodes\Support\Arr;
+use Syscodes\Support\Str;
+use Syscodes\Core\Http\Lenevor;
+use Syscodes\Support\HigherOrderTakeProxy;
 
 if ( ! function_exists('array_add'))
 {
@@ -383,7 +383,7 @@ if ( ! function_exists('take'))
      * 
      * @return mixed
      * 
-     * @uses   \Syscode\Support\HigherOrderTakeProxy
+     * @uses   \Syscodes\Support\HigherOrderTakeProxy
      */
     function take($value, $callback = null)
     {
@@ -407,7 +407,7 @@ if ( ! function_exists('value'))
      * 
      * @return mixed
      * 
-     * @uses   \Syscode\Contracts\Core\Lenevor
+     * @uses   \Syscodes\Contracts\Core\Lenevor
      */
     function value($value)
     {

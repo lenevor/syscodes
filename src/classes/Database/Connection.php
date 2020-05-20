@@ -22,7 +22,7 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database;
+namespace Syscodes\Database;
 
 use PDO;
 

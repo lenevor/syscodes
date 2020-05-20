@@ -22,9 +22,9 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database\Query\Processors;
+namespace Syscodes\Database\Query\Processors;
 
-use Syscode\Database\Query\Processor;
+use Syscodes\Database\Query\Processor;
 
 /**
  * Allows show the results of a column listing query for Mysql Database.

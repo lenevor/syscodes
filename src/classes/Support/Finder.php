@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support;
+namespace Syscodes\Support;
 
 use OutOfBoundsException;
 use InvalidArgumentException;
@@ -63,7 +63,7 @@ class Finder
     /**
      * Gets a singleton instance of Finder.
      *
-     * @return \Syscode\Support\Finder
+     * @return \Syscodes\Support\Finder
      */
     public static function instance()
     {

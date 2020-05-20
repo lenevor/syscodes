@@ -22,12 +22,12 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Debug;
+namespace Syscodes\Debug;
 
 use Exception;
 use Throwable;
-use Syscode\Debug\FatalExceptions\FlattenException;
-use Syscode\Debug\FatalExceptions\OutOfMemoryException;
+use Syscodes\Debug\FatalExceptions\FlattenException;
+use Syscodes\Debug\FatalExceptions\OutOfMemoryException;
 
 /**
  * A generic ErrorHandler for the PHP engine.
@@ -213,7 +213,7 @@ class ExceptionHandler
      * This method uses plain php functions as header and echo to generate the output 
      * response.
      * 
-     * @param \Exception|\Syscode\Debug\FlattenExceptions\FlattenException  $exception An \Exception or \FlattenException instance
+     * @param \Exception|\Syscodes\Debug\FlattenExceptions\FlattenException  $exception An \Exception or \FlattenException instance
      * 
      * @return string  The HTML content as a string 
      */
@@ -242,7 +242,7 @@ class ExceptionHandler
     /**
      * Gets the full HTML content associated with the given exception.
      * 
-     * @param  \Exception|\Syscode\Debug\FlattenExceptions\FlattenException  $exception  An \Exception or \FlattenException instance
+     * @param  \Exception|\Syscodes\Debug\FlattenExceptions\FlattenException  $exception  An \Exception or \FlattenException instance
      * 
      * @return string  The HTML content as a string 
      */
@@ -287,7 +287,7 @@ EOF;
     /**
      * Gets the HTML content associated with the given exception.
      * 
-     * @param  \Syscode\Debug\FlattenExceptions\FlattenException  $exception
+     * @param  \Syscodes\Debug\FlattenExceptions\FlattenException  $exception
      * 
      * @return string  The HTML content as a string
      */

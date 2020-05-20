@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Support\Chronos\traits;
+namespace Syscodes\Support\Chronos\traits;
 
 use Datetime;
 use IntlCalendar;

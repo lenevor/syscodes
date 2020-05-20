@@ -22,9 +22,9 @@
  * @since       0.7.0
  */
 
-namespace Syscode\Database;
+namespace Syscodes\Database;
 
-use Syscode\Support\ServiceProvider;
+use Syscodes\Support\ServiceProvider;
 
 /**
  * For loading the classes from the container of services.

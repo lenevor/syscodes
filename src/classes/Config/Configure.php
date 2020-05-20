@@ -22,11 +22,11 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Config;
+namespace Syscodes\Config;
 
 use ArrayAccess;
-use Syscode\Support\Arr;
-use Syscode\Contracts\Config\Configure as ConfigureContract;
+use Syscodes\Support\Arr;
+use Syscodes\Contracts\Config\Configure as ConfigureContract;
 
 /**
  * Class Configure
@@ -65,7 +65,7 @@ class Configure implements ArrayAccess, ConfigureContract
 	 *
 	 * @return mixed
 	 *
-	 * @uses   \Syscode\Support\Arr
+	 * @uses   \Syscodes\Support\Arr
 	 */
 	public function get(string $key, $default = null)
 	{
@@ -93,7 +93,7 @@ class Configure implements ArrayAccess, ConfigureContract
 	 *
 	 * @return mixed
 	 *
-	 * @uses   \Syscode\Support\Arr
+	 * @uses   \Syscodes\Support\Arr
 	 */
 	public function set(string $key, $value)
 	{
@@ -109,7 +109,7 @@ class Configure implements ArrayAccess, ConfigureContract
 	 *
 	 * @return array|bool
 	 *
-	 * @uses   \Syscode\Support\Arr
+	 * @uses   \Syscodes\Support\Arr
 	 */
 	public function erase(string $key)
 	{

@@ -22,9 +22,9 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Debug\FrameHandler;
+namespace Syscodes\Debug\FrameHandler;
 
-use Syscode\Debug\Util\TemplateHandler;
+use Syscodes\Debug\Util\TemplateHandler;
 
 /**
  * Returns all basic information about the exception in a simple array and
@@ -37,7 +37,7 @@ class Formatter
     /**
      * Returns all basic information about the exception in a simple array.
      * 
-     * @param  \Syscode\Debug\Engine\Supervisor  $supervisor
+     * @param  \Syscodes\Debug\Engine\Supervisor  $supervisor
      * 
      * @return array
      */
@@ -67,7 +67,7 @@ class Formatter
     /**
      * Returns all basic information about the exception in a plain text.
      * 
-     * @param  \Syscode\Debug\Engine\Supervisor  $supervisor
+     * @param  \Syscodes\Debug\Engine\Supervisor  $supervisor
      * 
      * @return string
      */

@@ -22,11 +22,11 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Support;
+namespace Syscodes\Support;
 
 use Closure;
 use InvalidArgumentException;
-use Syscode\Contracts\Container\Container;
+use Syscodes\Contracts\Container\Container;
 
 /**
  * This class manage the creation of driver based components.
@@ -38,14 +38,14 @@ abstract class Manager
     /**
      * The application instance.
      * 
-     * @var \Syscode\Contracts\Core\Application $app
+     * @var \Syscodes\Contracts\Core\Application $app
      */
     protected $app;
 
     /**
      * The configuration repository instance.
      * 
-     * @var \Syscode\Contracts\Config\Configure $config
+     * @var \Syscodes\Contracts\Config\Configure $config
      */
     protected $config;
 
@@ -66,7 +66,7 @@ abstract class Manager
     /**
      * Constructor. The Manager class instance.
      * 
-     * @param  \Syscode\Contracts\Container\Container  $container
+     * @param  \Syscodes\Contracts\Container\Container  $container
      * 
      * @return void
      */

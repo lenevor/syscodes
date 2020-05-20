@@ -22,34 +22,34 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Route class facade.
  *
  * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  * 
- * @method static \Syscode\Routing\Router any(string $route, string|Callable $action = null) 
- * @method static \Syscode\Routing\Router delete(string $route, string|Callable $action = null)
- * @method static \Syscode\Routing\Router get(string $route, string|Callable $action = null)
- * @method static \Syscode\Routing\Router head(string $route, string|Callable $action = null)
- * @method static \Syscode\Routing\Router match(string $route, string|Callable $action = null)
- * @method static \Syscode\Routing\Router options(string $route, string|Callable $action = null)
- * @method static \Syscode\Routing\Router patch(string $route, string|Callable $action = null)
- * @method static \Syscode\Routing\Router post(string $route, string|Callable $action = null)
- * @method static \Syscode\Routing\Router put(string $route, string|Callable $action = null)
- * @method static \Syscode\Routing\Route addRoute(\Syscode\Routing\Route $route)
+ * @method static \Syscodes\Routing\Router any(string $route, string|Callable $action = null) 
+ * @method static \Syscodes\Routing\Router delete(string $route, string|Callable $action = null)
+ * @method static \Syscodes\Routing\Router get(string $route, string|Callable $action = null)
+ * @method static \Syscodes\Routing\Router head(string $route, string|Callable $action = null)
+ * @method static \Syscodes\Routing\Router match(string $route, string|Callable $action = null)
+ * @method static \Syscodes\Routing\Router options(string $route, string|Callable $action = null)
+ * @method static \Syscodes\Routing\Router patch(string $route, string|Callable $action = null)
+ * @method static \Syscodes\Routing\Router post(string $route, string|Callable $action = null)
+ * @method static \Syscodes\Routing\Router put(string $route, string|Callable $action = null)
+ * @method static \Syscodes\Routing\Route addRoute(\Syscodes\Routing\Route $route)
  * @method static array getAllRoutes()
  * @method static string getGroupPrefix()
  * @method static array getRoutesByMethod(array|string $method)
  * @method static void group(array $attributes, \Closure|string $callback)
  * @method static void map(array|string $method, string $route, mixed$action) 
- * @method static \Syscode\Routing\Route newRoute(array|string $method, string $uri, mixed $action)
+ * @method static \Syscodes\Routing\Route newRoute(array|string $method, string $uri, mixed $action)
  * @method static bool hasGroupStack()
- * @method static array resolve(\Syscode\Http\Request $request)
+ * @method static array resolve(\Syscodes\Http\Request $request)
  * @method static string|bool namespace(string $namespace = null)
  * 
- * @see \Syscode\Routing\Router
+ * @see \Syscodes\Routing\Router
  */
 class Route extends Facade
 {

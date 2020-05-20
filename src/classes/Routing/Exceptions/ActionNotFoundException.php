@@ -22,9 +22,9 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Routing\Exceptions;
+namespace Syscodes\Routing\Exceptions;
 
-use Syscode\Core\Http\Exceptions\LenevorException;
+use Syscodes\Core\Http\Exceptions\LenevorException;
 
 /**
  * ActionNotFoundException.

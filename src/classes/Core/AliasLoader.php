@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Core;
+namespace Syscodes\Core;
 
 /**
  * Receives all the facade classes available for be load use a services provider.
@@ -34,7 +34,7 @@ class AliasLoader
     /**
      * The singleton instance of loader.
      * 
-     * @var \Syscode\Core\AliasLoader $instance
+     * @var \Syscodes\Core\AliasLoader $instance
      */
     protected static $instance;
 
@@ -64,7 +64,7 @@ class AliasLoader
      * 
      * @param  array  $aliases
      * 
-     * @return \Syscode\Core\AliasLoader
+     * @return \Syscodes\Core\AliasLoader
      */
     public static function getInstance(array $aliases = []) 
     {
@@ -83,7 +83,7 @@ class AliasLoader
     /**
      * Set the value of the singleton alias loader.
      * 
-     * @param  \Syscode\Core\AliasLoader  $loader
+     * @param  \Syscodes\Core\AliasLoader  $loader
      * 
      * @return void
      */

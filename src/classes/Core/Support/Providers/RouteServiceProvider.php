@@ -22,9 +22,9 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Core\Support\Providers;
+namespace Syscodes\Core\Support\Providers;
 
-use Syscode\Support\ServiceProvider;
+use Syscodes\Support\ServiceProvider;
 
 /**
  * The route service provider facilitates the register of a namespace your 

@@ -22,7 +22,7 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View;
+namespace Syscodes\View;
 
 /**
  * The Extension trait.

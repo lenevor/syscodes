@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Contracts\Core;
+namespace Syscodes\Contracts\Core;
 
 /**
  * Handles a Request to convert it to a Response.
@@ -35,11 +35,11 @@ interface Lenevor
 	 * Initializes the framework, this can only be called once.
 	 * Launch the application.
 	 * 
-	 * @param  \Syscode\http\Request  $request
+	 * @param  \Syscodes\http\Request  $request
 	 *
 	 * @return void
 	 * 
-	 * @uses   new \Syscode\Http\Response
+	 * @uses   new \Syscodes\Http\Response
 	 */
  	public function handle($request);
 }

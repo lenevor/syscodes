@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Contracts\Cache;
+namespace Syscodes\Contracts\Cache;
 
 /**
  * Sets functions by the item from the cache store.

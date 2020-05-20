@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Contracts\Debug;
+namespace Syscodes\Contracts\Debug;
 
 use Throwable;
 
@@ -53,7 +53,7 @@ interface Handler
 	 * 
 	 * @param  string|callable  $handler
 	 * 
-	 * @return \Syscode\Contracts\Debug\Handler
+	 * @return \Syscodes\Contracts\Debug\Handler
 	 */
 	public function pushHandler($handler);
 	

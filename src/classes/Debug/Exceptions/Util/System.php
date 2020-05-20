@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Debug\Util;
+namespace Syscodes\Debug\Util;
 
 /**
  * Activates the loading of PHP functions to capture user-generated exceptions.

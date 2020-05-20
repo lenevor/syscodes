@@ -22,20 +22,20 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Redirect class facade.
  *
  * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  * 
- * @method static \Syscode\Http\RedirectResponse back(int $status = 302, array $headers = [], bool $fallback = false)
- * @method static \Syscode\Http\RedirectResponse refresh(int $status = 302, array $headers = [])
- * @method static \Syscode\Http\RedirectResponse to(string $path, int $status = 302, array $headers = [], bool $secure = null)
- * @method static \Syscode\Http\RedirectResponse away(string $path, int $status = 302, array $headers = [])
- * @method static \Syscode\Http\RedirectResponse secure(string $path, int $status = 302, array $headers = [])
+ * @method static \Syscodes\Http\RedirectResponse back(int $status = 302, array $headers = [], bool $fallback = false)
+ * @method static \Syscodes\Http\RedirectResponse refresh(int $status = 302, array $headers = [])
+ * @method static \Syscodes\Http\RedirectResponse to(string $path, int $status = 302, array $headers = [], bool $secure = null)
+ * @method static \Syscodes\Http\RedirectResponse away(string $path, int $status = 302, array $headers = [])
+ * @method static \Syscodes\Http\RedirectResponse secure(string $path, int $status = 302, array $headers = [])
  * 
- * @see \Syscode\Routing\Redirector
+ * @see \Syscodes\Routing\Redirector
  */
 class Redirect extends Facade
 {

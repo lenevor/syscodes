@@ -22,11 +22,11 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Engines;
+namespace Syscodes\View\Engines;
 
 use Exception;
 use ErrorException;
-use Syscode\View\Transpilers\TranspilerInterface;
+use Syscodes\View\Transpilers\TranspilerInterface;
 
 /**
  * The file PHP engine.
@@ -38,7 +38,7 @@ class TranspilerEngine extends PhpEngine
     /**
      * The Plaze transpiler instance.
      * 
-     * @var \Syscode\View\Transpilers\TranspilerInterface $transpiler
+     * @var \Syscodes\View\Transpilers\TranspilerInterface $transpiler
      */
     protected $transpiler;
 
@@ -52,7 +52,7 @@ class TranspilerEngine extends PhpEngine
     /**
      * Constructor. Create a new Plaze view engine instance.
      * 
-     * @param  \Syscode\View\Transpilers\TranspilerInterface  $transpiler
+     * @param  \Syscodes\View\Transpilers\TranspilerInterface  $transpiler
      * 
      * @return void
      */
@@ -119,7 +119,7 @@ class TranspilerEngine extends PhpEngine
     /**
      * Get the transpiler implementation.
      * 
-     * @return \Syscode\View\Transpilers\TranspilerInterface
+     * @return \Syscodes\View\Transpilers\TranspilerInterface
      */
     public function getTranspiler()
     {

@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Redis;
+namespace Syscodes\Redis;
 
 use Predis\Client;
 

@@ -22,7 +22,7 @@
  * @since       0.7.0
  */
 
-namespace Syscode\Database;
+namespace Syscodes\Database;
 
 /**
  * @author Javier Alexander Campo M. <jalexcam@gmail.com>

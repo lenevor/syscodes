@@ -22,17 +22,17 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View;
+namespace Syscodes\View;
 
 use Exception;
 use Throwable;
 use ArrayAccess;
 use Traversable;
-use Syscode\Support\Str;
+use Syscodes\Support\Str;
 use BadMethodCallException;
 use InvalidArgumentException;
-use Syscode\Contracts\View\Engine;
-use Syscode\Contracts\View\View as ViewContract;
+use Syscodes\Contracts\View\Engine;
+use Syscodes\Contracts\View\View as ViewContract;
 
 /**
  * This class control the views.
@@ -51,14 +51,14 @@ class View implements ArrayAccess, ViewContract
 	/**
 	 * The engine implementation.
 	 * 
-	 * @var \Syscode\Contracts\View\Engine $engine
+	 * @var \Syscodes\Contracts\View\Engine $engine
 	 */
 	protected $engine;
 
 	/**
 	 * The view factory instance.
 	 * 
-	 * @var \Syscode\View\factory $factory
+	 * @var \Syscodes\View\factory $factory
 	 */
 	protected $factory;
 
@@ -72,8 +72,8 @@ class View implements ArrayAccess, ViewContract
 	/**
 	 * Constructor: Create a new view instance.
 	 * 
-	 * @param  \Syscode\View\factory  $factory
-	 * @param  \Syscode\Contracts\View\Engine  $engine
+	 * @param  \Syscodes\View\factory  $factory
+	 * @param  \Syscodes\Contracts\View\Engine  $engine
 	 * @param  string  $view
 	 * @param  array  $data
 	 *
@@ -246,7 +246,7 @@ class View implements ArrayAccess, ViewContract
 	/**
 	 * Get the view factory instance.
 	 * 
-	 * @return \Syscode\View\factory
+	 * @return \Syscodes\View\factory
 	 */
 	public function getFactory()
 	{
@@ -256,7 +256,7 @@ class View implements ArrayAccess, ViewContract
 	/**
 	 * Get the view's rendering engine.
 	 * 
-	 * @return \Syscode\Contracts\View\Engine
+	 * @return \Syscodes\Contracts\View\Engine
 	 */
 	public function getEngine()
 	{
@@ -276,7 +276,7 @@ class View implements ArrayAccess, ViewContract
 	 *
 	 * @return mixed
 	 *
-	 * @uses   \Syscode\Contracts\Core\Lenevor
+	 * @uses   \Syscodes\Contracts\Core\Lenevor
 	 *
 	 * @throws \InvalidArgumentException
 	 */
@@ -396,7 +396,7 @@ class View implements ArrayAccess, ViewContract
 	 *
 	 * @return mixed
 	 *
-	 * @throws \Syscode\LenevorException
+	 * @throws \Syscodes\LenevorException
 	 */
 	public function &__get($key) 
 	{

@@ -22,10 +22,10 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Session;
+namespace Syscodes\Session;
 
-use Syscode\Support\Manager;
-use Syscode\Session\Handlers\{ FileSession, NullSession, CacheBasedSession };
+use Syscodes\Support\Manager;
+use Syscodes\Session\Handlers\{ FileSession, NullSession, CacheBasedSession };
 
 /**
  * Lenevor session storage.
@@ -48,7 +48,7 @@ class SessionManager extends Manager
     /**
      * Create an instance of the array session driver.
      * 
-     * @return \Syscode\Session\Store
+     * @return \Syscodes\Session\Store
      */
     protected function createArrayDriver()
     {
@@ -58,7 +58,7 @@ class SessionManager extends Manager
     /**
      * Create an instance of the file session driver.
      * 
-     * @return \Syscode\Session\Store
+     * @return \Syscodes\Session\Store
      */
     protected function createFileDriver()
     {
@@ -73,7 +73,7 @@ class SessionManager extends Manager
     /**
      * Create an instance of the APC session driver.
      * 
-     * @return \Syscode\Session\Store
+     * @return \Syscodes\Session\Store
      */
     protected function createApcDriver()
     {
@@ -83,7 +83,7 @@ class SessionManager extends Manager
     /**
      * Create an instance of the Memcached session driver.
      * 
-     * @return \Syscode\Session\Store
+     * @return \Syscodes\Session\Store
      */
     protected function createMemcachedDriver()
     {
@@ -93,7 +93,7 @@ class SessionManager extends Manager
     /**
      * Create an instance of the Redis session driver.
      * 
-     * @return \Syscode\Session\Store
+     * @return \Syscodes\Session\Store
      */
     protected function createRedisDriver()
     {
@@ -110,7 +110,7 @@ class SessionManager extends Manager
      * 
      * @param  string  $driver
      * 
-     * @return \Syscode\Session\Store
+     * @return \Syscodes\Session\Store
      */
     protected function createCacheBased($driver)
     {
@@ -122,7 +122,7 @@ class SessionManager extends Manager
      * 
      * @param  string  $driver
      * 
-     * @return \Syscode\Session\Handlers\CacheBasedSession
+     * @return \Syscodes\Session\Handlers\CacheBasedSession
      */
     protected function createCacheHandler($driver)
     {
@@ -139,7 +139,7 @@ class SessionManager extends Manager
      * 
      * @param  \SessionHandlerInterface  $handler
      * 
-     * @return \Syscode\Session\Store
+     * @return \Syscodes\Session\Store
      */
     protected function buildSession($handler)
     {

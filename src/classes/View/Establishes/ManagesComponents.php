@@ -22,10 +22,10 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Establishes;
+namespace Syscodes\View\Establishes;
 
-use Syscode\Support\WebString;
-use Syscode\View\Exceptions\ViewException;
+use Syscodes\Support\WebString;
+use Syscodes\View\Exceptions\ViewException;
 
 /**
  * Trait ManagesComponents.

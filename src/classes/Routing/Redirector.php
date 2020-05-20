@@ -22,9 +22,9 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
-use Syscode\Http\RedirectResponse;
+use Syscodes\Http\RedirectResponse;
 
 /**
  * Returns redirect of the routes defined by the user.
@@ -43,7 +43,7 @@ class Redirector
     /**
      * Constructor. The Redirector class instance.
      * 
-     * @param  \Syscode\Routing\UrlGenerator  $generator
+     * @param  \Syscodes\Routing\UrlGenerator  $generator
      * 
      * @return void
      */
@@ -59,7 +59,7 @@ class Redirector
      * @param  array  $headers
      * @param  mixed  $fallback  (false by default)
      * 
-     * @return \Syscode\Http\RedirectResponse
+     * @return \Syscodes\Http\RedirectResponse
      */
     public function back($status = 302, $headers = [], $fallback = false)
     {
@@ -72,7 +72,7 @@ class Redirector
      * @param  int  $status  (302 by default)
      * @param  array  $headers
      * 
-     * @return \Syscode\Http\RedirectResponse
+     * @return \Syscodes\Http\RedirectResponse
      */
     public function refresh($status = 302, $headers = [])
     {
@@ -87,7 +87,7 @@ class Redirector
      * @param  array  $headers
      * @param  bool|null  $secure  (null by default)
      * 
-     * @return \Syscode\Http\RedirectResponse
+     * @return \Syscodes\Http\RedirectResponse
      */
     public function to($path, $status = 302, $headers = [], $secure = null)
     {
@@ -101,7 +101,7 @@ class Redirector
      * @param  int  $status  (302 by default)
      * @param  array  $headers
      * 
-     * @return \Syscode\Http\RedirectResponse
+     * @return \Syscodes\Http\RedirectResponse
      */
     public function away($path, $status = 302, $headers = [])
     {
@@ -115,7 +115,7 @@ class Redirector
      * @param  int  $status  (302 by default)
      * @param  array  $headers
      * 
-     * @return \Syscode\Http\RedirectResponse
+     * @return \Syscodes\Http\RedirectResponse
      */
     public function secure($path, $status = 302, $headers = [])
     {
@@ -129,7 +129,7 @@ class Redirector
      * @param  int  $status
      * @param  array  $headers
      * 
-     * @return \Syscode\Http\RedirectResponse
+     * @return \Syscodes\Http\RedirectResponse
      */
     protected function createRedirect($path, $status, $headers)
     {

@@ -22,7 +22,7 @@
  * @since       0.6.0
  */
 
-namespace Syscode\Contracts\Events;
+namespace Syscodes\Contracts\Events;
 
 /**
  * For register events and can calls all your listeners.

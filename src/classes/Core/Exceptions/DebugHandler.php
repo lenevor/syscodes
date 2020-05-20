@@ -22,9 +22,9 @@
  * @since       0.1.1
  */
 
-namespace Syscode\Core\Exceptions;
+namespace Syscodes\Core\Exceptions;
 
-use Syscode\Debug\Handlers\PleasingPageHandler;
+use Syscodes\Debug\Handlers\PleasingPageHandler;
 
 /**
  * Creates a new Debug handler instance.
@@ -36,7 +36,7 @@ class DebugHandler
     /**
      * Create a new Debug handler for debug mode.
      * 
-     * @return \Syscode\Debug\Handlers\PleasingPageHandler
+     * @return \Syscodes\Debug\Handlers\PleasingPageHandler
      */
     public function initDebug()
     {
@@ -48,7 +48,7 @@ class DebugHandler
     /**
      * Register the editor with the handler.
      *
-     * @param  \Syscode\Debug\Handlers\PleasingPageHandler $handler
+     * @param  \Syscodes\Debug\Handlers\PleasingPageHandler $handler
      * 
      * @return $this
      */

@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the App class facade.
@@ -43,14 +43,14 @@ namespace Syscode\Support\Facades;
  * @method static string environmentFilePath()
  * @method static bool hasBeenBootstrapped()
  * @method static void registerConfiguredProviders()
- * @method static \Syscode\Support\ServiceProvider register(\Syscode\Support\ServiceProvider $provider, bool $force = false)
- * @method static \Syscode\Support\ServiceProvider resolveProviderClass(string $provider)
+ * @method static \Syscodes\Support\ServiceProvider register(\Syscodes\Support\ServiceProvider $provider, bool $force = false)
+ * @method static \Syscodes\Support\ServiceProvider resolveProviderClass(string $provider)
  * @method static void isBooted()
  * @method static void boot()
  * @method static void booting(callable $callback)
  * @method static void booted(callable $callback)
  * 
- * @see \Syscode\Contracts\Core\Application
+ * @see \Syscodes\Contracts\Core\Application
  */
 class App extends Facade
 {

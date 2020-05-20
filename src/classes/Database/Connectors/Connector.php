@@ -22,11 +22,11 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database\Connectors;
+namespace Syscodes\Database\Connectors;
 
 use PDO;
 use PDOException;
-use Syscode\Database\Exceptions\ConnectionException;
+use Syscodes\Database\Exceptions\ConnectionException;
 
 /**
  * The default PDO connection.
@@ -71,7 +71,7 @@ abstract class Connector
      * 
      * @return \PDO
      * 
-     * @throws \Syscode\Database\Exceptions\ConnectionException  
+     * @throws \Syscodes\Database\Exceptions\ConnectionException  
      */
     public function createConnection($dsn, array $config, array $options)
     {

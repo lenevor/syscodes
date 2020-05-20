@@ -22,12 +22,12 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Cache;
+namespace Syscodes\Cache;
 
 use Closure;
 use ArrayAccess;
-use Syscode\Contracts\Cache\Store;
-use Syscode\Support\InteractsWithTime;
+use Syscodes\Contracts\Cache\Store;
+use Syscodes\Support\InteractsWithTime;
 
 /**
  * Begin executing operations of storage data if the store supports it.
@@ -48,14 +48,14 @@ class CacheRepository implements ArrayAccess
     /**
      * The cache store implementation.
      * 
-     * @var \Syscode\Contracts\Cache\Store $store
+     * @var \Syscodes\Contracts\Cache\Store $store
      */
     protected $store;
 
     /**
      * Constructor. Create a new cache repository instance.
      * 
-     * @param  \Syscode\Contracts\Cache\Store  $store
+     * @param  \Syscodes\Contracts\Cache\Store  $store
      * 
      * @return void
      */
@@ -230,7 +230,7 @@ class CacheRepository implements ArrayAccess
     /**
      * Get the cache store implementation.
      * 
-     * @return \Syscode\Contracts\Cache\Store
+     * @return \Syscodes\Contracts\Cache\Store
      */
     public function getStore()
     {

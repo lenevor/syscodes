@@ -22,9 +22,9 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
-use Syscode\Support\Arr;
+use Syscodes\Support\Arr;
 
 /**
  * Groups attributes according.

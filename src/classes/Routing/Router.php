@@ -22,13 +22,13 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
 use Closure;
-use Syscode\Support\Arr;
+use Syscodes\Support\Arr;
 use BadMethodCallException;
 use InvalidArgumentException;
-use Syscode\Contracts\Routing\Routable;
+use Syscodes\Contracts\Routing\Routable;
 
 /**
  * The Router class allows the integration of an easy-to-use routing system.
@@ -99,7 +99,7 @@ class Router implements Routable
 	 * Constructor initialize namespace.
 	 *
 	 * @param  string  $namespace
-	 * @param  \Syscode\Routing\RouteResolver  $resolver
+	 * @param  \Syscodes\Routing\RouteResolver  $resolver
 	 * 
 	 * @return void
 	 */
@@ -114,7 +114,7 @@ class Router implements Routable
 	 *
 	 * @param  string  $route
 	 *
-	 * @return \Syscode\Routing\Route
+	 * @return \Syscodes\Routing\Route
 	 */
 	public function addRoute(Route $route)
 	{
@@ -343,7 +343,7 @@ class Router implements Routable
 	 * @param  string        $uri
 	 * @param  mixed         $action
 	 * 
-	 * @return \Syscode\Routing\Route
+	 * @return \Syscodes\Routing\Route
 	 */
 	public function newRoute($method, $uri, $action)
 	{
@@ -379,9 +379,9 @@ class Router implements Routable
 	/**
 	 * Add the necessary where clauses to the route based on its initial registration.
 	 * 
-	 * @param  \Syscode\Routing\Route  $route
+	 * @param  \Syscodes\Routing\Route  $route
 	 * 
-	 * @return \Syscode\Routing\Route
+	 * @return \Syscodes\Routing\Route
 	 */
 	protected function addWhereClausesToRoute($route)
 	{
@@ -459,7 +459,7 @@ class Router implements Routable
 	/**
 	 * Resolve the given url and call the method that belongs to the route.
 	 *
-	 * @param  \Syscode\Http\Request  $request
+	 * @param  \Syscodes\Http\Request  $request
 	 *
 	 * @return array
 	 */

@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Contracts\Cache;
+namespace Syscodes\Contracts\Cache;
 
 /**
  * Get function for generate a cache store instance by name.
@@ -36,7 +36,7 @@ interface Manager
      * 
      * @param  string|null  $name
      * 
-     * @return \Syscode\Cache\CacheRepository
+     * @return \Syscodes\Cache\CacheRepository
      */
     public function store(string $store = null);
 }

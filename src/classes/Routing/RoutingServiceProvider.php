@@ -22,10 +22,10 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
-use Syscode\Support\ServiceProvider;
-use Syscode\Contracts\Routing\RouteResponse as ResponseContract;
+use Syscodes\Support\ServiceProvider;
+use Syscodes\Contracts\Routing\RouteResponse as ResponseContract;
 
 /**
  * For loading the classes from the container of services.

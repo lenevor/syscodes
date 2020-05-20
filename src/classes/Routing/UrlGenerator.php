@@ -22,10 +22,10 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
-use Syscode\Support\Str;
-use Syscode\Http\Request;
+use Syscodes\Support\Str;
+use Syscodes\Http\Request;
 use InvalidArgumentException;
 
 /**
@@ -59,7 +59,7 @@ class UrlGenerator
     /**
      * Constructor. The UrlGenerator class instance.
      * 
-     * @param  \Syscode\Http\Request  $request
+     * @param  \Syscodes\Http\Request  $request
      * 
      * @return void
      */
@@ -288,7 +288,7 @@ class UrlGenerator
     /**
      * Gets the Request instance.
      * 
-     * @return \Syscode\Http\Request
+     * @return \Syscodes\Http\Request
      */
     public function getRequest()
     {
@@ -298,7 +298,7 @@ class UrlGenerator
     /**
      * Sets the current Request instance.
      * 
-     * @param  \Syscode\Http\Request  $request
+     * @param  \Syscodes\Http\Request  $request
      * 
      * @return void
      */

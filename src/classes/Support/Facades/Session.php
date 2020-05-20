@@ -22,7 +22,7 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Session class facade.
@@ -50,8 +50,8 @@ namespace Syscode\Support\Facades;
  * @method static bool isStarted()
  * @method static string getDefaultDriver()
  * 
- * @see \Syscode\Session\Store
- * @see \Syscode\Session\SessionManager
+ * @see \Syscodes\Session\Store
+ * @see \Syscodes\Session\SessionManager
  */
 class Session extends Facade
 {

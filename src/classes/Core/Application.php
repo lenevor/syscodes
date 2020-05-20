@@ -22,15 +22,15 @@
  * @since       0.4.1
  */
 
-namespace Syscode\Core;
+namespace Syscodes\Core;
 
-use Syscode\Container\Container;
-use Syscode\Support\ServiceProvider;
-use Syscode\Log\LoggerServiceProvider;
-use Syscode\Routing\RoutingServiceProvider;
-use Syscode\Core\Http\Exceptions\HttpException;
-use Syscode\Core\Http\Exceptions\NotFoundHttpException;
-use Syscode\Contracts\Core\Application as ApplicationContract;
+use Syscodes\Container\Container;
+use Syscodes\Support\ServiceProvider;
+use Syscodes\Log\LoggerServiceProvider;
+use Syscodes\Routing\RoutingServiceProvider;
+use Syscodes\Core\Http\Exceptions\HttpException;
+use Syscodes\Core\Http\Exceptions\NotFoundHttpException;
+use Syscodes\Contracts\Core\Application as ApplicationContract;
 
 /**
  * Allows the loading of service providers and functions to activate 
@@ -113,7 +113,7 @@ class Application extends Container implements ApplicationContract
     /**
      * All of the registered services providers.
      * 
-     * @var \Syscode\Support\ServiceProvider[] $serviceProviders
+     * @var \Syscodes\Support\ServiceProvider[] $serviceProviders
      */
     protected $serviceProviders = [];
 
@@ -145,8 +145,8 @@ class Application extends Container implements ApplicationContract
      * 
      * @return void
      *
-     * @throws \Syscode\Core\Http\Exceptions\NotFoundHttpException
-     * @throws \Syscode\Core\Http\Exceptions\HttpException
+     * @throws \Syscodes\Core\Http\Exceptions\NotFoundHttpException
+     * @throws \Syscodes\Core\Http\Exceptions\HttpException
      */
     public function abort($code, $message = '', array $headers = [])
     {
@@ -391,7 +391,7 @@ class Application extends Container implements ApplicationContract
 	public function generateKey()
 	{
 		return 'base64:'.base64_encode(
-			\Syscode\Encryption\Encrypter::generateRandomKey($this['config']->get('security.cipher'))
+			\Syscodes\Encryption\Encrypter::generateRandomKey($this['config']->get('security.cipher'))
 		);
 	}
 	
@@ -464,10 +464,10 @@ class Application extends Container implements ApplicationContract
     /**
      * Register a service provider.
      * 
-     * @param  \Syscode\Support\ServiceProvider|string  $provider
+     * @param  \Syscodes\Support\ServiceProvider|string  $provider
      * @param  bool  $force
      * 
-     * @return \Syscode\Support\ServiceProvider
+     * @return \Syscodes\Support\ServiceProvider
      */
     public function register($provider, $force = false)
     {
@@ -491,9 +491,9 @@ class Application extends Container implements ApplicationContract
     /**
      * Get the registered service provider instance if it exists.
      * 
-     * @param  \Syscode\Support\ServiceProvider|string  $provider
+     * @param  \Syscodes\Support\ServiceProvider|string  $provider
      * 
-     * @return \Syscode\Support\ServiceProvider
+     * @return \Syscodes\Support\ServiceProvider
      */
     protected function getProviderHasBeenLoaded($provider)
     {
@@ -512,7 +512,7 @@ class Application extends Container implements ApplicationContract
      * 
      * @param  string  $provider
      * 
-     * @return \Syscode\Support\ServiceProvider
+     * @return \Syscodes\Support\ServiceProvider
      */
     public function resolveProviderClass($provider)
     {
@@ -522,7 +522,7 @@ class Application extends Container implements ApplicationContract
     /**
      * Mark the given provider as registered.
      * 
-     * @param  \Syscode\Support\ServiceProvider  $provider
+     * @param  \Syscodes\Support\ServiceProvider  $provider
      * 
      * @return void
      */
@@ -584,7 +584,7 @@ class Application extends Container implements ApplicationContract
     /**
      * Boot the given service provider.
      * 
-     * @param  \Syscode\Support\ServiceProvider  $provider
+     * @param  \Syscodes\Support\ServiceProvider  $provider
      * 
      * @return mixed
      */
@@ -636,8 +636,8 @@ class Application extends Container implements ApplicationContract
         
         $this->instance('app', $this);
         
-        $this->instance('config', $this[\Syscode\Config\Configure::class]);
-        $this->instance('http', $this[\Syscode\Http\Http::class]);
+        $this->instance('config', $this[\Syscodes\Config\Configure::class]);
+        $this->instance('http', $this[\Syscodes\Http\Http::class]);
     }
 
     /**
@@ -648,24 +648,24 @@ class Application extends Container implements ApplicationContract
     public function registerCoreContainerAliases()
     {
         foreach ([
-            'app'              => [self::class, \Syscode\Contracts\Container\Container::class, \Syscode\Contracts\Core\Application::class, \Psr\Container\ContainerInterface::class],
-            'cache'            => [\Syscode\Cache\CacheManager::class, \Syscode\Contracts\Cache\Manager::class],
-            'cache.store'      => [\Syscode\Cache\CacheRepository::class],
-            'config'           => [\Syscode\Config\Configure::class, \Syscode\Contracts\Config\Configure::class],
-            'db'               => [\Syscode\Database\DatabaseManager::class],
-            'encrypter'        => [\Syscode\Encryption\Encrypter::class, \Syscode\Contracts\Encryption\Encrypter::class],
-            'events'           => [\Syscode\Events\Dispatcher::class, \Syscode\Contracts\Events\Dispatcher::class],
-            'files'            => [\Syscode\Filesystem\Filesystem::class],
-            'log'              => [\Syscode\Log\LogManager::class, \Psr\Log\LoggerInterface::class],
-            'plaze.transpiler' => [\Syscode\View\Transpilers\PlazeTranspiler::class],
-            'redirect'         => [\Syscode\Routing\Redirector::class],
-            'redis'            => [\Syscode\Redis\RedisManager::class],
-            'router'           => [\Syscode\Routing\Router::class],
-            'session'          => [\Syscode\Session\SessionManager::class],
-            'session.store'    => [\Syscode\Session\Store::class, \Syscode\Contracts\Session\Session::class],
-            'translator'       => [\Syscode\Translation\Translator::class],
-            'url'              => [\Syscode\Routing\UrlGenerator::class],
-            'view'             => [\Syscode\View\Factory::class, \Syscode\Contracts\View\Factory::class]
+            'app'              => [self::class, \Syscodes\Contracts\Container\Container::class, \Syscodes\Contracts\Core\Application::class, \Psr\Container\ContainerInterface::class],
+            'cache'            => [\Syscodes\Cache\CacheManager::class, \Syscodes\Contracts\Cache\Manager::class],
+            'cache.store'      => [\Syscodes\Cache\CacheRepository::class],
+            'config'           => [\Syscodes\Config\Configure::class, \Syscodes\Contracts\Config\Configure::class],
+            'db'               => [\Syscodes\Database\DatabaseManager::class],
+            'encrypter'        => [\Syscodes\Encryption\Encrypter::class, \Syscodes\Contracts\Encryption\Encrypter::class],
+            'events'           => [\Syscodes\Events\Dispatcher::class, \Syscodes\Contracts\Events\Dispatcher::class],
+            'files'            => [\Syscodes\Filesystem\Filesystem::class],
+            'log'              => [\Syscodes\Log\LogManager::class, \Psr\Log\LoggerInterface::class],
+            'plaze.transpiler' => [\Syscodes\View\Transpilers\PlazeTranspiler::class],
+            'redirect'         => [\Syscodes\Routing\Redirector::class],
+            'redis'            => [\Syscodes\Redis\RedisManager::class],
+            'router'           => [\Syscodes\Routing\Router::class],
+            'session'          => [\Syscodes\Session\SessionManager::class],
+            'session.store'    => [\Syscodes\Session\Store::class, \Syscodes\Contracts\Session\Session::class],
+            'translator'       => [\Syscodes\Translation\Translator::class],
+            'url'              => [\Syscodes\Routing\UrlGenerator::class],
+            'view'             => [\Syscodes\View\Factory::class, \Syscodes\Contracts\View\Factory::class]
         ] as $key => $aliases) 
         {
             foreach ((array) $aliases as $alias) 

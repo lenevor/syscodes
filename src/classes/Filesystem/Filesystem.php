@@ -22,13 +22,13 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Filesystem;
+namespace Syscodes\Filesystem;
 
 use ErrorException;
 use FilesystemIterator;
-use Syscode\Filesystem\Exceptions\FileException;
-use Syscode\Filesystem\Exceptions\FileNotFoundException;
-use Syscode\Filesystem\Exceptions\FileUnableToMoveException;
+use Syscodes\Filesystem\Exceptions\FileException;
+use Syscodes\Filesystem\Exceptions\FileNotFoundException;
+use Syscodes\Filesystem\Exceptions\FileUnableToMoveException;
 
 /**
  * Provides basic utility to manipulate the file system.

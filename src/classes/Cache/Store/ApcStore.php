@@ -22,9 +22,9 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Cache\Store;
+namespace Syscodes\Cache\Store;
 
-use Syscode\Contracts\Cache\Store;
+use Syscodes\Contracts\Cache\Store;
 
 /**
  * Apc cache handler.
@@ -36,7 +36,7 @@ class ApcStore implements Store
     /**
      * The APC wrapper instance.
      * 
-     * @var \Syscode\Cache\Store\ApcWrapper $apc
+     * @var \Syscodes\Cache\Store\ApcWrapper $apc
      */
     protected $apc;
 
@@ -50,7 +50,7 @@ class ApcStore implements Store
     /**
      * Constructor. The new APC store instance.
      * 
-     * @param  \Syscode\Cache\Store\ApcWrapper  $apc
+     * @param  \Syscodes\Cache\Store\ApcWrapper  $apc
      * @param  string  $prefix
      * 
      * @return void

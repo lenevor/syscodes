@@ -22,10 +22,10 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Cache;
+namespace Syscodes\Cache;
 
-use Syscode\Support\ServiceProvider;
-use Syscode\Cache\Store\MemcachedConnector;
+use Syscodes\Support\ServiceProvider;
+use Syscodes\Cache\Store\MemcachedConnector;
 
 /**
  * For loading the classes from the container of services.

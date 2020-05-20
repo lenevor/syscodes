@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Http;
+namespace Syscodes\Http;
 
 /**
  * Returns the HTTP requests is filtered and detected in the routes set by the user.

@@ -22,7 +22,7 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Http;
+namespace Syscodes\Http;
 
 use ArrayObject;
 use JsonSerializable;

@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Contracts\Cache;
+namespace Syscodes\Contracts\Cache;
 
 /**
  * Returns a key name for the cache.

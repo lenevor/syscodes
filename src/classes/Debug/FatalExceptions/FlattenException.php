@@ -22,12 +22,12 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Debug\FatalExceptions;
+namespace Syscodes\Debug\FatalExceptions;
 
 use Exception;
 use Throwable;
 use ArrayObject;
-use Syscode\Core\Http\Exceptions\HttpException;
+use Syscodes\Core\Http\Exceptions\HttpException;
 
 /**
  * FlattenException wraps a PHP Error or Exception to be able to serialize it.

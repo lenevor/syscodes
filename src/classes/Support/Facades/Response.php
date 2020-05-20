@@ -22,22 +22,22 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
-use Syscode\Contracts\Routing\RouteResponse as ResponseContract;
+use Syscodes\Contracts\Routing\RouteResponse as ResponseContract;
 
 /**
  * Initialize the Response class facade.
  *
  * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  * 
- * @method static \Syscode\Http\Response make(string $body = '', int $status = 200, array $headers = [])
- * @method static \Syscode\Http\Response noContent(string $status = 204, array $headers = [])
- * @method static \Syscode\Http\Response view(string $view, array $data = [], int $status = 200, array $headers = [])
- * @method static \Syscode\Http\Response json(mixed $data = [], int $status = 200, array $headers = [], int $options = 0)
- * @method static \Syscode\Http\Response redirectTo(string $path, int $status = 302, array $headers = [], bool $secure = null)
+ * @method static \Syscodes\Http\Response make(string $body = '', int $status = 200, array $headers = [])
+ * @method static \Syscodes\Http\Response noContent(string $status = 204, array $headers = [])
+ * @method static \Syscodes\Http\Response view(string $view, array $data = [], int $status = 200, array $headers = [])
+ * @method static \Syscodes\Http\Response json(mixed $data = [], int $status = 200, array $headers = [], int $options = 0)
+ * @method static \Syscodes\Http\Response redirectTo(string $path, int $status = 302, array $headers = [], bool $secure = null)
  * 
- * @see \Syscode\Contracts\Routing\RouteResponse
+ * @see \Syscodes\Contracts\Routing\RouteResponse
  */
 class Response extends Facade
 {

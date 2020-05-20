@@ -22,10 +22,10 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database\Query\Grammar;
+namespace Syscodes\Database\Query\Grammar;
 
-use Syscode\Database\Query\Builder;
-use Syscode\Database\Query\Grammar;
+use Syscodes\Database\Query\Builder;
+use Syscodes\Database\Query\Grammar;
 
 /**
  * Allows make the grammar's for get results of the database
@@ -38,7 +38,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile the lock into SQL.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  bool|string  $value
      * 
      * @return string
@@ -63,7 +63,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where date" clause.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  array  $where
      * 
      * @return string
@@ -76,7 +76,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where time" clause.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  array  $where
      * 
      * @return string
@@ -89,7 +89,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where day" clause.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  array  $where
      * 
      * @return string
@@ -102,7 +102,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where month" clause.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  array  $where
      * 
      * @return string
@@ -115,7 +115,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where year" clause.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  array  $where
      * 
      * @return string
@@ -129,7 +129,7 @@ class SQLiteGrammar extends Grammar
      * Compile a date based where clause.
      * 
      * @param  string  $type
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  array  $where
      * 
      * @return string
@@ -144,7 +144,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a truncate table statement into SQL.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * 
      * @return array
      */

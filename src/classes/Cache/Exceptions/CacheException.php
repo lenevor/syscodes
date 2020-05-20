@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Cache\Exceptions;
+namespace Syscodes\Cache\Exceptions;
 
 use InvalidArgumentException;
 

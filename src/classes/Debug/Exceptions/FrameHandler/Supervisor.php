@@ -22,7 +22,7 @@
  * @since       0.1.1
  */
 
-namespace Syscode\Debug\FrameHandler;
+namespace Syscodes\Debug\FrameHandler;
 
 use Throwable;
 

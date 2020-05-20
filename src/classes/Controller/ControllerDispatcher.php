@@ -22,9 +22,9 @@
  * @since       0.5.0
  */
  
-namespace Syscode\Controller;
+namespace Syscodes\Controller;
 
-use Syscode\Controller\Contracts\ControllerDispatcher as ControllerDispatcherContract;
+use Syscodes\Controller\Contracts\ControllerDispatcher as ControllerDispatcherContract;
 
 /**
  * Dispatch requests when called a given controller and method.

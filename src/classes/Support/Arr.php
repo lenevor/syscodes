@@ -22,11 +22,11 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support;
+namespace Syscodes\Support;
 
 use ArrayAccess;
 use InvalidArgumentException;
-use Syscode\Core\Http\Lenevor;
+use Syscodes\Core\Http\Lenevor;
 
 /**
  * Gets all a given array for return dot-notated key from an array.
@@ -259,7 +259,7 @@ class Arr
 	 *
 	 * @return mixed
 	 *
-	 * @uses   \Syscode\Support\Arr::first
+	 * @uses   \Syscodes\Support\Arr::first
 	 */
 	public static function last($array, $callback, $default = null)
 	{

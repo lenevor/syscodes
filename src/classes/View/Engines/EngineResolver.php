@@ -22,7 +22,7 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Engines;
+namespace Syscodes\View\Engines;
 
 use Closure;
 use InvalidArgumentException;
@@ -68,7 +68,7 @@ class EngineResolver
      * 
      * @param  string  $engine
      * 
-     * @return \Syscode\Contracts\View\Engine
+     * @return \Syscodes\Contracts\View\Engine
      * 
      * @throws \InvalidArgumentException
      */

@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Prime class facade.
@@ -38,6 +38,6 @@ class Prime extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'Syscode\Console\Application';
+        return 'Syscodes\Console\Application';
     }
 }

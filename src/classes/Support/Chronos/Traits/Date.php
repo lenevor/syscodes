@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Support\Chronos\Traits;
+namespace Syscodes\Support\Chronos\Traits;
 
 use DateTime;
 use IntlCalendar;
@@ -67,7 +67,7 @@ trait Date
     protected $locale;
     
     /**
-     * @var \Syscode\Support\Chronos\Date $testNow
+     * @var \Syscodes\Support\Chronos\Date $testNow
      */
     protected static $testNow;
 
@@ -137,7 +137,7 @@ trait Date
      * 
      * @param  \DateTimeZone  $timezone
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public function setTimezone($timezone)
     {
@@ -149,7 +149,7 @@ trait Date
      * 
      * @param  int  $timestamp
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public function setTimestamp($timestamp)
     {
@@ -164,7 +164,7 @@ trait Date
      * @param  string  $name
      * @param  string  $value
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     protected function setValue(string $name, $value)
     {

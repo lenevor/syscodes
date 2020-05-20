@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
 /**
  * The RouteMap trait.
@@ -38,7 +38,7 @@ trait RouteMapTrait
 	 * @param  string  $route
 	 * @param  string|callable  $action
 	 *
-	 * @return \Syscode\Routing\Route
+	 * @return \Syscodes\Routing\Route
 	 */
 	abstract public function map($method, $route, $action);
 

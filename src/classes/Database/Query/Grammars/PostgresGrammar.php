@@ -22,10 +22,10 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database\Query\Grammar;
+namespace Syscodes\Database\Query\Grammar;
 
-use Syscode\Database\Query\Builder;
-use Syscode\Database\Query\Grammar;
+use Syscodes\Database\Query\Builder;
+use Syscodes\Database\Query\Grammar;
 
 /**
  * Allows make the grammar's for get results of the database
@@ -38,7 +38,7 @@ class PostGrammar extends Grammar
     /**
      * Compile the lock into SQL.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  bool|string  $value
      * 
      * @return string
@@ -56,7 +56,7 @@ class PostGrammar extends Grammar
     /**
      * Compile an insert and get ID statement into SQL.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * @param  array  $values
      * @param  string  $sequence
      * 
@@ -72,7 +72,7 @@ class PostGrammar extends Grammar
      /**
      * Compile a truncate table statement into SQL.
      * 
-     * @param  \Syscode\Database\Query\Builder  $builder
+     * @param  \Syscodes\Database\Query\Builder  $builder
      * 
      * @return array
      */

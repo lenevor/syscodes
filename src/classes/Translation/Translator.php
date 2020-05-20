@@ -22,10 +22,10 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Translation;
+namespace Syscodes\Translation;
 
 use MessageFormatter;
-use Syscode\Support\Finder;
+use Syscodes\Support\Finder;
 
 /**
  * Handle system messages and localization. Locale-based, 

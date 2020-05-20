@@ -22,9 +22,9 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Contracts\Routing;
+namespace Syscodes\Contracts\Routing;
 
-use Syscode\Routing\Route;
+use Syscodes\Routing\Route;
 
 /**
  * All Lenevor routes are defined in your route files, which are located in the routes 
@@ -37,9 +37,9 @@ interface Routable
 	/**
 	 * Add a route. 
 	 *
-	 * @param  \Syscode\Routing\Route  $route
+	 * @param  \Syscodes\Routing\Route  $route
 	 *
-	 * @return \Syscode\Routing\Route
+	 * @return \Syscodes\Routing\Route
 	 */
 	public function addRoute(Route $route);
 

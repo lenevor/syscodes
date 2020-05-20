@@ -22,15 +22,15 @@
  * @since       0.1.2
  */
  
-namespace Syscode\Http;
+namespace Syscodes\Http;
 
 use BadMethodCallException;
 use InvalidArgumentException;
 use UnexpectedValueException;
-use Syscode\Http\Contributors\Server;
-use Syscode\Http\Contributors\Status;
-use Syscode\Http\Contributors\Headers;
-use Syscode\Filesystem\Exceptions\UnexpectedTypeException;
+use Syscodes\Http\Contributors\Server;
+use Syscodes\Http\Contributors\Status;
+use Syscodes\Http\Contributors\Headers;
+use Syscodes\Filesystem\Exceptions\UnexpectedTypeException;
 
 /**
  * Response represents an HTTP response.
@@ -109,7 +109,7 @@ class Response extends Status
 	 *
 	 * @return bool
 	 *
-	 * @uses   \Syscode\Http\Http
+	 * @uses   \Syscodes\Http\Http
 	 */
 	public function sendHeaders()
 	{

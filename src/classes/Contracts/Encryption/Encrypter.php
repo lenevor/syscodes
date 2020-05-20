@@ -22,7 +22,7 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Contracts\Encryption;
+namespace Syscodes\Contracts\Encryption;
 
 /**
  * Allows to encrypt and decrypt the values that are required as security
@@ -60,7 +60,7 @@ interface Encrypter
      * 
      * @return string
      * 
-     * @throws \Syscode\Encryption\Exceptions\EncryptException
+     * @throws \Syscodes\Encryption\Exceptions\EncryptException
      */
     public function encrypt($value, $serialize = true);
 
@@ -81,7 +81,7 @@ interface Encrypter
      * 
      * @return mixed
      * 
-     * @throws \Syscode\Encryption\Exceptions\DecryptException
+     * @throws \Syscodes\Encryption\Exceptions\DecryptException
      */
     public function decrypt($value, $unserialize = true);
 
@@ -92,7 +92,7 @@ interface Encrypter
      * 
      * @return string
      * 
-     * @throws \Syscode\Encryption\Enxceptions\DecryptException
+     * @throws \Syscodes\Encryption\Enxceptions\DecryptException
      */
     public function decryptString($value);
 

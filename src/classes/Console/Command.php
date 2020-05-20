@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Console;
+namespace Syscodes\Console;
 
 /**
  * Class Command.

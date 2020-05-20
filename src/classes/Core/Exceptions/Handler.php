@@ -22,21 +22,21 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Core\Exceptions;
+namespace Syscodes\Core\Exceptions;
 
 use Exception;
-use Syscode\Support\Arr;
-use Syscode\Debug\GDebug;
-use Syscode\Http\Response;
+use Syscodes\Support\Arr;
+use Syscodes\Debug\GDebug;
+use Syscodes\Http\Response;
 use Psr\Log\LoggerInterface;
-use Syscode\Debug\ExceptionHandler;
-use Syscode\Contracts\Container\Container;
-use Syscode\Core\Http\Exceptions\HttpException;
-use Syscode\Http\Exceptions\HttpResponseException;
-use Syscode\Debug\FatalExceptions\FlattenException;
-use Syscode\Database\Exceptions\ModelNotFoundException;
-use Syscode\Core\Http\Exceptions\NotFoundHttpException;
-use Syscode\Contracts\Debug\ExceptionHandler as ExceptionHandlerContract;
+use Syscodes\Debug\ExceptionHandler;
+use Syscodes\Contracts\Container\Container;
+use Syscodes\Core\Http\Exceptions\HttpException;
+use Syscodes\Http\Exceptions\HttpResponseException;
+use Syscodes\Debug\FatalExceptions\FlattenException;
+use Syscodes\Database\Exceptions\ModelNotFoundException;
+use Syscodes\Core\Http\Exceptions\NotFoundHttpException;
+use Syscodes\Contracts\Debug\ExceptionHandler as ExceptionHandlerContract;
 
 /**
  * The system's main exception class is loaded for activate the render method of debugging.
@@ -48,7 +48,7 @@ class Handler implements ExceptionHandlerContract
     /**
      * The container implementation.
      * 
-     * @var \Syscode\Contracts\Container\Container $container
+     * @var \Syscodes\Contracts\Container\Container $container
      */
     protected $container;
 
@@ -73,7 +73,7 @@ class Handler implements ExceptionHandlerContract
     /**
      * Constructor. Create a new exception handler instance.
      * 
-     * @param  \Syscode\Contracts\Container\Container  $container
+     * @param  \Syscodes\Contracts\Container\Container  $container
      * 
      * @return void
      */
@@ -152,10 +152,10 @@ class Handler implements ExceptionHandlerContract
     /**
      * Render an exception into a response.
      *
-     * @param  \Syscode\Http\Request  $request
+     * @param  \Syscodes\Http\Request  $request
      * @param  \Exception  $e
      * 
-     * @return \Syscode\Http\Response
+     * @return \Syscodes\Http\Response
      */
     public function render($request, Exception $e)
     {
@@ -189,18 +189,18 @@ class Handler implements ExceptionHandlerContract
     /**
      * Prepare a response for the given exception.
      * 
-     * @param  \Syscode\Http\Request  $request
+     * @param  \Syscodes\Http\Request  $request
      * @param  \Exception  $e
      * 
-     * @return \Syscode\Http\Response
+     * @return \Syscodes\Http\Response
      * 
-     * @uses   \Syscode\Core\Http\Exceptions\HttpException
+     * @uses   \Syscodes\Core\Http\Exceptions\HttpException
      */
     protected function prepareResponse($request, Exception $e)
     {
         if ( ! $this->isHttpException($e) && config('app.debug'))
         {
-            return $this->toSyscodeResponse($this->convertExceptionToResponse($e), $e);
+            return $this->toSyscodesResponse($this->convertExceptionToResponse($e), $e);
         }
 
         // When the debug is not active, the HTTP 500 code view is throw
@@ -209,15 +209,15 @@ class Handler implements ExceptionHandlerContract
             $e = new HttpException(500, $e->getMessage());
         }
 
-        return $this->toSyscodeResponse($this->renderHttpException($e), $e);
+        return $this->toSyscodesResponse($this->renderHttpException($e), $e);
     }
 
     /**
      * Render the given HttpException.
      * 
-     * @param  \Syscode\Core\Http\Exceptions\HttpException  $e
+     * @param  \Syscodes\Core\Http\Exceptions\HttpException  $e
      * 
-     * @return \Syscode\Http\Response
+     * @return \Syscodes\Http\Response
      */
     protected function renderHttpException(HttpException $e)
     {
@@ -239,7 +239,7 @@ class Handler implements ExceptionHandlerContract
      * 
      * @param  \Exception  $e
      * 
-     * @return \Syscode\Http\Response
+     * @return \Syscodes\Http\Response
      */
     protected function convertExceptionToResponse(Exception $e)
     {
@@ -278,7 +278,7 @@ class Handler implements ExceptionHandlerContract
      * 
      * @return void
      * 
-     * @uses   \Syscode\Debug\GDebug
+     * @uses   \Syscodes\Debug\GDebug
      */
     protected function renderExceptionWithGDebug(Exception $e)
     {
@@ -296,7 +296,7 @@ class Handler implements ExceptionHandlerContract
     /**
      * Get the Debug handler for the application.
      *
-     * @return \Syscode\Debug\Handlers\MainHandler
+     * @return \Syscodes\Debug\Handlers\MainHandler
      */
     protected function DebugHandler()
     {
@@ -319,14 +319,14 @@ class Handler implements ExceptionHandlerContract
     }
 
     /**
-     * Map the given exception into an Syscode response.
+     * Map the given exception into an Syscodes response.
      * 
-     * @param  \Syscode\Http\Response  $response
+     * @param  \Syscodes\Http\Response  $response
      * @param  \Exception  $e 
      * 
-     * @return \Syscode\Http\Response
+     * @return \Syscodes\Http\Response
      */
-    protected function toSyscodeResponse($response, Exception $e)
+    protected function toSyscodesResponse($response, Exception $e)
     {
         if ($response instanceof RedirectResponse)
         {

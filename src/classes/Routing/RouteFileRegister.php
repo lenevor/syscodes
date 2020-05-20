@@ -22,7 +22,7 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
 /**
  * Create a new route file for register instance.
@@ -34,14 +34,14 @@ class RouteFileRegister
     /**
      * The router instance.
      *
-     * @var \Syscode\Routing\Router $router
+     * @var \Syscodes\Routing\Router $router
      */
     protected $router;
 
     /**
      * Create a new route file registrar instance.
      *
-     * @param  \Syscode\Routing\Router  $router
+     * @param  \Syscodes\Routing\Router  $router
 
      * @return void
      */

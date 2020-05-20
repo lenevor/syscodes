@@ -22,9 +22,9 @@
  * @since       0.7.0
  */
 
-namespace Syscode\Database\Exceptions;
+namespace Syscodes\Database\Exceptions;
 
-use Syscode\Core\Http\Exceptions\LenevorException;
+use Syscodes\Core\Http\Exceptions\LenevorException;
 
 /**
  * ModelNotFoundException.

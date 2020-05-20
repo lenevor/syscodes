@@ -22,9 +22,9 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Support;
+namespace Syscodes\Support;
 
-use Syscode\Support\Chronos\Time as BaseTime;
+use Syscodes\Support\Chronos\Time as BaseTime;
 
 /**
  * Class that inherits all methods the Time class.

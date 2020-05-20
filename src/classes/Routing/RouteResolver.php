@@ -22,11 +22,11 @@
  * @since       0.5.1
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
 use Closure;
-use Syscode\Contracts\Routing\Routable;
-use Syscode\Routing\Exceptions\RouteNotFoundException;
+use Syscodes\Contracts\Routing\Routable;
+use Syscodes\Routing\Exceptions\RouteNotFoundException;
 
 /**
  * This class resolve the given route and called the method that belongs to the route.
@@ -38,12 +38,12 @@ class RouteResolver
 	/**
 	 * Resolve the given route and call the method that belongs to the route.
 	 *
-	 * @param  \Syscode\Contracts\Routing\Routable  $router 
-	 * @param  \Syscode\Http\Request  $request
+	 * @param  \Syscodes\Contracts\Routing\Routable  $router 
+	 * @param  \Syscodes\Http\Request  $request
 	 *
 	 * @return mixed
 	 *
-	 * @throws \Syscode\Routing\Exceptions\RouteNotFoundException
+	 * @throws \Syscodes\Routing\Exceptions\RouteNotFoundException
 	 */
 	public function resolve(Routable $router, $request)
 	{

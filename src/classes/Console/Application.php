@@ -22,12 +22,12 @@
  * @since       0.1.1
  */
 
-namespace Syscode\Console;
+namespace Syscodes\Console;
 
-use Syscode\Version;
-use Syscode\Contracts\Core\Lenevor;
-use Syscode\Support\Facades\Request;
-use Syscode\Contracts\Console\Application as ApplicationContracts;
+use Syscodes\Version;
+use Syscodes\Contracts\Core\Lenevor;
+use Syscodes\Support\Facades\Request;
+use Syscodes\Contracts\Console\Application as ApplicationContracts;
 
 /**
  * Console application.
@@ -39,14 +39,14 @@ class Application implements ApplicationContracts
 	/**
 	 * Get the Lenevor class instance.
 	 * 
-	 * @var \Syscode\Contracts\Core\Lenevor $core
+	 * @var \Syscodes\Contracts\Core\Lenevor $core
 	 */
 	protected $core;
 
 	/**
 	 * Console constructor. Initialize the console of Lenevor.
 	 *
-	 * @param  \Syscode\Contracts\Core\Lenevor  $core
+	 * @param  \Syscodes\Contracts\Core\Lenevor  $core
 	 * 
 	 * @return void
 	 */

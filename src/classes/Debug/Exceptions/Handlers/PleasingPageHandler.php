@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Debug\Handlers;
+namespace Syscodes\Debug\Handlers;
 
 use Throwable;
 use Traversable;
@@ -30,9 +30,9 @@ use ErrorException;
 use RuntimeException;
 use InvalidArgumentException;
 use UnexpectedValueException;
-use Syscode\Contracts\Debug\Table;
-use Syscode\Debug\FrameHandler\Formatter;
-use Syscode\Debug\Util\{ ArrayTable, Misc, TemplateHandler };
+use Syscodes\Contracts\Debug\Table;
+use Syscodes\Debug\FrameHandler\Formatter;
+use Syscodes\Debug\Util\{ ArrayTable, Misc, TemplateHandler };
 
 /**
  * Generates exceptions in mode of graphic interface.
@@ -135,7 +135,7 @@ class PleasingPageHandler extends MainHandler
 	 * The expected data is a simple associative array. Any nested arrays
 	 * will be flattened with print_r.
 	 * 
-	 * @param  \Syscode\Contracts\Debug\Table  $table
+	 * @param  \Syscodes\Contracts\Debug\Table  $table
 	 * 
 	 * @return array
 	 */
@@ -203,7 +203,7 @@ class PleasingPageHandler extends MainHandler
 	/**
 	 * Returns the default tables.
 	 * 
-	 * @return \Syscode\Contracts\Debug\Table[]
+	 * @return \Syscodes\Contracts\Debug\Table[]
 	 */
 	protected function getDefaultTables()
 	{
@@ -239,7 +239,7 @@ class PleasingPageHandler extends MainHandler
 	/**
 	 * Get the stack trace frames of the exception that is currently being handled.
 	 * 
-	 * @return \Syscode\Debug\Engine\Supervisor;
+	 * @return \Syscodes\Debug\Engine\Supervisor;
 	 */
 	protected function getExceptionFrames()
 	{
@@ -261,7 +261,7 @@ class PleasingPageHandler extends MainHandler
 	/**
 	 * Processes an array of tables making sure everything is allright.
 	 * 
-	 * @param  \Syscode\Contracts\Debug\Table[]  $tables
+	 * @param  \Syscodes\Contracts\Debug\Table[]  $tables
 	 * 
 	 * @return array
 	 */

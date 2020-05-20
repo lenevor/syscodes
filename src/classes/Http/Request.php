@@ -22,11 +22,11 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Http;
+namespace Syscodes\Http;
 
 Use Locale;
 use Exception;
-use Syscode\Http\Contributors\Server;
+use Syscodes\Http\Contributors\Server;
 
 /**
  * Request represents an HTTP request.
@@ -116,8 +116,8 @@ class Request
 	 * Constructor: Initialize the Request class.
 	 * 
 	 * @param  string|null  $body
-	 * @param  \Syscode\Http\Uri  $uri
-	 * @param  \Syscode\Http\Http  $http
+	 * @param  \Syscodes\Http\Uri  $uri
+	 * @param  \Syscodes\Http\Http  $http
 	 * 
 	 * @return string
 	 */
@@ -147,9 +147,9 @@ class Request
 	/**
 	 * Returns the active request currently being used.
 	 *
-	 * @param  \Syscode\Http\Request|bool|null  $request Overwrite current request before returning, false prevents overwrite
+	 * @param  \Syscodes\Http\Request|bool|null  $request Overwrite current request before returning, false prevents overwrite
 	 *
-	 * @return \Syscode\Http\Request
+	 * @return \Syscodes\Http\Request
 	 */
 	public static function active($request = false)
 	{
@@ -276,7 +276,7 @@ class Request
 	 * 
 	 * @param  string  $locale
 	 * 
-	 * @return \Syscode\Http\Request
+	 * @return \Syscodes\Http\Request
 	 */
 	public function setLocale($locale)
 	{

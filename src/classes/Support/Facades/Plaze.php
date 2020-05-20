@@ -22,7 +22,7 @@
  * @since       0.6.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Plaze engine class facade.
@@ -35,7 +35,7 @@ namespace Syscode\Support\Facades;
  * @method static void extend(callable $extend)
  * @method static array getExtensions()
  * 
- * @see \Syscode\View\Transpilers\PlazeTranspiler
+ * @see \Syscodes\View\Transpilers\PlazeTranspiler
  */
 class Plaze extends Facade
 {

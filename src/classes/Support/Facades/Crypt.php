@@ -22,7 +22,7 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Encrypter class facade.
@@ -37,7 +37,7 @@ namespace Syscode\Support\Facades;
  * @method static string decryptString(string $value)
  * @method static string getKey()
  * 
- * @see \Syscode\Encryption\Encrypter
+ * @see \Syscodes\Encryption\Encrypter
  */
 class Crypt extends Facade
 {

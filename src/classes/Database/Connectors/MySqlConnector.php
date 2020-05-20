@@ -22,7 +22,7 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database\Connectors;
+namespace Syscodes\Database\Connectors;
 
 /**
  * A PDO based MySQL Database Connector.

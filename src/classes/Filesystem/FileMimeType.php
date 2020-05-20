@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Filesystem;
+namespace Syscodes\Filesystem;
 
 /**
  * This class loads an array of mime types.

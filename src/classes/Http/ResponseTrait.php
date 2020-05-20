@@ -22,10 +22,10 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Http;
+namespace Syscodes\Http;
 
 use Exception;
-use Syscode\Http\Exceptions\HttpResponseException;
+use Syscodes\Http\Exceptions\HttpResponseException;
 
 /**
  * Loads the response trait of headers, status code and content message.
@@ -51,7 +51,7 @@ trait ResponseTrait
     /**
      * The Headers class instance.
      * 
-     * @var \Syscode\Http\Headers $headers
+     * @var \Syscodes\Http\Headers $headers
      */
 	public $headers;
 
@@ -122,7 +122,7 @@ trait ResponseTrait
     /**
      * Throws the response in a HttpResponseException instance.
      * 
-     * @throws \Syscode\Http\Exceptions\HttpResponseException
+     * @throws \Syscodes\Http\Exceptions\HttpResponseException
      */
     public function throwResponse()
     {

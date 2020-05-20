@@ -22,7 +22,7 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Contracts\Log;
+namespace Syscodes\Contracts\Log;
 
 /**
  * Expected behavior for a Log handler.

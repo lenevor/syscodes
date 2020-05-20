@@ -22,13 +22,13 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Log\Handlers;
+namespace Syscodes\Log\Handlers;
 
 use DateTime;
 use Throwable;
-use Syscode\Support\Chronos;
-use Syscode\Contracts\Log\Handler;
-use Syscode\Log\Exceptions\LogException;
+use Syscodes\Support\Chronos;
+use Syscodes\Contracts\Log\Handler;
+use Syscodes\Log\Exceptions\LogException;
 
 /**
  * The Lenevor Logger of errors.

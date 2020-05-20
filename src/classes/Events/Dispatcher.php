@@ -22,12 +22,12 @@
  * @since       0.6.0
  */
 
-namespace Syscode\Events;
+namespace Syscodes\Events;
 
-use Syscode\Support\Arr;
-use Syscode\Support\Str;
-use Syscode\Contracts\Container\Container;
-use Syscode\Contracts\Events\Dispatcher as DispatcherContract;
+use Syscodes\Support\Arr;
+use Syscodes\Support\Str;
+use Syscodes\Contracts\Container\Container;
+use Syscodes\Contracts\Events\Dispatcher as DispatcherContract;
 
 /**
  * Dispatches events to registered listeners.
@@ -39,7 +39,7 @@ class Dispatcher implements DispatcherContract
     /**
      * The registered IoC container instance.
      * 
-     * @var \Syscode\Contracts\Container\Container $container
+     * @var \Syscodes\Contracts\Container\Container $container
      */
     protected $container;
 
@@ -74,7 +74,7 @@ class Dispatcher implements DispatcherContract
     /**
      * Constructor. Create a new event distpacher instance.
      * 
-     * @param  \Syscode\Contracts\Container\Container|null  $container  (null by default)
+     * @param  \Syscodes\Contracts\Container\Container|null  $container  (null by default)
      * 
      * @return void
      */

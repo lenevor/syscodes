@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 use RuntimeException;
 
@@ -101,7 +101,7 @@ abstract class Facade
     /**
      * Get the application instance behind the facade.
      * 
-     * @return \Syscode\Contracts\Core\Application
+     * @return \Syscodes\Contracts\Core\Application
      */
     public static function getFacadeApplication()
     {
@@ -143,7 +143,7 @@ abstract class Facade
     /**
      * Set the application instance.
      * 
-     * @param  \Syscode\Contracts\core\Application  $app
+     * @param  \Syscodes\Contracts\core\Application  $app
      * 
      * @return void
      */

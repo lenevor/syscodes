@@ -22,11 +22,11 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Encryption;
+namespace Syscodes\Encryption;
 
 use RuntimeException;
-use Syscode\Support\Str;
-use Syscode\Support\ServiceProvider;
+use Syscodes\Support\Str;
+use Syscodes\Support\ServiceProvider;
 
 /**
  * For loading the encrypter class from the container of services.

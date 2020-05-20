@@ -22,7 +22,7 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Encryption\Exceptions;
+namespace Syscodes\Encryption\Exceptions;
 
 use RuntimeException;
 

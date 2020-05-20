@@ -22,12 +22,12 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Log;
+namespace Syscodes\Log;
 
 use Psr\Log\LogLevel;
 use Psr\Log\LoggerInterface;
-use Syscode\Contracts\Log\Handler;
-use Syscode\Log\Exceptions\LogException;
+use Syscodes\Contracts\Log\Handler;
+use Syscodes\Log\Exceptions\LogException;
 
 /**
  * The Lenevor Logger of errors.
@@ -62,7 +62,7 @@ class Logger implements LoggerInterface
     /**
      * Constructor. The Logger class instance.
      * 
-     * @param  \Syscode\Contracts\Log\Handler  $logger
+     * @param  \Syscodes\Contracts\Log\Handler  $logger
      * 
      * @return void
      */

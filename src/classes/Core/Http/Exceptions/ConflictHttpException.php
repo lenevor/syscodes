@@ -1,6 +1,6 @@
 <?php 
 
-namespace Syscode\Core\Http\Exceptions;
+namespace Syscodes\Core\Http\Exceptions;
 
 use Throwable;
 
@@ -26,7 +26,7 @@ use Throwable;
  * @since       0.1.0
  */
 
-namespace Syscode\Core\Http\Exceptions;
+namespace Syscodes\Core\Http\Exceptions;
 
 use Throwable;
 

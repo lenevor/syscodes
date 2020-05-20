@@ -22,7 +22,7 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Debug\FatalExceptions;
+namespace Syscodes\Debug\FatalExceptions;
 
 /**
  * OutOfMemoryException.

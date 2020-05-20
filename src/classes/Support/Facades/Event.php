@@ -22,7 +22,7 @@
  * @since       0.6.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Event class facade.
@@ -38,7 +38,7 @@ namespace Syscode\Support\Facades;
  * @method static array getListeners(string $eventName)
  * @method static void delete(string $event)
  * 
- * @see \Syscode\Events\Dispatcher
+ * @see \Syscodes\Events\Dispatcher
  */
 class Event extends Facade
 {

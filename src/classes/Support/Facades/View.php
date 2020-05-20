@@ -22,7 +22,7 @@
  * @since       0.6.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the View class facade.
@@ -30,15 +30,15 @@ namespace Syscode\Support\Facades;
  * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  * 
  * @method static bool viewExists(string $view)
- * @method static \Syscode\Contracts\View\View make(string $view, array $data = [])
+ * @method static \Syscodes\Contracts\View\View make(string $view, array $data = [])
  * @method static \Illuminate\Contracts\View\Engine getEngineFromPath(string $path)
  * @method static array getExtensions()
  * @method static mixed share(array|string $key, mixed $value = null)
  * @method static void getShared()
- * @method static \Syscode\Contracts\Container\Container getContainer()
- * @method static \Syscode\Contracts\Container\Container setContainer(\Syscode\Contracts\Container\Container $container)
+ * @method static \Syscodes\Contracts\Container\Container getContainer()
+ * @method static \Syscodes\Contracts\Container\Container setContainer(\Syscodes\Contracts\Container\Container $container)
  * 
- * @see \Syscode\View\Parser
+ * @see \Syscodes\View\Parser
  */
 class View extends Facade
 {

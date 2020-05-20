@@ -22,7 +22,7 @@
  * @since       0.1.1
  */
 
-namespace Syscode\Config;
+namespace Syscodes\Config;
 
 /**
  * Auto-loader Config

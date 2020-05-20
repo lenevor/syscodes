@@ -22,21 +22,21 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Request class facade.
  *
  * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  * 
- * @method static \Syscode\Http\Request active(\Syscode\Http\Request|bool $request = false)
+ * @method static \Syscodes\Http\Request active(\Syscodes\Http\Request|bool $request = false)
  * @method static string segment(int $index, mixed $default = null)
  * @method static array segments()
  * @method static int totalSegments()
  * @method static void detectLocale()
  * @method static string getDefaultLocale()
  * @method static string getLocale()
- * @method static \Syscode\Http\Request setLocale(string $locale)
+ * @method static \Syscodes\Http\Request setLocale(string $locale)
  * @method static string getUri()
  * @method static mixed getJSON(bool $assoc = false, int $depth = 512, int $options = 0)
  * @method static bool isXmlHttpRequest()
@@ -55,7 +55,7 @@ namespace Syscode\Support\Facades;
  * @method static bool secure()
  * @method static userAgent(string $default = null)
  * 
- * @see \Syscode\Http\Request
+ * @see \Syscodes\Http\Request
  */
 class Request extends Facade
 {

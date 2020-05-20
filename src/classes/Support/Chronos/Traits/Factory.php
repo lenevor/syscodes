@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Support\Chronos\Traits;
+namespace Syscodes\Support\Chronos\Traits;
 
 use Locale;
 use DateTime;
@@ -81,7 +81,7 @@ trait Factory
      * @param  string|null  $timezone  (null by default)
      * @param  string|null  $locale  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function now($timezone = null, string $locale = null)
     {
@@ -95,7 +95,7 @@ trait Factory
      * @param  string|null  $timezone  (null by default)
      * @param  string|null  $locale  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function parse(string $time, $timezone = null, string $locale = null)
     {
@@ -108,7 +108,7 @@ trait Factory
      * @param  string|null  $timezone  (null by default)
      * @param  string|null  $locale  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function today($timezone = null, string $locale = null)
     {
@@ -121,7 +121,7 @@ trait Factory
      * @param  string|null  $timezone  (null by default)
      * @param  string|null  $locale  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function yesterday($timezone = null, string $locale = null)
 	{
@@ -134,7 +134,7 @@ trait Factory
      * @param  string|null  $timezone  (null by default)
      * @param  string|null  $locale  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function tomorrow($timezone = null, string $locale = null)
 	{
@@ -151,7 +151,7 @@ trait Factory
      * @param  string|null  $timezone  (null by default)
      * @param  string|null  $locale  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function createFromDate(
         int $year      = null, 
@@ -173,7 +173,7 @@ trait Factory
      * @param  string|null  $timezone  (null by default)
      * @param  string|null  $locale  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function createFromTime(
         int $hour      = null, 
@@ -197,7 +197,7 @@ trait Factory
      * @param  string|null  $timezone  (null by default)
      * @param  string|null  $locale  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function create(
         int $year      = null, 
@@ -228,7 +228,7 @@ trait Factory
      * @param  string  $datetime
      * @param  \DateTimeZone|string|null  $timezone  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function createFromFormat($format, $datetime, $timezone = null)
     {
@@ -244,7 +244,7 @@ trait Factory
      * @param  string|null  $timezone  (null by default)
      * @param  string|null  $locale  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function createFromTimestamp(int $timestamp, $timezone = null, string $locale = null)
     {
@@ -258,7 +258,7 @@ trait Factory
      * @param  \DateTime  $datetime
      * @param  string|null  $locale  (null by default)
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      */
     public static function instance($datetime, string $locale = null)
     {
@@ -272,7 +272,7 @@ trait Factory
      * Creates an instance of Time that will be returned during testing
 	 * when calling 'Time::now' instead of the current time.
      * 
-     * @param  \Syscode\Support\Chronos\Time|string  $datetime  (null by default)
+     * @param  \Syscodes\Support\Chronos\Time|string  $datetime  (null by default)
      * @param  string|null  $timezone (null by default)
      * @param  string|null  $locale  (null by default)
      * 

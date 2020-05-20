@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Contracts\Config;
+namespace Syscodes\Contracts\Config;
 
 /**
  * Sets functions for the config item.
@@ -47,7 +47,7 @@ interface Configure
 	 * 
 	 * @return array|bool
 	 * 
-	 * @uses   \Syscode\Support\Arr
+	 * @uses   \Syscodes\Support\Arr
 	 */	
 	public function erase(string $key);
 
@@ -59,7 +59,7 @@ interface Configure
 	 *
 	 * @return mixed
 	 *
-	 * @uses    \Syscode\Support\Arr
+	 * @uses    \Syscodes\Support\Arr
 	 */
 	public function get(string $key, $default = null);
 	
@@ -71,7 +71,7 @@ interface Configure
 	 *
 	 * @return mixed
 	 *
-	 * @uses  \Syscode\Support\Arr
+	 * @uses  \Syscodes\Support\Arr
 	 */
 	public function set(string $key, $value);
 

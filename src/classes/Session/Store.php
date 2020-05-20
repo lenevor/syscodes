@@ -22,13 +22,13 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Session;
+namespace Syscodes\Session;
 
 use Closure;
-use Syscode\Support\Arr;
-use Syscode\Support\Str;
+use Syscodes\Support\Arr;
+use Syscodes\Support\Str;
 use SessionHandlerInterface;
-use Syscode\Contracts\Session\Session;
+use Syscodes\Contracts\Session\Session;
 
 /**
  * Implementation of Lenevor session container.

@@ -22,14 +22,14 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Cache class facade.
  * 
  * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  *
- * @method static \Syscode\Cache\CacheRepository store(string $name = null)
+ * @method static \Syscodes\Cache\CacheRepository store(string $name = null)
  * @method static bool has(string $key)
  * @method static mixed get(string $key, mixed $default = null)
  * @method static mixed pull(string $key, mixed $default = null)
@@ -40,8 +40,8 @@ namespace Syscode\Support\Facades;
  * @method static void flush()
  * @method static string getPrefix()
  * 
- * @see  \Syscode\Cache\CacheManager
- * @see  \Syscode\Cache\CacheRepository
+ * @see  \Syscodes\Cache\CacheManager
+ * @see  \Syscodes\Cache\CacheRepository
  */
 class Cache extends Facade
 {

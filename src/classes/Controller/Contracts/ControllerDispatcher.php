@@ -22,7 +22,7 @@
  * @since       0.5.0
  */
 
-namespace Syscode\Controller\Contracts;
+namespace Syscodes\Controller\Contracts;
 
 /**
  * Dispatch requests when called a given controller and method.

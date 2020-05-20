@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the File class facade.
@@ -70,7 +70,7 @@ namespace Syscode\Support\Facades;
  * @method static bool close()
  * @method static bool write(string $path, string $data, bool $force = false)
  * 
- * @see \Syscode\Filesystem\Filesystem
+ * @see \Syscodes\Filesystem\Filesystem
  */
 class File extends Facade
 {

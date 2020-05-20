@@ -22,7 +22,7 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Contracts\Session;
+namespace Syscodes\Contracts\Session;
 
 /**
  * Expected behavior of a session container used with Lenevor.

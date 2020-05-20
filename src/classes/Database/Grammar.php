@@ -22,9 +22,9 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database;
+namespace Syscodes\Database;
 
-use Syscode\Database\Query\Expression;
+use Syscodes\Database\Query\Expression;
 
 /**
  * Allows make the grammar's for get results of the database.
@@ -60,7 +60,7 @@ abstract class Grammar
     /**
      * Wrap a value in keyword identifiers.
      * 
-     * @param  \Syscode\Database\Query\Expression|string  $value
+     * @param  \Syscodes\Database\Query\Expression|string  $value
      * @param  bool  $prefix
      * 
      * @return string
@@ -177,7 +177,7 @@ abstract class Grammar
     /**
      * Get the value of a raw expression.
      * 
-     * @param  \Syscode\Database\Query\Expression  $expression
+     * @param  \Syscodes\Database\Query\Expression  $expression
      * 
      * @return string
      */

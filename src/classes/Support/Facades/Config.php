@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Config class facade.
@@ -35,7 +35,7 @@ namespace Syscode\Support\Facades;
  * @method static void set(string $key, mixed $value = null)
  * @method static array all()
  * 
- * @see \Syscode\Config\Configure
+ * @see \Syscodes\Config\Configure
  */
 class Config extends Facade
 {

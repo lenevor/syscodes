@@ -22,7 +22,7 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Establishes;
+namespace Syscodes\View\Establishes;
 
 /**
  * Trait ManagesLayouts.

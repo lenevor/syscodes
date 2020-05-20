@@ -22,18 +22,18 @@
  * @since       0.1.1
  */
 
-namespace Syscode\Container;
+namespace Syscodes\Container;
 
 use Closure;
 use ArrayAccess;
 use ReflectionClass;
 use ReflectionParameter;
-use Syscode\Contracts\Container\NotFoundException;
-use Syscode\Container\Exceptions\ContainerException;
-use Syscode\Contracts\Container\BindingResolutionException;
-use Syscode\Contracts\Container\ExpectedInvokableException;
-use Syscode\Container\Exceptions\UnknownIdentifierException;
-use Syscode\Contracts\Container\Container as ContainerContract;
+use Syscodes\Contracts\Container\NotFoundException;
+use Syscodes\Container\Exceptions\ContainerException;
+use Syscodes\Contracts\Container\BindingResolutionException;
+use Syscodes\Contracts\Container\ExpectedInvokableException;
+use Syscodes\Container\Exceptions\UnknownIdentifierException;
+use Syscodes\Contracts\Container\Container as ContainerContract;
 
 /**
  * Class responsible of registering the bindings, instances and 
@@ -125,9 +125,9 @@ class Container implements ArrayAccess, ContainerContract
     /**
      * Set the shared instance of the container.
      *
-     * @param  \Syscode\Contracts\Container\Container|null  $container
+     * @param  \Syscodes\Contracts\Container\Container|null  $container
      * 
-     * @return \Syscode\Contracts\Container\Container|static
+     * @return \Syscodes\Contracts\Container\Container|static
      */
     public static function setInstance(ContainerContract $container = null)
     {
@@ -142,7 +142,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return void
      * 
-     * @throws \Syscode\Container\Exceptions\ContainerException
+     * @throws \Syscodes\Container\Exceptions\ContainerException
      */
     public function alias($id, string $alias)
     {
@@ -208,7 +208,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return mixed
      * 
-     * @throws \Syscode\Contracts\Container\BindingResolutionException
+     * @throws \Syscodes\Contracts\Container\BindingResolutionException
      */
     public function build($class)
     {
@@ -251,7 +251,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return void
      *
-     * @throws \Syscode\Contracts\Container\BindingResolutionException
+     * @throws \Syscodes\Contracts\Container\BindingResolutionException
      */
     protected function buildNotInstantiable(string $class)
     {
@@ -338,7 +338,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return mixed
      *
-     * @throws \Syscode\Container\Exceptions\BindingResolutionException
+     * @throws \Syscodes\Container\Exceptions\BindingResolutionException
      */
     protected function getResolveClass(ReflectionParameter $parameter)
     {
@@ -364,7 +364,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return mixed
      *
-     * @throws \Syscode\Container\Exceptions\BindingResolutionException
+     * @throws \Syscodes\Container\Exceptions\BindingResolutionException
      */
     protected function getResolveNonClass(ReflectionParameter $parameter)
     {
@@ -762,7 +762,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return $this
      * 
-     * @throws \Syscode\Container\Exceptions\ContainerException
+     * @throws \Syscodes\Container\Exceptions\ContainerException
      */
     public function set($id, string $value)
     {
@@ -814,7 +814,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return mixed
      * 
-     * @throws \Syscode\Container\Exceptions\UnknownIdentifierException
+     * @throws \Syscodes\Container\Exceptions\UnknownIdentifierException
      */
     public function get($id)
     {

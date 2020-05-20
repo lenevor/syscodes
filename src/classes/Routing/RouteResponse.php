@@ -22,13 +22,13 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Routing;
+namespace Syscodes\Routing;
 
-use Syscode\Http\Response;
-use Syscode\Http\JsonResponse;
-use Syscode\Routing\Redirector;
-use Syscode\Contracts\View\Factory;
-use Syscode\Contracts\Routing\RouteResponse as ResponseContract;
+use Syscodes\Http\Response;
+use Syscodes\Http\JsonResponse;
+use Syscodes\Routing\Redirector;
+use Syscodes\Contracts\View\Factory;
+use Syscodes\Contracts\Routing\RouteResponse as ResponseContract;
 
 /**
  * This class allows you to control the use of the HTTP response 
@@ -41,22 +41,22 @@ class RouteResponse implements ResponseContract
     /**
      * The View class instance.
      * 
-     * @var Syscode\Contracts\View\Parser $view
+     * @var Syscodes\Contracts\View\Parser $view
      */
     protected $view;
 
     /**
      * The Redirector class instance.
      * 
-     * @var \Syscode\Routing\Redirector $redirector
+     * @var \Syscodes\Routing\Redirector $redirector
      */
     protected $redirector;
 
     /**
      * Constructor. Create a new RouteResponse instance.
      * 
-     * @param  \Syscode\Contracts\View\Factory  $factory
-     * @param  \Syscode\Routing\Redirector  $redirector
+     * @param  \Syscodes\Contracts\View\Factory  $factory
+     * @param  \Syscodes\Routing\Redirector  $redirector
      * 
      * @return void  
      */
@@ -73,7 +73,7 @@ class RouteResponse implements ResponseContract
      * @param  int  $status  (200 by default)
      * @param  array  $headers
      * 
-     * @return \Syscode\Http\Response
+     * @return \Syscodes\Http\Response
      */
     public function make($body = '', $status = 200, array $headers = [])
     {
@@ -86,7 +86,7 @@ class RouteResponse implements ResponseContract
      * @param  int  $status  (204 by default)
      * @param  array  $headers
      * 
-     * @return \Syscode\Http\Response
+     * @return \Syscodes\Http\Response
      */
     public function noContent($status = 204, array $headers = [])
     {
@@ -101,7 +101,7 @@ class RouteResponse implements ResponseContract
      * @param  int  $status  (200 by default)
      * @param  array  $headers
      * 
-     * @return  \Syscode\Http\Response
+     * @return  \Syscodes\Http\Response
      */
     public function view($view, array $data = [], $status = 200, array $headers = [])
     {
@@ -116,7 +116,7 @@ class RouteResponse implements ResponseContract
      * @param  array  $headers
      * @param  int  $options  (0 by default)
      * 
-     * @return \Syscode\Http\JsonResponse
+     * @return \Syscodes\Http\JsonResponse
      */
     public function json($data = [], $status = 200, array $headers = [], $options = 0)
     {
@@ -131,7 +131,7 @@ class RouteResponse implements ResponseContract
      * @param  array  $headers
      * @param  bool|null  $secure  (null by default)
      * 
-     * @return \Syscode\Http\RedirectResponse
+     * @return \Syscodes\Http\RedirectResponse
      */
     public function redirectTo($path, $status = 302, $headers = [], $secure = null)
     {

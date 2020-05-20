@@ -22,7 +22,7 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Session\Handlers;
+namespace Syscodes\Session\Handlers;
 
 use SessionHandlerInterface;
 

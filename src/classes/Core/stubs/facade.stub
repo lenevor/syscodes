@@ -24,7 +24,7 @@
  
 namespace DummyNamespace;
 
-use Syscode\Support\Facades\Facade;
+use Syscodes\Support\Facades\Facade;
 
 /**
  * Initialize the facade class.

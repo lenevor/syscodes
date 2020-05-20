@@ -22,10 +22,10 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Http\Exceptions;
+namespace Syscodes\Http\Exceptions;
 
 use RuntimeException;
-use Syscode\Http\Response;
+use Syscodes\Http\Response;
 
 /**
  *This class is responsible for calling the Response class to be loaded 
@@ -39,14 +39,14 @@ class HttpResponseException extends RuntimeException
     /**
      * Gets the response instance.
      * 
-     * @var \Syscode\Http\Response $response
+     * @var \Syscodes\Http\Response $response
      */
     protected $response;
 
     /**
      * Constructor. The HttpResponseException class instance.
      * 
-     * @param  \Syscode\Http\Response  $response
+     * @param  \Syscodes\Http\Response  $response
      * 
      * @return void
      */
@@ -58,7 +58,7 @@ class HttpResponseException extends RuntimeException
     /**
      * Get the response instance.
      * 
-     * @return \Syscode\Http\Response;
+     * @return \Syscodes\Http\Response;
      */
     public function getResponse()
     {

@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Core\Http\Exceptions;
+namespace Syscodes\Core\Http\Exceptions;
 
 use Throwable;
 
@@ -58,7 +58,7 @@ class HttpException extends LenevorException
 	 * 
 	 * @return void
 	 * 
-	 * @throws \Syscode\Core\Http\Exceptions\LenevorException
+	 * @throws \Syscodes\Core\Http\Exceptions\LenevorException
 	 */
 	public function __construct(int $statusCode, string $message = null, Throwable $previous = null, array $headers = [], ?int $code = 0)
 	{

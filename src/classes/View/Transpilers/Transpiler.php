@@ -22,10 +22,10 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Transpilers;
+namespace Syscodes\View\Transpilers;
 
 use InvalidArgumentException;
-use Syscode\Filesystem\Filesystem;
+use Syscodes\Filesystem\Filesystem;
 
 /**
  * Allows transpilation of view file path.
@@ -37,7 +37,7 @@ abstract class Transpiler
     /**
      * The filesystem instance.
      * 
-     * @var \Syscode\Filesystem\Filesytem $files
+     * @var \Syscodes\Filesystem\Filesytem $files
      */
     protected $files;
 
@@ -51,7 +51,7 @@ abstract class Transpiler
     /**
      * Constructor. Create a new Transpiler instance.
      * 
-     * @param  \Syscode\Filesystem\Filesystem  $files
+     * @param  \Syscodes\Filesystem\Filesystem  $files
      * @param  string  $cachePath
      * 
      * @return void

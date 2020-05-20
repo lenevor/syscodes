@@ -22,7 +22,7 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Http;
+namespace Syscodes\Http;
 
 use InvalidArgumentException;
 
@@ -140,7 +140,7 @@ class RedirectResponse extends Response
     /**
      * Gets the Request instance.
      * 
-     * @return \Syscode\Http\Request
+     * @return \Syscodes\Http\Request
      */
     public function getRequest()
     {
@@ -150,7 +150,7 @@ class RedirectResponse extends Response
     /**
      * Sets the current Request instance.
      * 
-     * @param  \Syscode\Http\Request  $request
+     * @param  \Syscodes\Http\Request  $request
      * 
      * @return void
      */

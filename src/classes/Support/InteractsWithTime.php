@@ -22,7 +22,7 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Support;
+namespace Syscodes\Support;
 
 use DateTime;
 use DateInterval;

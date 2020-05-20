@@ -22,9 +22,9 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Core;
+namespace Syscodes\Core;
 
-use Syscode\Contracts\Core\Application;
+use Syscodes\Contracts\Core\Application;
 
 /**
  * @author Javier Alexander Campo M. <jalexcam@gmail.com>
@@ -34,14 +34,14 @@ class ProviderRepository
     /**
      * The application implementation.
      * 
-     * @var \Syscode\Contracts\Core\Application $app
+     * @var \Syscodes\Contracts\Core\Application $app
      */
     protected $app;
     
     /**
      * Constructor. The ProviderRepository class instance.
      * 
-     * @param  \Syscode\Contracts\Core\Application  $app
+     * @param  \Syscodes\Contracts\Core\Application  $app
      * 
      * @return void
      */

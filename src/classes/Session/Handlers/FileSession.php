@@ -22,11 +22,12 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Session\Handlers;
+namespace Syscodes\Session\Handlers;
 
 use SessionHandlerInterface;
-use Syscode\Filesystem\Filesystem;
-use Syscode\Support\{ Finder, Chronos };
+use Syscodes\Filesystem\Filesystem;
+use Syscodes\Support\Finder;
+use Syscodes\Support\Chronos;
 
 /**
  * Session handler using file system for storage.
@@ -38,7 +39,7 @@ class FileSession implements SessionHandlerInterface
     /**
      * The filesystem instance.
      * 
-     * @var \Syscode\Filesystem\filesystem $files
+     * @var \Syscodes\Filesystem\filesystem $files
      */
     protected $files;
 
@@ -59,7 +60,7 @@ class FileSession implements SessionHandlerInterface
     /**
      * Constructor. The FileSession class instance.
      * 
-     * @param  \Syscode\Filesystem\filesystem  $file
+     * @param  \Syscodes\Filesystem\filesystem  $file
      * @param  string  $path
      * @param  int  $minutes
      * 

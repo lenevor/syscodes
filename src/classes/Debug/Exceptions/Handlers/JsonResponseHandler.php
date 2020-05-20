@@ -22,9 +22,9 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Debug\Handlers;
+namespace Syscodes\Debug\Handlers;
 
-use Syscode\Debug\FrameHandler\Formatter;
+use Syscodes\Debug\FrameHandler\Formatter;
 
 /**
  * Catches an exception and converts it to a JSON response.

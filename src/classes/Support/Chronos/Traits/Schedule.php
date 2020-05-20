@@ -22,10 +22,10 @@
  * @since       0.3.0
  */
 
-namespace Syscode\Support\Chronos\Traits;
+namespace Syscodes\Support\Chronos\Traits;
 
 use DateInterval;
-use Syscode\Support\Chronos\Exceptions\InvalidDateTimeException;
+use Syscodes\Support\Chronos\Exceptions\InvalidDateTimeException;
 
 /**
  * Trait Schedule.
@@ -192,9 +192,9 @@ trait Schedule
      * 
      * @param  string  $value
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      * 
-     * @throws \Syscode\Support\Chronos\Exceptions\InvalidDateTimeException
+     * @throws \Syscodes\Support\Chronos\Exceptions\InvalidDateTimeException
      */
     public function setYear($value)
     {
@@ -206,9 +206,9 @@ trait Schedule
      * 
      * @param  string  $value
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      * 
-     * @throws \Syscode\Support\Chronos\Exceptions\InvalidDateTimeException
+     * @throws \Syscodes\Support\Chronos\Exceptions\InvalidDateTimeException
      */
     public function setMonth($value)
     {
@@ -230,9 +230,9 @@ trait Schedule
      * 
      * @param  string  $value
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      * 
-     * @throws \Syscode\Support\Chronos\Exceptions\InvalidDateTimeException
+     * @throws \Syscodes\Support\Chronos\Exceptions\InvalidDateTimeException
      */
     public function setDay($value)
     {
@@ -257,9 +257,9 @@ trait Schedule
      * 
      * @param  string  $value
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      * 
-     * @throws \Syscode\Support\Chronos\Exceptions\InvalidDateTimeException
+     * @throws \Syscodes\Support\Chronos\Exceptions\InvalidDateTimeException
      */
     public function setHour($value)
     {
@@ -276,9 +276,9 @@ trait Schedule
      * 
      * @param  string  $value
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      * 
-     * @throws \Syscode\Support\Chronos\Exceptions\InvalidDateTimeException
+     * @throws \Syscodes\Support\Chronos\Exceptions\InvalidDateTimeException
      */
     public function setMinute($value)
     {
@@ -295,9 +295,9 @@ trait Schedule
      * 
      * @param  string  $value
      * 
-     * @return \Syscode\Support\Chronos\Time
+     * @return \Syscodes\Support\Chronos\Time
      * 
-     * @throws \Syscode\Support\Chronos\Exceptions\InvalidDateTimeException
+     * @throws \Syscodes\Support\Chronos\Exceptions\InvalidDateTimeException
      */
     public function setSecond($value)
     {

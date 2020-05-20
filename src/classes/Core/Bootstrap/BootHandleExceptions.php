@@ -22,14 +22,14 @@
  * @since       0.1.0
  */
 
-namespace Syscode\Core\Bootstrap;
+namespace Syscodes\Core\Bootstrap;
 
 use Exception;
 use ErrorException;
-use Syscode\Contracts\Core\Application;
-use Syscode\Contracts\Debug\ExceptionHandler;
-use Syscode\Debug\FatalExceptions\FatalErrorException;
-use Syscode\Debug\FatalExceptions\FatalThrowableError;
+use Syscodes\Contracts\Core\Application;
+use Syscodes\Contracts\Debug\ExceptionHandler;
+use Syscodes\Debug\FatalExceptions\FatalErrorException;
+use Syscodes\Debug\FatalExceptions\FatalThrowableError;
 
 /**
  * It is an integrated exception handler that allows you to report and 
@@ -42,14 +42,14 @@ class BootHandleExceptions
     /**
      * The application implementation.
      *
-     * @var \Syscode\Contracts\Core\Application $app
+     * @var \Syscodes\Contracts\Core\Application $app
      */
     protected $app;
     
     /**
      * Bootstrap the given application.
      *
-     * @param  \Syscode\Contracts\Core\Application  $app
+     * @param  \Syscodes\Contracts\Core\Application  $app
      * 
      * @return void
      */
@@ -154,7 +154,7 @@ class BootHandleExceptions
      * @param  array  $error
      * @param  int|null  $traceOffset
      * 
-     * @return \Syscode\Debug\FatalExceptions\FatalErrorException
+     * @return \Syscodes\Debug\FatalExceptions\FatalErrorException
      */
     protected function fatalExceptionFromError(array $error, $traceOffset = null)
     {
@@ -166,7 +166,7 @@ class BootHandleExceptions
     /**
      * Get an instance of the exception handler.
      *
-     * @return \Syscode\Contracts\Debug\Handler
+     * @return \Syscodes\Contracts\Debug\Handler
      */
     protected function getExceptionHandler()
     {    

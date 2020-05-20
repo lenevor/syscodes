@@ -22,7 +22,7 @@
  * @since       0.1.0
  */
 
-namespace Syscode;
+namespace Syscodes;
 
 /**
  * Loads the version of system.

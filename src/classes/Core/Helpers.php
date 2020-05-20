@@ -23,13 +23,13 @@
  */
 
 //use RuntimeException;
-use Syscode\Core\Application;
-use Syscode\Support\WebString;
-use Syscode\Routing\UrlGenerator;
-use Syscode\Support\Facades\Date;
-use Syscode\Contracts\View\Factory;
-use Syscode\Support\Facades\Facade;
-use Syscode\Contracts\Routing\RouteResponse;
+use Syscodes\Core\Application;
+use Syscodes\Support\WebString;
+use Syscodes\Routing\UrlGenerator;
+use Syscodes\Support\Facades\Date;
+use Syscodes\Contracts\View\Factory;
+use Syscodes\Support\Facades\Facade;
+use Syscodes\Contracts\Routing\RouteResponse;
 
 if ( ! function_exists('abort')) 
 {
@@ -42,8 +42,8 @@ if ( ! function_exists('abort'))
      * 
      * @return void
      *
-     * @throws \Syscode\Core\Http\Exceptions\HttpException
-     * @throws \Syscode\Core\Http\Exceptions\LenevorException
+     * @throws \Syscodes\Core\Http\Exceptions\HttpException
+     * @throws \Syscodes\Core\Http\Exceptions\LenevorException
      */
     function abort($code, $message = '', array $headers = [])
     {
@@ -59,7 +59,7 @@ if ( ! function_exists('app'))
      * @param  string  $id
      * @param  array  $parameters
      * 
-     * @return \Syscode\Core\Application|\Syscode\Support\Facades\Facade
+     * @return \Syscodes\Core\Application|\Syscodes\Support\Facades\Facade
      */
     function app($id = null, $parameters = [])
     {
@@ -97,7 +97,7 @@ if ( ! function_exists('back'))
      * @param  array  $headers
      * @param  mixed  $fallback  (false by default)
      * 
-     * @return \Syscode\Http\RedirectResponse
+     * @return \Syscodes\Http\RedirectResponse
      */
     function back($status = 302, $headers = [], $fallback = false)
     {
@@ -129,7 +129,7 @@ if ( ! function_exists('cache'))
      *
      * @param  dynamic  key|key,default|data,expiration|null
      * 
-     * @return mixed|\Syscode\Cache\CacheManager
+     * @return mixed|\Syscodes\Cache\CacheManager
      *
      * @throws \Exception
      */
@@ -171,7 +171,7 @@ if ( ! function_exists('config'))
      * @param   array|string  $key
      * @param   mixed  $default
      *
-     * @return  mixed|\Syscode\Config\Configure
+     * @return  mixed|\Syscodes\Config\Configure
      */
     function config($key = null, $value = null)
     {
@@ -375,7 +375,7 @@ if ( ! function_exists('now'))
      * 
      * @param  \DateTimeZone|string|null  $timezone
      * 
-     * @return \Syscode\Support\Chronos
+     * @return \Syscodes\Support\Chronos
      */
     function now($timezone = null)
     {
@@ -393,7 +393,7 @@ if ( ! function_exists('redirect'))
      * @param  array  $headers  An array of headers
      * @param  bool|null  $secure  Type of protocol (http|https)  (null by default)
      *
-     * @return \Syscode\Routing\Redirector
+     * @return \Syscodes\Routing\Redirector
      */
     function redirect($url = null, $code = 302, $headers = [], $secure = null)
     {
@@ -414,7 +414,7 @@ if ( ! function_exists('request'))
      * @param  array|string|null  $key  (null by default)
      * @param  mixed  $default  (null by default)
      * 
-     * @return \Syscode\Http\Request|string|array 
+     * @return \Syscodes\Http\Request|string|array 
      */
     function request($key = null, $default = null)
     {
@@ -438,7 +438,7 @@ if ( ! function_exists('response'))
      * @param  int  $status  (200 by default)
      * @param  array  $headers
      * 
-     * @return \Syscode\Http\Response|\Syscode\Routing\RouteResponse
+     * @return \Syscodes\Http\Response|\Syscodes\Routing\RouteResponse
      */
     function response($body = '', $status = 200, array $headers = [])
     {
@@ -507,7 +507,7 @@ if ( ! function_exists('session'))
      * @param  string  $key  (null by default)
      * @param  mixed  $default  (null by default)
      * 
-     * @return mixed|\Syscode\Session\Store|\Syscode\Session\SessionManager
+     * @return mixed|\Syscodes\Session\Store|\Syscodes\Session\SessionManager
      */
     function session($key = null, $default = null)
     {

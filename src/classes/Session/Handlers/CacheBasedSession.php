@@ -22,9 +22,9 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Session\Handlers;
+namespace Syscodes\Session\Handlers;
 
-use Syscode\Contracts\Cache\Store;
+use Syscodes\Contracts\Cache\Store;
 
 /**
  * Session handler using cache system for storage.
@@ -36,7 +36,7 @@ class CacheBasedSession implements SessionHandlerInterface
     /**
      * The cache repository instance.
      * 
-     * @var \Syscode\Contracts\Cache\Store $cache
+     * @var \Syscodes\Contracts\Cache\Store $cache
      */
     protected $cache;
 
@@ -50,7 +50,7 @@ class CacheBasedSession implements SessionHandlerInterface
     /**
      * Constructor. The FileSession class instance.
      * 
-     * @param  \Syscode\Contracts\Cache\Store  $cache
+     * @param  \Syscodes\Contracts\Cache\Store  $cache
      * @param  int  $minutes
      * 
      * @return void
@@ -133,7 +133,7 @@ class CacheBasedSession implements SessionHandlerInterface
     /**
      * Get the underlying cache repository.
      * 
-     * @return \Syscode\Contracts\Cache\Store
+     * @return \Syscodes\Contracts\Cache\Store
      */
     public function getCache()
     {

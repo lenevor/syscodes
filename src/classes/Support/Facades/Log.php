@@ -22,7 +22,7 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Support\Facades;
+namespace Syscodes\Support\Facades;
 
 /**
  * Initialize the Logger class facade.
@@ -39,7 +39,7 @@ namespace Syscode\Support\Facades;
  * @method static void debug(string $message, array $context = [])
  * @method static void log(string $level, string $message = null, array $context = [])
  * 
- * @see \Syscode\Log\Logger
+ * @see \Syscodes\Log\Logger
  */
 class Log extends Facade
 {

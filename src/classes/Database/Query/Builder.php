@@ -22,19 +22,19 @@
  * @since       0.7.0
  */
  
-namespace Syscode\Database\Query;
+namespace Syscodes\Database\Query;
 
 use Closure;
 use RuntimeException;
 use DateTimeInterface;
-use Syscode\Support\Str;
+use Syscodes\Support\Str;
 use BadMethodCallException;
 use InvalidArgumentException;
-use Syscode\Database\Query\Access;
-use Syscode\Database\Query\Grammar;
-use Syscode\Database\Query\Expression;
-use Syscode\Database\Query\JoinClause;
-use Syscode\Database\ConnectionInterface;
+use Syscodes\Database\Query\Access;
+use Syscodes\Database\Query\Grammar;
+use Syscodes\Database\Query\Expression;
+use Syscodes\Database\Query\JoinClause;
+use Syscodes\Database\ConnectionInterface;
 
 /**
  * Lenevor database query builder provides a convenient, fluent interface 
@@ -78,7 +78,7 @@ class Builder
     /**
      * The database connection instance.
      * 
-     * @var \Syscode\Database\ConnectionInterface $connection
+     * @var \Syscodes\Database\ConnectionInterface $connection
      */
     protected $connection;
 
@@ -99,7 +99,7 @@ class Builder
     /**
      * The database query grammar instance.
      * 
-     * @var \Syscode\Database\Query\Grammar $grammar
+     * @var \Syscodes\Database\Query\Grammar $grammar
      */
     protected $grammar;
 
@@ -155,7 +155,7 @@ class Builder
     /**
      * The database query post processor instance.
      * 
-     * @var \Syscode\Database\Query\Processor $processor
+     * @var \Syscodes\Database\Query\Processor $processor
      */
     protected $processor;
 
@@ -197,9 +197,9 @@ class Builder
     /**
      * Constructor. Create a new query builder instance.
      * 
-     * @param  \Syscode\Database\ConnectionInterface  $connection
-     * @param  \Syscode\Database\Query\Grammar  $grammar
-     * @param  \Syscode\Database\Query\Processor  $processor
+     * @param  \Syscodes\Database\ConnectionInterface  $connection
+     * @param  \Syscodes\Database\Query\Grammar  $grammar
+     * @param  \Syscodes\Database\Query\Processor  $processor
      * 
      * return void
      */
@@ -261,13 +261,73 @@ class Builder
     }
 
     /**
+     * Get run a truncate statment on the table.
+     * 
+     * @return void
+     */
+    public function truncate()
+    {
+        foreach ($this->grammar->compileTruncate($this) as $sql => $bindings)
+        {
+            $this->connection->query($sql, $bindings);
+        }
+    }
+
+    /**
      * Get a new instance of the query builder.
      * 
-     * @return \Syscode\Database\Query\Builder
+     * @return \Syscodes\Database\Query\Builder
      */
     public function newQuery()
     {
         return new Builder($this->connection, $this->grammar, $this->processor);
+    }
+
+    /**
+     * Remove all of the expressions from a lists of bindings.
+     * 
+     * @param  array  $bindings
+     * 
+     * @return array
+     */
+    public function cleanBindings(array $bindings)
+    {
+        return array_values(array_filter($bindings, function () {
+            return ! bindings instanceof Expression;
+        }));
+    }
+
+    /**
+     * Get the array of bindings.
+     * 
+     * @return void
+     */
+    public function getBinding()
+    {
+        return $this->bindings;
+    }
+
+    /**
+     * /**
+     * Set the bindings on the query sql.
+     * 
+     * @param  mixed  $value
+     * @param  string  $type  ('where' by default)
+     * 
+     * @return $this
+     * 
+     * @throws \InvalidArgumentException
+     */
+    public function setBinding($value, $type='where')
+    {
+        if ( ! array_key_exists($type, $this->bindings))
+        {
+            throw new InvalidArgumentException("Invalid binding type: {$type}");
+        }
+
+        $this->bindings[$type] = $value;
+
+        return $this;
     }
 
     /**
@@ -277,16 +337,32 @@ class Builder
      * @param  string  $type  ('where' by default)
      * 
      * @return $this
+     * 
+     * @throws \InvalidArgumentException
      */
     public function addBinding($value, $type = 'where')
     {
-        
+        if ( ! array_key_exists($type, $this->bindings))
+        {
+            throw new InvalidArgumentException("Invalid binding type: {$type}");
+        }
+
+        if (is_array($value))
+        {
+            $this->bindings[$type] = array_values(array_merge($this->bindings[$type], $value));
+        }
+        else
+        {
+            $this->bindings[$type][] = $value;
+        }
+
+        return $this;
     }
 
     /**
      * Get the database connection instance.
      * 
-     * @return \Syscode\Database\ConnectionInterface
+     * @return \Syscodes\Database\ConnectionInterface
      */
     public function getConnection()
     {
@@ -296,7 +372,7 @@ class Builder
     /**
      * Get the database query processor instance.
      * 
-     * @return \Syscode\Database\Query\Processor
+     * @return \Syscodes\Database\Query\Processor
      */
     public function getProcessor()
     {
@@ -306,7 +382,7 @@ class Builder
     /**
      * Get the database query grammar instance.
      * 
-     * @return \Syscode\Database\Query\Grammar
+     * @return \Syscodes\Database\Query\Grammar
      */
     public function getGrammar()
     {

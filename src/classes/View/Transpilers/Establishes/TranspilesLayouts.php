@@ -22,9 +22,9 @@
  * @since       0.6.0
  */
 
-namespace Syscode\View\Transpilers\Establishes;
+namespace Syscodes\View\Transpilers\Establishes;
 
-use Syscode\Contracts\View\Parser as ViewParser;
+use Syscodes\Contracts\View\Parser as ViewParser;
 
 /**
  * Trait TranspilesLayouts.
@@ -44,7 +44,7 @@ trait TranspilesLayouts
     {
         $expression = $this->stripParentheses($expression);
 
-        $data = "<?php echo \$__env->make({$expression}, \Syscode\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>";
+        $data = "<?php echo \$__env->make({$expression}, \Syscodes\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>";
 
         $this->footer[] = $data;
 

@@ -22,9 +22,9 @@
  * @since       0.4.0
  */
 
-namespace Syscode\Core\Bootstrap;
+namespace Syscodes\Core\Bootstrap;
 
-use Syscode\Contracts\Core\Application;
+use Syscodes\Contracts\Core\Application;
 
 /**
  * Initialize boot of register providers.
@@ -36,7 +36,7 @@ class BootProviders
 	/**
 	 * Bootstrap the given application.
 	 * 
-	 * @param  \Syscode\Contracts\Core\Application  $app
+	 * @param  \Syscodes\Contracts\Core\Application  $app
 	 * 
 	 * @return void
 	 */

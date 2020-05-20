@@ -22,15 +22,15 @@
  * @since       0.6.1
  */
 
-namespace Syscode\View;
+namespace Syscodes\View;
 
-use Syscode\View\Engines\PhpEngine;
-use Syscode\Support\ServiceProvider;
-use Syscode\View\Transpilers\Transpiler;
-use Syscode\View\Engines\FileEngine;
-use Syscode\View\Engines\TranspilerEngine;
-use Syscode\View\Engines\EngineResolver;
-use Syscode\View\Transpilers\PlazeTranspiler;
+use Syscodes\View\Engines\PhpEngine;
+use Syscodes\Support\ServiceProvider;
+use Syscodes\View\Transpilers\Transpiler;
+use Syscodes\View\Engines\FileEngine;
+use Syscodes\View\Engines\TranspilerEngine;
+use Syscodes\View\Engines\EngineResolver;
+use Syscodes\View\Transpilers\PlazeTranspiler;
 
 /**
  * For loading the classes from the container of services.
@@ -126,7 +126,7 @@ class ViewServiceProvider extends ServiceProvider
     /**
      * Register the file engine implementation.
      * 
-     * @param  \Syscode\View\Engines\EngineResolver  $resolver
+     * @param  \Syscodes\View\Engines\EngineResolver  $resolver
      * 
      * @return void
      */
@@ -140,7 +140,7 @@ class ViewServiceProvider extends ServiceProvider
     /**
      * Register the PHP engine implementation.
      * 
-     * @param  \Syscode\View\Engines\EngineResolver  $resolver
+     * @param  \Syscodes\View\Engines\EngineResolver  $resolver
      * 
      * @return void
      */
@@ -154,7 +154,7 @@ class ViewServiceProvider extends ServiceProvider
     /**
      * Register the Plaze engine implementation.
      * 
-     * @param  \Syscode\View\Engines\EngineResolver  $resolver
+     * @param  \Syscodes\View\Engines\EngineResolver  $resolver
      * 
      * @return void
      */

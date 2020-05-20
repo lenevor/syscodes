@@ -22,10 +22,10 @@
  * @since       0.6.0
  */
 
-namespace Syscode\Core\Support\Providers;
+namespace Syscodes\Core\Support\Providers;
 
-use Syscode\Support\Facades\Event;
-use Syscode\Support\ServiceProvider;
+use Syscodes\Support\Facades\Event;
+use Syscodes\Support\ServiceProvider;
 
 /**
  * Manage all events occurred in the application.

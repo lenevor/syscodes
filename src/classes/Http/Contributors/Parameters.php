@@ -22,11 +22,11 @@
  * @since       0.2.0
  */
 
-namespace Syscode\Http\Contributors;
+namespace Syscodes\Http\Contributors;
 
 use Countable;
 use IteratorAggregate;
-use Syscode\Support\Arr;
+use Syscodes\Support\Arr;
 
 /**
  * Parameters is a container for key/value pairs.
