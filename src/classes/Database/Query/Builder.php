@@ -27,11 +27,13 @@ namespace Syscodes\Database\Query;
 use Closure;
 use RuntimeException;
 use DateTimeInterface;
+use Syscodes\Support\Arr;
 use Syscodes\Support\Str;
 use BadMethodCallException;
 use InvalidArgumentException;
-use Syscodes\Database\Query\Access;
+use Syscodes\Database\DatabaseCache;
 use Syscodes\Database\Query\Grammar;
+use Syscodes\Database\Query\Processor;
 use Syscodes\Database\Query\Expression;
 use Syscodes\Database\Query\JoinClause;
 use Syscodes\Database\ConnectionInterface;
@@ -302,7 +304,7 @@ class Builder
             return $this->getCached($columns);
         }
 
-        return $this->getFresh($columns);
+        return $this->getFreshStatement($columns);
     }
 
     /**
@@ -314,7 +316,96 @@ class Builder
      */
     public function getCached($columns = ['*'])
     {
-        
+        if (is_null($this->columns)) 
+        {
+            $this->columns = $columns;
+        }
+
+        list($key, $minutes) = $this->getCacheInfo();
+
+        $cache = $this->getCache();
+
+        if ($minutes > 0)
+        {
+            return $cache->rememberForever($key, $this->getCacheCallback());
+        }
+
+        return $cache->remember($key, $this->getCacheCallback());
+    }
+
+    /**
+     * Get the cache object with tags assigned, if applicable.
+     * 
+     * @return \Syscode\Database\DatabaseCache
+     */
+    public function getCache()
+    {
+        $cache = (new DatabaseCache)->driver($this->cacheDriver);
+
+        return $this->cacheTags ? $cache->tags($this->tags) : $cache;
+    }
+
+    /**
+     * Get the cache key and cache minutes as an array.
+     * 
+     * @return array
+     */
+    public function getCacheInfo()
+    {
+        return [$this->getCacheKey(), $this->cacheMinutes];
+    }
+
+    /**
+     * Get a unique cache key for the complete query.
+     * 
+     * @return string
+     */
+    public function getCacheKey()
+    {
+        $name = $this->connection->getName();
+
+        return md5($name.$this->getSql().serialize($this->getBindings()));
+    }
+
+    /**
+     * Get the Closure callback used when caching queries.
+     * 
+     * @param  array  $columns
+     * 
+     * @return \Closure
+     */
+    protected function getCacheCallback($columns)
+    {
+        return function () use ($columns) {
+            return $this->getFreshStatement($columns);
+        };
+    }
+
+    /**
+     * Execute the query as a fresh "select" statement.
+     * 
+     * @param  array  $columns
+     * 
+     * @return array|static[]
+     */
+    public function getFreshStatement($columns = ['*'])
+    {
+        if (is_null($this->columns))
+        {
+            $this->columns = $columns;
+        }
+
+        return $this->processor->processSelect($this, $this->runOnSelectStatement());
+    }
+
+    /**
+     * Run the query as a "select" statement against the connection.
+     * 
+     * @return array
+     */
+    public function runOnSelectStatement()
+    {
+        return $this->connection->select($this->getSql(), $this->getBinding());
     }
 
     /**
@@ -507,11 +598,21 @@ class Builder
     }
 
     /**
-     * Get the array of bindings.
+     * Get the current query value bindings in a flattened array.
      * 
-     * @return void
+     * @return array
      */
-    public function getBinding()
+    public function getBindings()
+    {
+        return Arr::Flatten($this->bindings);
+    }
+
+    /**
+     * Get the raw array of bindings.
+     * 
+     * @return array
+     */
+    public function getRawBindings()
     {
         return $this->bindings;
     }
@@ -527,7 +628,7 @@ class Builder
      * 
      * @throws \InvalidArgumentException
      */
-    public function setBinding($value, $type = 'where')
+    public function setBindings($value, $type = 'where')
     {
         if ( ! array_key_exists($type, $this->bindings))
         {
@@ -575,7 +676,7 @@ class Builder
      * 
      * @return $this
      */
-    public function mergeBinding(Builder $builder)
+    public function mergeBindings(Builder $builder)
     {
         $this->bindings = array_merge_recursive($this->bindings, $builder->bindings);
 
