@@ -108,7 +108,7 @@ class Router implements Routable
 	public function __construct(Container $container)
 	{
 		$this->container = $container;
-
+		
 		$this->routes = new RouteCollection();
 	}
 
@@ -240,9 +240,9 @@ class Router implements Routable
 		}
 		
 		$route = $this->newRoute(
-						array_map('strtoupper', (array) $method), 
-						$this->prefix($route), 
-						$action
+				array_map('strtoupper', (array) $method),
+				$this->prefix($route),
+				$action
 		);
 
 		if ($this->hasGroupStack())
