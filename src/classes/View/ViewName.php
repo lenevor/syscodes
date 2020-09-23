@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Lenevor Framework
@@ -19,31 +19,38 @@
  * @link        https://lenevor.com 
  * @copyright   Copyright (c) 2019-2020 Lenevor Framework 
  * @license     https://lenevor.com/license or see /license.md or see https://opensource.org/licenses/BSD-3-Clause New BSD license
- * @since       0.6.0
+ * @since       0.7.2
  */
 
-namespace Syscodes\Contracts\View;
+namespace Syscodes\View;
+
+use Syscodes\Contracts\View\ViewFinder;
 
 /**
- * Returns the location of a view.
+ * Normalizes the view name.
  * 
  * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  */
-interface ViewFinder
+class ViewName
 {
     /**
-     * Hint path delimiter value.
-     * 
-     * @var string
-     */
-    const HINT_PATH_DELIMITER = '::';
-
-    /**
-     * Get the complete location of the view.
+     * Normalize the given view name.
      * 
      * @param  string  $name
-     *
+     * 
      * @return string
      */
-    public function find($name);
+    public static function normalize($name)
+    {
+        $delimiter = ViewFinder::HINT_PATH_DELIMITER;
+		
+		if (strpos($name, $delimiter) === false)
+		{
+			return str_replace('/', '.', $name);
+		}
+		
+		[$namespace, $name] = explode($delimiter, $name);
+		
+		return $namespace.$delimiter.str_replace('/', '.', $name);
+    }
 }

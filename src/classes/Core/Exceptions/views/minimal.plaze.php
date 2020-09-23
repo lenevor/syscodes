@@ -15,7 +15,7 @@
 		
 		<!-- Styles -->
 		<style type="text/css">
-		   <?= preg_replace('#[\r\n\t ]+#', ' ', file_get_contents(basePath('vendor\lenevor\syscodes/views/errors/css/minimal.css'))) ?>
+		   <?= preg_replace('#[\r\n\t ]+#', ' ', file_get_contents(basePath('syscodes/src/classes/Core/Exceptions/views/css/minimal.css'))) ?>
 		</style>
 
 	</head>
