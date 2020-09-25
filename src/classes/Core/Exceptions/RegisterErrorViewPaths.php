@@ -22,28 +22,24 @@
  * @since       0.7.2
  */
 
-namespace Syscodes\Core\Console;
+namespace Syscodes\Core\Exceptions;
 
-use Closure;
-use Exception;
-use Throwable;
-use ReflectionClass;
-use Syscodes\Support\Str;
-use Syscodes\Support\Finder;
-use Syscodes\Collections\Arr;
-use Syscodes\Contracts\Core\Application;
-use Syscodes\Contracts\Events\Dispatcher;
-use Syscodes\Contracts\Debug\ExceptionHandler;
-use Syscodes\Console\Application as LenevorConsole;
-use Syscodes\Debug\FatalExceptions\FatalThrowableError;
+use Syscodes\Support\Facades\View;
 
 /**
- * The Lenevor class is the heart of the system when use 
- * the console of commands in framework.
- *
+ * Allows egister the errors in view paths.
+ * 
  * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  */
-class Lenevor extends LenevorConsole
+class RegisterErrorViewPaths
 {
-
+    /**
+     * Register the error view paths.
+     *
+     * @return void
+     */
+    public function __invoke()
+    {
+        View::replaceNamespace('errors', __DIR__.'/views');
+    }
 }
