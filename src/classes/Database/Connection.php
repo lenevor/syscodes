@@ -44,6 +44,8 @@ use Syscodes\Database\Query\Grammar as QueryGrammar;
  */
 class Connection implements ConnectionInterface
 {
+    use Concerns\DetectLostConnections;
+    
     /**
      * The database connection configuration options.
      * 
@@ -203,12 +205,13 @@ class Connection implements ConnectionInterface
      * 
      * @param  string  $query
      * @param  array  $bindings
+     * @param  bool  $useReadPdo  (true by default)
      * 
      * @return array
      */
-    public function select($query, $bindings = [])
+    public function select($query, $bindings = [], $useReadPdo = true)
     {
-
+        
     }
 
     /**
