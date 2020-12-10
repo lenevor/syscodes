@@ -43,9 +43,9 @@ define('SYS_PATH', realpath($config['path.sys']).DIRECTORY_SEPARATOR);
 require $rootDir.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'constants.php';
 
 // Activate the framework class autoloader
-require $sysDir.DIRECTORY_SEPARATOR.'classes'.DIRECTORY_SEPARATOR.'Autoloader'.DIRECTORY_SEPARATOR.'Autoloader.php';
+require $sysDir.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'Autoloader'.DIRECTORY_SEPARATOR.'Autoloader.php';
 // Call the class configuration Autoloader
-require $sysDir.DIRECTORY_SEPARATOR.'classes'.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'AutoloadConfig.php';
+require $sysDir.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'AutoloadConfig.php';
 
 // Aliases of the class autoloader 
 class_alias('Syscodes\\Autoloader', 'Autoloader');
