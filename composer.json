@@ -25,7 +25,7 @@
             "src/classes/Support/Helpers.php"
         ],
         "psr-4": {
-            "Syscodes\\": "src/classes/"
+            "Syscodes\\": "src/components/"
         }
     },
     "extra": {
