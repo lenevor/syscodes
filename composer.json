@@ -21,8 +21,9 @@
     },
     "autoload": {
         "files": [
-            "src/classes/Core/Helpers.php",
-            "src/classes/Support/Helpers.php"
+            "src/components/Collections/Helpers.php",
+            "src/components/Core/Helpers.php",
+            "src/components/Support/Helpers.php"
         ],
         "psr-4": {
             "Syscodes\\": "src/components/"
