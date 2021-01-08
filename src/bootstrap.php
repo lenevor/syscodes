@@ -23,7 +23,7 @@
  */
 
 $sysDir  = dirname(__FILE__);
-$rootDir = dirname(dirname($sysDir));
+$rootDir = dirname(dirname(dirname(dirname($sysDir))));
 
 // Location to the paths config file
 $config = require $rootDir.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'paths.php';
