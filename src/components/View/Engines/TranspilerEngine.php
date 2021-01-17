@@ -26,7 +26,8 @@ namespace Syscodes\View\Engines;
 
 use Throwable;
 use ErrorException;
-use Syscodes\View\Transpilers\TranspilerInterface; 
+use Syscodes\Filesystem\Filesystem;
+use Syscodes\View\Transpilers\TranspilerInterface;
 
 /**
  * The file PHP engine.
@@ -53,11 +54,14 @@ class TranspilerEngine extends PhpEngine
      * Constructor. Create a new Plaze view engine instance.
      * 
      * @param  \Syscodes\View\Transpilers\TranspilerInterface  $transpiler
+     * @param  \Syscodes\Filesystem\Filesystem|null  $files  (null by default)
      * 
      * @return void
      */
-    public function __construct(TranspilerInterface $transpiler)
+    public function __construct(TranspilerInterface $transpiler, Filesystem $files = null)
     {
+        parent::__construct($files ?: new Filesystem);
+
         $this->transpiler = $transpiler;
     }
 
