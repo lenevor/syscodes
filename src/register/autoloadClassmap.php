@@ -180,7 +180,7 @@ return [
     'Syscodes\\Debug\\Benchmark' => SYS_PATH.'src/components/Debug/Benchmark.php',
     'Syscodes\\Debug\\ExceptionHandler' => SYS_PATH.'src/components/Debug/ExceptionHandler.php',
     'Syscodes\\Debug\\GDebug' => SYS_PATH.'src/components/Debug/GDebug.php', 
-    'Syscodes\\Dotenv\\Dotenv' => SYS_PATH.'src/components/Dotenv/Dotenv.php',
+    'Syscodes\\Dotenv\\Dotenv' => SYS_PATH.'src/components/Dotenv/Dotenv.php', 
     'Syscodes\\Encryption\\Exceptions\\DecryptException' => SYS_PATH.'src/components/Encryption/Exceptions/DecryptException.php',
     'Syscodes\\Encryption\\Exceptions\\EncryptException' => SYS_PATH.'src/components/Encryption/Exceptions/EncryptException.php',
     'Syscodes\\Encryption\\Encrypter' => SYS_PATH.'src/components/Encryption/Encrypter.php', 
