@@ -26,7 +26,6 @@ namespace Syscodes\View\Engines;
 
 use Throwable;
 use Syscodes\Contracts\View\Engine;
-use Syscodes\Filesystem\Filesystem;
 
 /**
  * The file PHP engine.
@@ -35,25 +34,6 @@ use Syscodes\Filesystem\Filesystem;
  */
 class PhpEngine implements Engine
 {
-    /**
-     * The Filesystem instance
-     * 
-     * @var \Syscodes\Filesystem\Filesystem $files
-     */
-    protected $files;
-    
-    /**
-     * Constructor. Create new a PhpEngine instance.
-     * 
-     * @param  \Syscodes\Filesystem\Filesystem  $files
-     * 
-     * @return void
-     */
-    public function __construct(Filesystem $files)
-    {
-        $this->files = $files;
-    }
-
     /**
      * Get the evaluated contents of the view.
      * 
@@ -78,12 +58,14 @@ class PhpEngine implements Engine
     protected function evaluatePath($path, $data)
     {
         $obLevel = ob_get_level();
+
+        extract($data, EXTR_SKIP);
         
         ob_start();
 
         try
         {
-            $this->files->getRequire($path, $data);
+            require $path;
         }
         catch(Throwable $e)
         {
