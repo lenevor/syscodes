@@ -167,7 +167,7 @@ class ViewServiceProvider extends ServiceProvider
     public function registerPlazeEngine($resolver)
     {
         $resolver->register('plaze', function () {
-            return new TranspilerEngine($this->app['plaze.transpiler'], $this->app['files']);
+            return new TranspilerEngine($this->app['plaze.transpiler']);
         });
     }
 }
