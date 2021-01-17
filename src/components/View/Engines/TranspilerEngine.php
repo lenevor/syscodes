@@ -26,8 +26,7 @@ namespace Syscodes\View\Engines;
 
 use Throwable;
 use ErrorException;
-use Syscodes\Filesystem\Filesystem;
-use Syscodes\View\Transpilers\TranspilerInterface;
+use Syscodes\View\Transpilers\TranspilerInterface; 
 
 /**
  * The file PHP engine.
@@ -57,10 +56,8 @@ class TranspilerEngine extends PhpEngine
      * 
      * @return void
      */
-    public function __construct(TranspilerInterface $transpiler, Filesystem $files = null)
+    public function __construct(TranspilerInterface $transpiler)
     {
-        parent::__construct($files ?: new Filesystem);
-
         $this->transpiler = $transpiler;
     }
 
