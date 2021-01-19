@@ -2,10 +2,10 @@
 
 <p align="center">
     <a href="https://scrutinizer-ci.com/g/lenevor/syscodes"><img src="https://scrutinizer-ci.com/g/lenevor/syscodes/badges/build.png" title="Build status"></a>
-    <a href="https://packagist.org/packages/lenevor/syscodes"><img src="https://poser.pugx.org/lenevor/syscodes/d/total.svg" title="Total Downloads"></a>
-    <a href="https://packagist.org/packages/lenevor/syscodes"><img src="https://poser.pugx.org/lenevor/syscodes/v/stable.svg" title="Latest Stable Version"></a>
-    <a href="https://packagist.org/packages/lenevor/syscodes"><img src="https://img.shields.io/packagist/php-v/lenevor/syscodes?color=green" title="PHP Version Support"></a>
-    <a href="https://packagist.org/packages/lenevor/syscodes"><img src="https://poser.pugx.org/lenevor/syscodes/license.svg" title="Licence"></a>
+    <a href="https://packagist.org/packages/lenevor/lenevor"><img src="https://img.shields.io/packagist/dt/lenevor/lenevor?color=gr" title="Total Downloads"></a>
+    <a href="https://packagist.org/packages/lenevor/lenevor"><img src="https://img.shields.io/packagist/v/lenevor/lenevor?color=blue" title="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/lenevor/lenevor"><img src="https://img.shields.io/packagist/php-v/lenevor/lenevor" title="PHP Version Support"></a>
+    <a href="https://packagist.org/packages/lenevor/lenevor"><img src="https://img.shields.io/packagist/l/lenevor/lenevor" title="Licence"></a>
 </p>
 
 ## About Lenevor
