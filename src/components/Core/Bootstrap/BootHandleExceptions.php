@@ -64,7 +64,7 @@ class BootHandleExceptions
 
         register_shutdown_function([$this, 'handleShutdown']);
 
-        if ( ! $this->app->isUnitTests())
+        if ( ! $app->isUnitTests())
         {
             ini_set('display_errors', 'off');
         }
