@@ -27,8 +27,24 @@ namespace Syscodes\Contracts\Dotenv;
  * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-interface AdapterInterface
+interface Adapter
 {
+    /**
+     * Determines if the adapter is supported.
+     * 
+     * @return bool
+     */
+    public function isSupported();
+    
+    /**
+     * Check if a variable exists.
+     * 
+     * @param  string  $name
+     * 
+     * @return bool
+     */
+    public function has(string $name);
+    
     /**
      * Read an environment variable.
      * 
