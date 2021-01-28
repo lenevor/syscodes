@@ -22,82 +22,65 @@
 
 namespace Syscodes\Dotenv\Repository\Adapters;
 
-use Syscodes\Contracts\Dotenv\Adapter;
-
 /**
- * Read, write and delete an environment variable for $_SERVER.
+ * Write and delete an environment variable.
  * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class ServerAdapter implements Adapter
+final class Writers
 {
     /**
-     * Determines if the adapter is supported.
+     * The set of writers to use.
      * 
-     * @return bool
+     * @var \Syscodes\Dotenv\Repository\Adapters\Writers $writers
      */
-    public function isSupported()
+    protected $writers;
+
+    /**
+     * Constructor. Create a new Writers instance.
+     * 
+     * @param  \Syscodes\Dotenv\Repository\Adapters\Writers  $writers
+     * 
+     * @return void
+     */
+    public function __construct(array $writers)
     {
-        return true;
+        $this->writers = $writers;
     }
 
     /**
-     * Check if a variable exists.
-     * 
-     * @param  string  $name
-     * 
-     * @return bool
-     */
-    public function has(string $name)
-    {
-        return array_key_exists($name, $_SERVER);
-    }
-
-    /**
-     * Read an environment variable.
-     * 
-     * @param  string  $name
-     * 
-     * @return array
-     */
-    public function read(string $name)
-    {
-        if ($this->has($name)) {
-            return $_SERVER[$name];
-        }
-
-        return null;
-    }
-
-     /**
      * Write to an environment variable.
      * 
      * @param  string  $name
      * @param  string  $value
      * 
-     * @return bool
+     * @return bool 
      */
     public function write(string $name, string $value)
     {
-        $notHttpName = 0 !== strpos($name, 'HTTP_');
-        
-        if ($notHttpName) {
-            $_SERVER[$name] = $value;
+        foreach ($this->writers as $writes) {
+            if ( ! $writes->write($name, $value)) {
+                return false;
+            }
         }
 
         return true;
     }
 
     /**
-     * Delete an environment variable.
+     * Write to an environment variable.
      * 
      * @param  string  $name
      * 
-     * @return bool
+     * @return bool 
      */
     public function delete(string $name)
     {
-        unset($_SERVER[$name]);
+        foreach ($this->writers as $writes) {
+            if ( ! $writes->delete($name)) {
+                return false;
+            }
+        }
 
         return true;
     }
