@@ -56,13 +56,6 @@ final class Dotenv
     protected $store;
 
     /**
-     * Activate use of putenv, by default is true.
-     * 
-     * @var bool $usePutenv 
-     */
-    protected $usePutenv = true;
-
-    /**
      * Constructor. Create a new Dotenv instance.
      * 
      * @param  \Syscodes\Dotenv\Store\StoreBuilder  $store
