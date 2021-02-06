@@ -1,6 +1,5 @@
 {
     "name": "lenevor/syscodes",
-    "type": "project",
     "description": "The Lenevor Framework.",
     "keywords": ["syscodes","lenevor"],
     "license": "BSD-3-Clause",
