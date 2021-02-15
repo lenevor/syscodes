@@ -412,9 +412,9 @@ class Application extends Container implements ApplicationContract
     /**
      * Get or check the current application environment.
      * 
-     * @param  string|array  ...$environments
+     * @param  array  ...$environments
      * 
-     * @return string|bool
+     * @return string
      */
     public function environment(...$environments)
     {
