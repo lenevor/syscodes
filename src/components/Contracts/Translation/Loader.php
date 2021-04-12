@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /**
  * Lenevor Framework
@@ -20,24 +20,15 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Translation\Loader;
-
-use Syscodes\Contracts\Translation\Loader;
+namespace Syscodes\Contracts\Translation;
 
 /**
- * Loads the translation messages in an array for the given locale.
+ * Loads all messages for the given locale.
  * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class ArrayLoader implements Loader
+interface Loader
 {
-    /**
-     * All of the translation messages.
-     * 
-     * @var array $messages
-     */
-    protected $messages = [];
-
     /**
      * Load the messages for the given locale.
      * 
@@ -46,8 +37,5 @@ class ArrayLoader implements Loader
      * 
      * @return array
      */
-    public function load($locale, $group)
-    {
-        return $this->messages[$locale][$group] ?? [];
-    }
+    public function load($locale, $group);
 }
