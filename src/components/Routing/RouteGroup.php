@@ -68,8 +68,8 @@ class RouteGroup
 	{
 		if (isset($new['namespace'])) {
 			return isset($old['namespace'])
-				   ? trim($old['namespace'], '\\').'\\'.trim($new['namespace'], '\\')
-				   : trim($new['namespace'], '\\');
+			       ? trim($old['namespace'], '\\').'\\'.trim($new['namespace'], '\\')
+			       : trim($new['namespace'], '\\');
 		}
 
 		return $old['namespace'] ?? null;
@@ -87,8 +87,8 @@ class RouteGroup
 	{
 		$old = $old['prefix'] ?? null;
 		return isset($new['prefix'])
-		            ? trim($old, '/').'/'.trim($new['prefix'], '/')
-					: $old;
+		    	? trim($old, '/').'/'.trim($new['prefix'], '/')
+		        : $old;
 	}
 
 	/**
