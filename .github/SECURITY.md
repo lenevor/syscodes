@@ -7,6 +7,7 @@ currently being supported with security updates.
 
 | Version | Security Fixes Until |
 | ------- | -------------------- |
+| 0.7.5   | Mar 16th, 2021       |
 | 0.7.4   | Feb 9th, 2021        |
 | 0.7.3   | Jan 8th, 2021        |
 | 0.7.2   | Aug 1th, 2020        |
@@ -15,4 +16,4 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability within Laravel, please send an email to Alexander Campo at lenevorphp@gmail.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Lenevor, please send an email to Alexander Campo at lenevorphp@gmail.com. All security vulnerabilities will be promptly addressed.
