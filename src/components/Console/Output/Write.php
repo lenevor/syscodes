@@ -77,22 +77,23 @@ class Write
  	 * with a line break.
  	 * 
  	 * @param  string|array  $text  The text to output, or array of lines
- 	 * @param  string|null  $foreground  The foreground color
- 	 * @param  string|null  $background  The background color
+	 * @param  bool  $eol  End of line command
  	 *
  	 * @return string
  	 */
- 	public function write(string $text = '', string $foreground = null, string $background = null)
+ 	public function write(string $text = '', bool $eol = false)
  	{
  		if (is_array($text)) {
  			$text = implode(PHP_EOL, $text);
  		}
 
- 		if ($foreground OR $background) {
- 			$text = $this->colorizer->line($text, $foreground, $background);
- 		}
+ 		$text = $this->colorizer->line($text, []);
 
- 		$this->fwrite($this->stdout, $text.PHP_EOL);
+		if ($eol) {
+			$text .= \PHP_EOL;
+		}
+ 		
+ 		$this->fwrite($this->stdout, $text);
  	}
 
     /**
