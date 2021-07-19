@@ -23,9 +23,11 @@
 namespace Syscodes\Console\Output;
 
 /**
+ * Outputs many string to the cli.
+ * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class Write
+class Writer
 {
 	/**
 	 * Get the Color for the Cli command.
