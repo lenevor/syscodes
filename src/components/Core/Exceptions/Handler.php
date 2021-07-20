@@ -442,7 +442,7 @@ class Handler implements ExceptionHandlerContract
             $e->getMessage(),            
             $e->getFile(),
             $e->getLine(),
-            $e->getTraceAsString()
+            $e->getTraceAsString() 
         );
 
         echo $message;
