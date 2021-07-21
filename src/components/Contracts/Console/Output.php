@@ -20,12 +20,14 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Console\Output;
+namespace Syscodes\Contracts\Console;
 
 /**
+ * <Output> is the interface implemented by all Output classes.
+ * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class Output
+interface Output
 {
     /**
 	 * Outputs a string to the cli.	If you send an array it will implode them
@@ -36,10 +38,7 @@ class Output
 	 * 
 	 * @return string
 	 */
-	public function write($messages, bool $newline = false)
-    {
-
-    }
+	public function write($messages, bool $newline = false);
 
     /**
 	 * Writes a message to the output and adds a newline at the end..
@@ -48,8 +47,5 @@ class Output
 	 * 
 	 * @return string
 	 */
-	public function writeln($messages)
-    {
-        return $this->write($messages, true);
-    }
+	public function writeln($messages);
 }

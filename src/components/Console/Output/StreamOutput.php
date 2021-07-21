@@ -25,31 +25,7 @@ namespace Syscodes\Console\Output;
 /**
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class Output
+class StreamOutput
 {
-    /**
-	 * Outputs a string to the cli.	If you send an array it will implode them
-	 * with a line break.
-	 * 
-	 * @param  string|iterable  $messages  The text to output, or array of lines
-	 * @param  bool  $newline  Add a newline command
-	 * 
-	 * @return string
-	 */
-	public function write($messages, bool $newline = false)
-    {
-
-    }
-
-    /**
-	 * Writes a message to the output and adds a newline at the end..
-	 * 
-	 * @param  string|iterable  $messages  The message as an iterable of strings or a single string
-	 * 
-	 * @return string
-	 */
-	public function writeln($messages)
-    {
-        return $this->write($messages, true);
-    }
+    
 }

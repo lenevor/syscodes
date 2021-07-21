@@ -22,34 +22,30 @@
 
 namespace Syscodes\Console\Output;
 
+use Syscodes\Contracts\Console\Output as OutputInterface;
+
 /**
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class Output
+class ConsoleOutput
 {
     /**
-	 * Outputs a string to the cli.	If you send an array it will implode them
-	 * with a line break.
-	 * 
-	 * @param  string|iterable  $messages  The text to output, or array of lines
-	 * @param  bool  $newline  Add a newline command
-	 * 
-	 * @return string
-	 */
-	public function write($messages, bool $newline = false)
+     * Gets the Output interface for errors.
+     * 
+     * @return \Syscodes\Contracts\Console\Output
+     */
+    public function getErrorOutput(): Output
     {
 
     }
 
     /**
-	 * Writes a message to the output and adds a newline at the end..
-	 * 
-	 * @param  string|iterable  $messages  The message as an iterable of strings or a single string
-	 * 
-	 * @return string
-	 */
-	public function writeln($messages)
+     * Sets the Output interface for errors.
+     * 
+     * @return void
+     */
+    public function SetErrorOutput(OutputInterface $error): void
     {
-        return $this->write($messages, true);
+        $this->stderr = $error;
     }
 }
