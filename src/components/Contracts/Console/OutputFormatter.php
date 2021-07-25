@@ -20,24 +20,21 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Console\Formatter;
+namespace Syscodes\Contracts\Console;
 
 /**
- * Formatter class for console output.
+ * <OutputFormatter> is the interface for output console.
  * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class OutputFormatter
+interface OutputFormatter
 {
     /**
      * Gets style options from style with specified name.
      * 
      * @return \Syscodes\Contracts\Console\OutputFormatterStyles
      */
-    public function getStyle(): OutputFormatterStyles
-    {
-
-    }
+    public function getStyle(): OutputFormatterStyles;
 
     /**
      * Sets a new style.
@@ -47,10 +44,7 @@ class OutputFormatter
      * 
      * @return void
      */
-    public function setStyle(string $name, OutputFormatterStyles $style): void
-    {
-
-    }
+    public function setStyle(string $name, OutputFormatterStyles $style): void;
 
     /**
      * Checks if output formatter has style with specified name.
@@ -59,10 +53,7 @@ class OutputFormatter
      * 
      * @return bool
      */
-    public function hasStyle(string $name): bool
-    {
-
-    }
+    public function hasStyle(string $name): bool;
 
     /**
      * Formats a message depending to the given styles.
@@ -71,8 +62,5 @@ class OutputFormatter
      * 
      * @return string
      */
-    public function format(?string $message): string
-    {
-
-    }
+    public function format(?string $message): string;
 }
