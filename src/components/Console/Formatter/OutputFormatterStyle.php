@@ -22,14 +22,14 @@
 
 namespace Syscodes\Console\Formatter;
 
-use Syscodes\Contracts\Console\OutputFormatterStyles as OutputFormatterStylesInterface;
+use Syscodes\Contracts\Console\OutputFormatterStyle as OutputFormatterStyleInterface;
 
 /**
  * Allows that formatter style class for defining styles.
  * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class OutputFormatterStyles implements OutputFormatterStylesInterface
+class OutputFormatterStyle implements OutputFormatterStyleInterface
 {
     /**
      * Gets the background of CLI command.

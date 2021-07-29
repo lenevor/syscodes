@@ -23,11 +23,11 @@
 namespace Syscodes\Contracts\Console;
 
 /**
- * <OutputFormatterStyles> is the interface for defining styles.
+ * <OutputFormatterStyle> is the interface for defining styles.
  * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-interface OutputFormatterStyles
+interface OutputFormatterStyle
 {
     /**
      * Sets style foreground color.
