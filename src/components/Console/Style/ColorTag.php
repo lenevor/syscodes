@@ -20,28 +20,12 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Contracts\Console;
+namespace Syscodes\Console\Style;
 
 /**
- * Console core.
- * 
- * @author Alexander Campo M. <jalexcam@gmail.com>
+ * @author Alexander Campo <jalexcam@gmail.com>
  */
-interface Lenevor 
+final class ColorTag
 {
-    /**
-     * Bootstrap the application for artisan commands.
-     * 
-     * @return void
-     */
-    public function bootstrap();
-
-    /**
-     * Handle an incoming console command.
-     * 
-     * @param  \Syscodes\Contracts\Console\Output|null  $output
-     * 
-     * @return int
-     */
-    public function handle($output = null);
+    
 }

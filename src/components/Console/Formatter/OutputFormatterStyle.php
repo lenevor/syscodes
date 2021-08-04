@@ -22,6 +22,7 @@
 
 namespace Syscodes\Console\Formatter;
 
+use Syscodes\Console\Style\Color;
 use Syscodes\Contracts\Console\OutputFormatterStyle as OutputFormatterStyleInterface;
 
 /**
@@ -106,7 +107,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
      */
     public function setOption(string $option): void
     {
-        $this->options = [];
+        $this->options[] = $option;
 
         $this->color = new Color($this->foreground, $this->background, $this->options);
     }
