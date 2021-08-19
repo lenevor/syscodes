@@ -22,10 +22,34 @@
 
 namespace Syscodes\Console\Input;
 
+use Syscodes\Console\Input\InputDefinition;
+
 /**
+ * This class represents an input provided as an array.
+ * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
 class ArrayInput extends Input
 {
-    
+    /**
+     * Gets the parameters input.
+     * 
+     * @var array $parameters
+     */
+    protected $parameters;
+
+    /**
+     * Constructor. Create a new ArrayInput instance.
+     * 
+     * @param  array  $parameters
+     * @param  \Syscodes\Console\Input\InputDefinition|null  $definition
+     * 
+     * @return void
+     */
+    public function __construct(array $parameters, InputDefinition $definition = null)
+    {
+        $this->parameters = $parameters;
+
+        parent::__construct($definition);
+    }
 }
