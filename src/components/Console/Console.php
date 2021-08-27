@@ -172,7 +172,7 @@ abstract class Console
     {
         if ('UNKNOWN' !== $this->getName()) {
             if ('UNKNOWN' !== $this->getVersion()) {
-                return sprintf('%s <info>%s</info> (env: <comment>%s</comment>, debug: <comment>%s</comment>) [<magenta>%s</magenta>]', 
+                return sprintf('%s <info>%s</info> (env: <comment>%s</comment>, debug: <comment>%s</comment>) [<note>%s</note>]', 
                     $this->getName(), 
                     $this->getVersion(),
                     env('APP_ENV'),
