@@ -22,6 +22,8 @@
 
 namespace Syscodes\Console\Concerns;
 
+use Syscodes\Console\Style\ColorTag;
+
 /**
  * Trait ApplicationHelp.
  * 
@@ -38,6 +40,56 @@ trait ApplicationHelp
      */
     public function displayVersionInfo($output) 
     {
-        $output->writeln($this->getConsoleVersion());
+        $output->writeln($this->getConsoleWithLogo());
+    }
+
+    /**
+     * Returns the version of the console with logo.
+     *
+     * @return string
+     */
+    public function getConsoleWithLogo(): string
+    {
+        $updateAt  = $this->getParam('updateAt', 'Unknown');
+        $createdAt = $this->getParam('createdAt', 'Unknown');
+
+        if ($logoTxt = $this->getLogoText()) {
+            $logo = ColorTag::wrap($logoTxt, $this->getLogoStyle());
+        }
+
+        $info = "$logo\n".$this->getConsoleVersion().
+                "\n\n<suc>Application Info</suc>: Update at <green>$updateAt</green>, created at <green>$createdAt</green>";
+
+        if ($hUrl = $this->getParam('homepage')) {
+            $info .= "\n\t<suc>Homepage</suc>: $hUrl\n";
+        } elseif ('' !== $this->getParam('homePage')) {
+            $info .= "\n";
+        }
+
+        return $info;
+    }
+
+    /**
+     * Returns the version of the console.
+     *
+     * @return string
+     */
+    public function getConsoleVersion()
+    {
+        if ('UNKNOWN' !== $this->getName()) {
+            if ('UNKNOWN' !== $this->getVersion()) {
+                return sprintf('%s <info>%s</info> (env: <comment>%s</comment>, debug: <comment>%s</comment>) [<magenta>%s</magenta>]', 
+                    $this->getName(), 
+                    $this->getVersion(),
+                    env('APP_ENV'),
+                    env('APP_DEBUG') ? 'true' : 'false',
+			        PHP_OS
+                );
+            }
+
+            return $this->getName();
+        }
+
+        return 'Lenevor CLI Console';
     }
 }
