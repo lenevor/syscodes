@@ -64,7 +64,7 @@ final class Color
 	protected const OPTIONS = [
 		'bold'      => ColorANSICode::BOLD,
 		'fuzzy'     => ColorANSICode::FUZZY,
-		'italic'    => ColorANSICode::ITALIC,
+		'italic'    => ColorANSICode::ITALIC, 
 		'underline' => ColorANSICode::UNDERLINE,
 		'blink'     => ColorANSICode::BLINK,
 		'reverse'   => ColorANSICode::REVERSE,
