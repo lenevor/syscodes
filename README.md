@@ -3,7 +3,7 @@
 <p align="center">
     <a href="https://github.com/lenevor/syscodes/actions"><img src="https://github.com/lenevor/syscodes/workflows/tests/badge.svg" title="Build status"></a>
     <a href="https://packagist.org/packages/lenevor/syscodes"><img src="https://img.shields.io/packagist/dt/lenevor/syscodes?color=gr" title="Total Downloads"></a>
-    <a href="https://packagist.org/packages/lenevor/syscodes"><img src="https://img.shields.io/packagist/v/lenevor/syscodes?color=blue" title="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/lenevor/syscodes"><img src="https://img.shields.io/github/v/tag/lenevor/syscodes?label=release" title="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/lenevor/syscodes"><img src="https://img.shields.io/packagist/l/lenevor/syscodes" title="Licence"></a>
 </p>
 
