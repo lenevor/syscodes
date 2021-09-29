@@ -41,7 +41,7 @@ class ListCommand extends Command
         $this
         ->setName('list')
         ->setDescription('List commands')
-        ->setHelp('hola mundo...');
+        ->setHelp('List command...');
     }
 
     /**
