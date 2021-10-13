@@ -20,18 +20,18 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Bundles\Console;
+namespace Syscodes\Bundles\ApplicationBundle\Console;
 
-use Syscodes\Version;
-use Syscodes\Console\Input\ArgvInput;
-use Syscodes\Support\Facades\Request;
-use Syscodes\Console\Input\ArrayInput;
-use Syscodes\Console\Input\InputOption;
-use Syscodes\Contracts\Events\Dispatcher;
-use Syscodes\Contracts\Container\Container;
-use Syscodes\Console\Application as BaseApplication;
-use Syscodes\Contracts\Console\Input as InputInterface;
-use Syscodes\Contracts\Console\Output as OutputInterface;
+use Syscodes\Components\Version;
+use Syscodes\Components\Console\Input\ArgvInput;
+use Syscodes\Components\Support\Facades\Request;
+use Syscodes\Components\Console\Input\ArrayInput;
+use Syscodes\Components\Console\Input\InputOption;
+use Syscodes\Components\Contracts\Events\Dispatcher;
+use Syscodes\Components\Contracts\Container\Container;
+use Syscodes\Components\Console\Application as BaseApplication;
+use Syscodes\Components\Contracts\Console\Input as InputInterface;
+use Syscodes\Components\Contracts\Console\Output as OutputInterface;
 
 /**
  * Console application.
@@ -43,21 +43,21 @@ class Application extends BaseApplication
 	/**
 	 * The event dispatcher instance.
 	 * 
-	 * @var \Syscodes\Contracts\Events\Dispatcher $events
+	 * @var \Syscodes\Components\Contracts\Events\Dispatcher $events
 	 */
 	protected $events;
 
 	/**
 	 * The Lenevor application instance.
 	 * 
-	 * @var \Syscodes\Contracts\Container|Container $lenevor
+	 * @var \Syscodes\Components\Contracts\Container|Container $lenevor
 	 */
 	protected $lenevor;
 
 	/**
 	 * Console constructor. Initialize the console of Lenevor.
 	 *
-	 * @param  \Syscodes\Contracts\Core\Container  $lenevor
+	 * @param  \Syscodes\Components\Contracts\Core\Container  $lenevor
 	 * 
 	 * @param  string  $version
 	 * 
@@ -100,7 +100,7 @@ class Application extends BaseApplication
 	public function getConsoleVersion(): string
     {
         return parent::getConsoleVersion().
-			sprintf(' (env: <comment>%s</comment>, debug: <comment>%s</comment>) [<info>%s</info>]', 
+			sprintf(' (env: <comment>%s</comment>, debug: <comment>%s</comment>) [<cyan>%s</cyan>]', 
                 env('APP_ENV'),
                 env('APP_DEBUG') ? 'true' : 'false',
 			    PHP_OS

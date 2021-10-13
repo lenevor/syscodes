@@ -20,11 +20,12 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Console\Command;
+namespace Syscodes\Bundles\ApplicationBundle\Console\Commands;
 
-use Syscodes\Console\Util\Show;
-use Syscodes\Console\Application;
-use Syscodes\Console\Style\ColorTag;
+use Syscodes\Components\Console\Util\Show;
+use Syscodes\Components\Console\Application;
+use Syscodes\Components\Console\Style\ColorTag;
+use Syscodes\Components\Console\Command\Command;
 
 /**
  * A console command to display information about of system.
@@ -39,7 +40,7 @@ class AboutCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function configure()
+    protected function define()
     {
         $this
             ->setName('about')
