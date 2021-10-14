@@ -20,16 +20,16 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Log;
+namespace Syscodes\Components\Log;
 
-use Syscodes\Support\ServiceProvider;
+use Syscodes\Components\Support\ServiceProvider;
 
 /**
  * For loading the classes from the container of services.
  * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class LoggerServiceProvider extends ServiceProvider
+class LogServiceProvider extends ServiceProvider
 {
     /**
      * Register the service provider.
