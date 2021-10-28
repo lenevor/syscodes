@@ -22,7 +22,6 @@
 
 // Define the absolute paths for configured directories
 if ( ! defined('APP_PATH')) define('APP_PATH', realpath($paths['path.app']).DIRECTORY_SEPARATOR);
-if ( ! defined('BST_PATH')) define('BST_PATH', realpath($paths['path.bootstrap']).DIRECTORY_SEPARATOR);
 if ( ! defined('CON_PATH')) define('CON_PATH', realpath($paths['path.config']).DIRECTORY_SEPARATOR);
 if ( ! defined('RES_PATH')) define('RES_PATH', realpath($paths['path.resources']).DIRECTORY_SEPARATOR);
 if ( ! defined('SYS_PATH')) define('SYS_PATH', realpath($paths['path.sys']).DIRECTORY_SEPARATOR);
@@ -30,18 +29,18 @@ if ( ! defined('SYS_PATH')) define('SYS_PATH', realpath($paths['path.sys']).DIRE
 // Call the file constants
 require CON_PATH.'constants.php';
 
-if ( ! class_exists(Syscodes\Bundles\ApplicationBundle\Autoloader\Autoload::class, false)) {
-	require_once SYS_PATH.'src/Bundles/ApplicationBundle/Autoloader/AutoloadConfig.php';
-	require_once SYS_PATH.'src/Bundles/ApplicationBundle/Autoloader/Autoload.php';
+if ( ! class_exists(Syscodes\Bundles\WebResourceBundle\Autoloader\Autoload::class, false)) {
+	require_once SYS_PATH.'src/bundles/WebResourceBundle/Autoloader/AutoloadConfig.php';
+	require_once SYS_PATH.'src/bundles/WebResourceBundle/Autoloader/Autoload.php';
 }
 
 // Activate the framework class autoloader
-require SYS_PATH.'src/Bundles/ApplicationBundle/Autoloader/Autoloader.php';
+require SYS_PATH.'src/bundles/WebResourceBundle/Autoloader/Autoloader.php';
 
 // Aliases of the class autoloader 
-class_alias('Syscodes\\Bundles\\ApplicationBundle\\Autoloader\\Autoloader', 'Autoloader');
+class_alias('Syscodes\\Bundles\\WebResourceBundle\\Autoloader\\Autoloader', 'Autoloader');
 
 // Define the core classes to the autoloader
 (new Autoloader)
-    ->initialize(new Syscodes\Bundles\ApplicationBundle\Autoloader\Autoload())
+    ->initialize(new Syscodes\Bundles\WebResourceBundle\Autoloader\Autoload())
     ->register();
