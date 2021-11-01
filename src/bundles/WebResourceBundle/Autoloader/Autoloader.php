@@ -20,7 +20,7 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Bundles\ApplicationBundle\Autoloader;
+namespace Syscodes\Bundles\WebResourceBundle\Autoloader;
 
 use InvalidArgumentException;
 
