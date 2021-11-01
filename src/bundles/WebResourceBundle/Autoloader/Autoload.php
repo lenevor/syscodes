@@ -20,7 +20,7 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Bundles\ApplicationBundle\Autoloader;
+namespace Syscodes\Bundles\WebResourceBundle\Autoloader;
 
 /**
  * Autoload.
@@ -29,34 +29,34 @@ namespace Syscodes\Bundles\ApplicationBundle\Autoloader;
  */
 final class Autoload extends AutoloadConfig
 {
-    /**
+	/**
 	 * Map of class names and locations.
-	 *
+	 * 
 	 * @var array $classmap
 	 */
 	public $classmap = [];
-
-    /**
-	 * If true, then auto-enabled will happen across all namespaces 
+	
+	/**
+	 * If true, then auto-enabled will happen across all namespaces
 	 * loaded by Composer, as well as the namespaces configured locally.
 	 * 
 	 * @var bool $enabledInComposer
 	 */
 	public $enabledInComposer = true;
-
-    /**
+	
+	/**
 	 * Array of files for autoloading.
 	 * 
 	 * @var array $includeFiles
 	 */
 	public $includeFiles = [];
-
-    /**
+	
+	/**
 	 * Array of namespaces for autoloading.
-	 *
+	 * 
 	 * @var array $psr4
 	 */
-    public $prs4 = []; 
+	public $prs4 = [];
 	
 	/**
 	 * Constructor. Create a new Autoload instance.
