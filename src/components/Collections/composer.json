@@ -1,0 +1,31 @@
+{
+	"name": "syscodes/collections",
+	"description": "The Syscodes Collections package.",
+	"keywords": ["lenevor","collections"],
+	"license": "BSD-3-Clause",
+	"homepage": "https://lenevor.com",
+	"support": {
+		"issues": "https://github.com/lenevor/syscodes/issues",
+        "source": "https://github.com/lenevor/syscodes"
+	},
+	"authors": [
+		{
+			"name": "Alexander Campo",
+			"email": "jalexcam@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^7.4|^8.0",
+		"syscodes/contracts": "^0.7.6"
+	},
+	"autoload": {
+		"psr-4": {
+			"Syscodes\\Collections\\": ""
+		},
+		"files": [
+            "helpers.php"
+        ]
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}

@@ -1,0 +1,29 @@
+{
+	"name": "syscodes/container",
+	"description": "The Syscodes Container package.",
+	"keywords": ["lenevor","container"],
+	"license": "BSD-3-Clause",
+	"homepage": "https://lenevor.com",
+	"support": {
+		"issues": "https://github.com/lenevor/syscodes/issues",
+        "source": "https://github.com/lenevor/syscodes"
+	},
+	"authors": [
+		{
+			"name": "Alexander Campo",
+			"email": "jalexcam@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^7.4|^8.0",
+		"psr/container": "^1.0",
+		"syscodes/contracts": "^0.7.6"
+	},
+	"autoload": {
+		"psr-4": {
+			"Syscodes\\Container\\": ""
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}

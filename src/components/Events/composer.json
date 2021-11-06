@@ -1,0 +1,29 @@
+{
+	"name": "syscodes/events",
+	"description": "The Syscodes Events package.",
+	"keywords": ["lenevor","events"],
+	"license": "BSD-3-Clause",
+	"homepage": "https://lenevor.com",
+	"support": {
+		"issues": "https://github.com/lenevor/syscodes/issues",
+        "source": "https://github.com/lenevor/syscodes"
+	},
+	"authors": [
+		{
+			"name": "Alexander Campo",
+			"email": "jalexcam@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^7.4|^8.0",
+		"syscodes/contracts": "^0.7.6",
+		"syscodes/support": "^0.7.6"
+	},
+	"autoload": {
+		"psr-4": {
+			"Syscodes\\Events\\": ""
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
