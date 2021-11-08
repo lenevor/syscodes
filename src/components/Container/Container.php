@@ -134,16 +134,9 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Alias a type to a diferent name.
-     * 
-     * @param  string  $id
-     * @param  string  $alias
-     * 
-     * @return void
-     * 
-     * @throws \Syscodes\Components\Container\Exceptions\ContainerException
+     * {@inheritdoc}
      */
-    public function alias($id, $alias)
+    public function alias($id, $alias): void
     {
         if ($alias === $id) {
             throw new ContainerException("[{$id}] is aliased to itself");
@@ -153,15 +146,9 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Register a binding with container.
-     * 
-     * @param  string  $id
-     * @param  \Closure|string|null  $value
-     * @param  bool  $singleton
-     * 
-     * @return void
+     * {@inheritdoc}
      */
-    public function bind($id, $value = null, bool $singleton = false)
+    public function bind($id, $value = null, bool $singleton = false): void
     {   
         $this->dropInstances($id);
 
@@ -205,13 +192,9 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Determine if the given id type has been resolved.
-     *
-     * @param  string  $id
-     * 
-     * @return bool
+     * {@inheritdoc}
      */
-    public function resolved($id)
+    public function resolved($id): bool
     {
         if ($this->isAlias($id)) {
             $id = $this->getAlias($id);
@@ -227,13 +210,40 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return void
      */
-    protected function reBound($id)
+    protected function reBound($id): void
     {
         $instance = $this->make($id);
 
         foreach ($this->getBound($id) as $callback) {
             call_user_func($callback, $this, $instance);
         }
+    }
+
+    /**
+     * Extender an id type in the container.
+     *
+     * @param  string  $id
+     * @param  \Closure  $closure
+     * 
+     * @return void
+     */
+    public function extend($id, Closure $closure)
+    {
+        if ( ! isset($this->bindings[$id])) {
+            throw new InvalidArgumentException("Type {$id} is not bound.");
+        }
+        
+        if (isset($this->instances[$id])) {
+            $this->instances[$id] = $closure($this->instances[$id], $this);
+            
+            return $this->reBound($id);
+        }
+        
+        $resolver = $this->bindings[$id]['value'];
+        
+        $this->bind($id, function ($container) use ($resolver, $closure) {
+            return $closure($resolver($container), $container);
+        }, $this->isSingleton($id));
     }
 
     /**
@@ -244,7 +254,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return void
      */
-    public function singleton($id, $value = null)
+    public function singleton($id, $value = null): void
     {
         $this->bind($id, $value, true);
     }    
@@ -294,7 +304,7 @@ class Container implements ArrayAccess, ContainerContract
      *
      * @param  string  $class
      * 
-     * @return void
+     * @return mixed
      *
      * @throws \Syscodes\Components\Contracts\Container\BindingResolutionException
      */
@@ -318,7 +328,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return array
      */
-    protected function getDependencies(array $dependencies) 
+    protected function getDependencies(array $dependencies): array
     {
         $param = [];
 
@@ -344,7 +354,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return bool
      */
-    protected function getHasParameters($dependency)
+    protected function getHasParameters($dependency): bool
     {
         return array_key_exists($dependency->name, $this->getLastParameterOverride());
     }
@@ -354,7 +364,7 @@ class Container implements ArrayAccess, ContainerContract
      *
      * @return array
      */
-    protected function getLastParameterOverride()
+    protected function getLastParameterOverride(): array
     {
         return count($this->across) ? end($this->across) : [];
     }
@@ -418,40 +428,13 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Extender an id type in the container.
-     *
-     * @param  string  $id
-     * @param  \Closure  $closure
-     * 
-     * @return void
-     */
-    public function extend($id, Closure $closure) 
-    {
-        if ( ! isset($this->bindings[$id])) {
-            throw new InvalidArgumentException("Type {$id} is not bound.");
-        }
-        
-        if (isset($this->instances[$id])) {
-            $this->instances[$id] = $closure($this->instances[$id], $this);
-            
-            return $this->reBound($id);
-        }
-        
-        $resolver = $this->bindings[$id]['value'];
-        
-        $this->bind($id, function ($container) use ($resolver, $closure) {
-            return $closure($resolver($container), $container);
-        }, $this->isSingleton($id));
-    }
-
-    /**
      * Remove all id traces of the specified binding.
      * 
      * @param  string  $id
      * 
      * @return void
      */
-    protected function destroyBinding($id)
+    protected function destroyBinding($id): void
     {
         if ($this->has($id)) {
             unset($this->bindings[$id], $this->instances[$id], $this->resolved[$id]);
@@ -465,19 +448,15 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return void
      */
-    protected function dropInstances($id)
+    protected function dropInstances($id): void
     {
         unset($this->instances[$id], $this->aliases[$id]);
     }
 
     /**
-     * Marks a callable as being a factory service.
-     * 
-     * @param  string  $id
-     * 
-     * @return void
+     * {@inheritdoc}
      */
-    public function factory($id)
+    public function factory($id): Closure
     {
         return function () use ($id) {
             return $this->make($id);
@@ -485,13 +464,9 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Get the alias for an id if available.
-     * 
-     * @param  string  $id
-     * 
-     * @return string
+     * {@inheritdoc}
      */
-    public function getAlias($id)
+    public function getAlias($id): string
     {
         return isset($this->aliases[$id]) 
                 ? $this->getAlias($this->aliases[$id])
@@ -499,11 +474,9 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Return and array containing all bindings.
-     * 
-     * @return array
+     * {@inheritdoc}
      */
-    public function getBindings()
+    public function getBindings(): array
     {
         return $this->bindings;
     }
@@ -521,12 +494,7 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Register an existing instance as singleton in the container.
-     *
-     * @param  string  $id
-     * @param  mixed  $instance
-     * 
-     * @return mixed
+     * {@inheritdoc}
      */
     public function instance($id, $instance) 
     {
@@ -548,22 +516,15 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Return all defined value binding.
-     * 
-     * @return array
+     * {@inheritdoc}
      */
-    public function keys()
+    public function keys(): array
     {
         return array_keys($this->bindings);
     }
 
     /**
-     * An alias function name for make().
-     * 
-     * @param  string  $id
-     * @param  array  $parameters
-     * 
-     * @return mixed
+     * {@inheritdoc}
      */
     public function makeAssign($id, array $parameters = [])
     {
@@ -571,12 +532,7 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Resolve the given type from the container.
-     * 
-     * @param  string  $id
-     * @param  array  $parameters
-     * 
-     * @return mixed
+     * {@inheritdoc}
      */
     public function make($id, array $parameters = []) 
     {
@@ -631,7 +587,7 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return bool
      */
-    public function isAlias($name)
+    public function isAlias($name): bool
     {
         return isset($this->aliases[$name]);
     }
@@ -696,13 +652,7 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Call the given callable / class@method and inject its dependencies.
-     * 
-     * @param  \callable|string  $callback
-     * @param  array  $parameters
-     * @param  string|null  $defaultMethod
-     * 
-     * @return mixed
+     * {@inheritdoc}
      */
     public function call($callback, array $parameters = [], string $defaultMethod = null)
     {
@@ -716,22 +666,15 @@ class Container implements ArrayAccess, ContainerContract
      * 
      * @return void
      */
-    public function remove($id)
+    public function remove($id): void
     {
         $this->destroyBinding($id);
     }
 
     /**
-     * Set the binding with given key / value.
-     * 
-     * @param  string  $id
-     * @param  string  $value
-     * 
-     * @return $this
-     * 
-     * @throws \Syscodes\Components\Container\Exceptions\ContainerException
+     * {@inheritdoc}
      */
-    public function set($id, string $value)
+    public function set($id, string $value): self
     {
         if ( ! $this->bound($id)) {
             throw new ContainerException($id);
@@ -743,11 +686,9 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Flush the container of all bindings and resolved instances.
-     * 
-     * @return void
+     * {@inheritdoc}
      */
-    public function flush()
+    public function flush(): void
     {
         $this->aliases   = [];
         $this->resolved  = [];
@@ -863,6 +804,8 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
+     * Magic method.
+     * 
      * Dynamically access container services.
      * 
      * @param  string  $key
@@ -875,6 +818,8 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
+     * Magic method.
+     * 
      * Dynamically set container services.
      * 
      * @param  string  $key
