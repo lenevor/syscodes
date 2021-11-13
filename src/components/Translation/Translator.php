@@ -25,6 +25,7 @@ namespace Syscodes\Components\Translation;
 use MessageFormatter;
 use InvalidArgumentException;
 use Syscodes\Components\Support\Str;
+use Syscodes\Components\Collections\Arr;
 use Syscodes\Components\Contracts\Translation\Loader;
 use Syscodes\Components\Contracts\Translation\Translator as TranslatorContract;
 
@@ -44,18 +45,11 @@ class Translator implements TranslatorContract
     protected $fallback;
 
     /**
-     * Get the language lines from files.
+     * Array of language translation groups.
      * 
      * @var array $language
      */
     protected $language = [];
-
-    /**
-     * Array of loaded files.
-     * 
-     * @var array $loaded
-     */
-    protected $loaded = [];
 
     /**
      * The loader implementation.
@@ -112,37 +106,89 @@ class Translator implements TranslatorContract
         $locale = $locale ?: $this->locale;
 
         $this->load('*', $locale);
-
-        $locales = $fallback ? $this->localeArray($locale) : [$locale];
         
-        foreach ($locales as $locale) {
-            if ( ! is_null($line = $this->getLine($key, $locale, $replace))) {
-                return $line;
+        $line = $this->language['*'][$locale][$key] ?? null;
+
+        if ( ! isset($line)) {
+            // Parse out the file name and the actual alias.
+            // Will load the language file and strings.
+            [$group, $item] = $this->parseLine($key);
+
+            $locales = $fallback ? $this->localeArray($locale) : [$locale];
+            
+            foreach ($locales as $locale) {
+                if ( ! is_null($line = $this->getLine(
+                        $group, $locale, $item, $replace
+                ))) {
+                    return $line;
+                }
             }
         }
 
-        return $this->makeReplacements($key, $replace);
+        return $this->makeReplacements($line ?: $key, $replace);
+    }
+
+    /**
+     * Parses the language string which should include the
+     * filename as the first segment (separated by period).
+     * 
+     * @param  string  $key
+     * 
+     * @return array
+     */
+    protected function parseLine(string $key): array
+    {
+        if (isset($this->language[$key])) {
+            return $this->language[$key];
+        }
+        
+        if (strpos($key, '::') === false) {
+            $segments = explode('.', $key);
+            
+            $parsed = $this->parseSegments($segments);
+        }
+
+        return $this->language[$key] = $parsed;
+    }
+    
+    /**
+     * Parse an array of segments.
+     * 
+     * @param  array  $segments
+     * 
+     * @return array
+     */
+    protected function parseSegments(array $segments): array
+    {
+        $group = $segments[0];
+        
+        $item = count($segments) === 1
+                    ? null
+                    : implode('.', array_slice($segments, 1));
+                    
+        return [$group, $item];
     }
 
     /**
      * Parses the language string for a file, loads the file, if necessary,
      * getting the line.
      * 
-     * @param  string  $line
+     * @param  string  $group
      * @param  string  $locale
+     * @param  string  $item
      * @param  array  $replace
      * 
      * @return string|array  Returns line
      */
-    protected function getLine($line, $locale, array $replace = [])
-    {   
-        $this->load($line, $locale);
+    protected function getLine(
+        $group, 
+        $locale, 
+        $item, 
+        array $replace = []
+    ) {   
+        $this->load($group, $locale);       
         
-        // Parse out the file name and the actual alias.
-        // Will load the language file and strings.
-        list($file, $group) = $this->parseLine($line, $locale);
-        
-        $output = $this->language[$locale][$file][$group] ?? $line;
+        $output = Arr::get($this->language[$group][$locale], $item);
 
         if (is_string($output)) {
             return $this->makeReplacements($output, $replace);
@@ -154,65 +200,38 @@ class Translator implements TranslatorContract
             return $output;
         }
     }
-    
-    /**
-     * Parses the language string which should include the
-     * filename as the first segment (separated by period).
-     * 
-     * @param  string  $line
-     * @param  string  $locale
-     * 
-     * @return array
-     */
-    protected function parseLine(string $line, string $locale)
-    {
-        $this->load($line, $locale);
-
-        $file = substr($line, 0, strpos($line, '.'));
-        $line = substr($line, strlen($file) + 1);
-
-        if (isset($this->language[$locale][$file])) {
-            $this->load($file, $locale);
-        }
-
-        if ( ! isset($this->language[$locale][$file]) || ! array_key_exists($line, $this->language[$locale][$file])) {
-            $this->load($file, $locale);
-        }
-        
-        return [$file, $line];
-    }
 
     /**
-     * Loads a language file in the current locale, otherwise will merge with the 
+     * Loads a language group in the current locale, otherwise will merge with the 
      * existing language lines.
      * 
-     * @param  string  $file
+     * @param  string  $group
      * @param  string  $locale  
      * 
-     * @return array|null
+     * @return void
      */
-    protected function load($file, $locale)
+    protected function load($group, $locale): void
     {
-        if ($this->isLoaded($file, $locale)) {
+        if ($this->isLanguage($group, $locale)) {
             return;
         }
         
-        $lang = $this->loader->load($locale, $file);
+        $lang = $this->loader->load($locale, $group);
 
-        $this->language[$locale][$file] = $lang;
+        $this->language[$group][$locale] = $lang;
     }
     
     /**
-     * Determine if the given file has been loaded.
+     * Determine if the given group has been language.
      * 
-     * @param  string  $file
+     * @param  string  $group
      * @param  string  $locale
      * 
      * @return bool
      */
-    protected function isLoaded($file, $locale)
+    protected function isLanguage($group, $locale): bool
     {
-        return isset($this->language[$locale][$file]);
+        return isset($this->language[$group][$locale]);
     }
 
     /**
@@ -288,7 +307,7 @@ class Translator implements TranslatorContract
      * 
      * @return void
      */
-    public function setLocale($locale)
+    public function setLocale($locale): void
     {
         if (Str::contains($locale, ['/', '\\'])) {
             throw new InvalidArgumentException('Invalid characters present in locale.');
