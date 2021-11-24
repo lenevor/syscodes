@@ -2,7 +2,7 @@
 
 ## [Version 0.7.7-alpha.7] 
 
-Release Date: Nov 23, 2021
+Release Date: Nov 24, 2021
 
 **Next alpha release of Lenevor**
 
@@ -22,6 +22,9 @@ Release Date: Nov 23, 2021
 - Added an alias function name for `make()`
 - Added new method for call on any terminable middleware
 - Added method for a locale from a given Json
+
+### Fixed
+- Fix bug in insert and update of `Query Builder`
 
 ### Changed
 - Changed the format for to color tags of a text
