@@ -61,7 +61,7 @@ class Parameters implements IteratorAggregate, Countable
 	 * 
 	 * @return array
 	 */
-	public function all()
+	public function all(): array
 	{
 		$key = func_num_args() > 0 ? func_get_arg(0) : null;
 
@@ -77,7 +77,7 @@ class Parameters implements IteratorAggregate, Countable
 	 * 
 	 * @return array
 	 */
-	public function keys()
+	public function keys(): array
 	{
 		return array_keys($this->parameters);
 	}
@@ -151,7 +151,7 @@ class Parameters implements IteratorAggregate, Countable
 	 *
 	 * @return void
 	 */
-	public function remove(string $key)
+	public function remove(string $key): void
 	{
 		if ($this->has($key)) {
 			unset($this->parameters[$key]);
