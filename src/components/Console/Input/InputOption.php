@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2021 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -129,7 +129,7 @@ class InputOption implements InputOptionInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getDescription(): string
     {
@@ -137,7 +137,7 @@ class InputOption implements InputOptionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setDescription(string $description): void
     {
@@ -145,7 +145,7 @@ class InputOption implements InputOptionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getDefault()
     {
@@ -153,7 +153,7 @@ class InputOption implements InputOptionInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setDefault($default = null): void
     {
@@ -173,7 +173,7 @@ class InputOption implements InputOptionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getName(): string
     {
@@ -181,7 +181,7 @@ class InputOption implements InputOptionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setName(string $name): void
     {
@@ -189,7 +189,7 @@ class InputOption implements InputOptionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getShortcut()
     {
@@ -197,7 +197,7 @@ class InputOption implements InputOptionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setShortcut($shortcut): void
     {
@@ -213,7 +213,7 @@ class InputOption implements InputOptionInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function isAcceptValue(): bool
     {
@@ -221,7 +221,7 @@ class InputOption implements InputOptionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function isValueRequired(): bool
     {
@@ -229,7 +229,7 @@ class InputOption implements InputOptionInterface
     }
     
     /**
-     * G@inheritdoc
+     * G{@inheritdoc}
      */
     public function isValueOptional(): bool
     {
@@ -237,7 +237,7 @@ class InputOption implements InputOptionInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function isArray(): bool
     {
@@ -245,7 +245,7 @@ class InputOption implements InputOptionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function isNegatable(): bool
     {

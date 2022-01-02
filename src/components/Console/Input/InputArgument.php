@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2021 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -96,7 +96,7 @@ class InputArgument implements InputArgumentInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getName(): string
     {
@@ -104,7 +104,7 @@ class InputArgument implements InputArgumentInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setName(string $name): void
     {
@@ -112,7 +112,7 @@ class InputArgument implements InputArgumentInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getMode(): int
     {
@@ -120,7 +120,7 @@ class InputArgument implements InputArgumentInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setMode(int $mode): void
     {
@@ -128,7 +128,7 @@ class InputArgument implements InputArgumentInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getDescription(): string
     {
@@ -136,7 +136,7 @@ class InputArgument implements InputArgumentInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setDescription(string $description): void
     {
@@ -154,7 +154,7 @@ class InputArgument implements InputArgumentInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setDefault($default = null): void
     {
@@ -174,7 +174,7 @@ class InputArgument implements InputArgumentInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function isRequired(): bool
     {
@@ -182,7 +182,7 @@ class InputArgument implements InputArgumentInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function isArray(): bool
     {

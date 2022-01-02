@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2021 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -118,7 +118,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setForeground(string $color = null): void
     {
@@ -132,7 +132,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setBackground(string $color = null): void
     {
@@ -146,7 +146,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setOption(string $option): void
     {
@@ -165,7 +165,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function unsetOption(string $option): void
     {
@@ -186,7 +186,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setOptions(array $options): void
     {
@@ -198,7 +198,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function apply(string $text): string
     {

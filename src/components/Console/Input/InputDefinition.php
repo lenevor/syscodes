@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2021 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -132,7 +132,7 @@ class InputDefinition implements InputDefinitionInterface
     */
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setArguments(array $arguments = [])
     {
@@ -142,7 +142,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function addArguments(array $arguments = [])
     {
@@ -152,7 +152,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function addArgument(InputArgument $argument)
     {
@@ -182,7 +182,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getArgument($name)
     {
@@ -196,7 +196,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function hasArgument($name): bool
     {
@@ -206,7 +206,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getArguments()
     {
@@ -214,7 +214,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getArgumentCount(): int
     {
@@ -222,7 +222,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getArgumentRequiredCount(): int
     {
@@ -236,7 +236,7 @@ class InputDefinition implements InputDefinitionInterface
     */
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setOptions(array $options = [])
     {
@@ -247,7 +247,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function addOptions(array $options = [])
     {
@@ -257,7 +257,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function addOption(InputOption $option)
     {
@@ -293,7 +293,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getOption(string $name)
     {
@@ -305,7 +305,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function hasOption(string $name): bool
     {
@@ -313,7 +313,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getOptions(): array
     {
@@ -321,7 +321,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      * @return bool  True if the InputOption object exists, false otherwise
      */
     public function hasShortcut(string $name): bool
@@ -330,7 +330,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getOptionByShortcut(string $name)
     {
@@ -338,7 +338,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function shortcutToName(string $name)
     {
@@ -350,7 +350,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function hasNegation(string $name): bool
     {
@@ -358,7 +358,7 @@ class InputDefinition implements InputDefinitionInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function negationToName(string $name): string
     {
