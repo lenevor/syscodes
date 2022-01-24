@@ -16,12 +16,12 @@
 	],
 	"require": {
 		"php": "^7.4|^8.0",
-		"syscodes/contracts": "^0.7.6",
-		"syscodes/support": "^0.7.6"
+		"syscodes/contracts": "^0.7.8",
+		"syscodes/support": "^0.7.8"
 	},
 	"autoload": {
 		"psr-4": {
-			"Syscodes\\Events\\": ""
+			"Syscodes\\Components\\Events\\": ""
 		}
 	},
 	"minimum-stability": "dev",
