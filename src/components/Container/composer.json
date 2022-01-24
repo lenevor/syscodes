@@ -17,11 +17,11 @@
 	"require": {
 		"php": "^7.4|^8.0",
 		"psr/container": "^1.0",
-		"syscodes/contracts": "^0.7.6"
+		"syscodes/contracts": "^0.7.8"
 	},
 	"autoload": {
 		"psr-4": {
-			"Syscodes\\Container\\": ""
+			"Syscodes\\Components\\Container\\": ""
 		}
 	},
 	"minimum-stability": "dev",
