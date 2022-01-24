@@ -16,12 +16,12 @@
 	],
 	"require": {
 		"php": "^7.4|^8.0",
-		"syscodes/contracts": "^0.7.6",
-		"syscodes/routing": "^0.7.6"
+		"syscodes/contracts": "^0.7.8",
+		"syscodes/routing": "^0.7.8"
 	},
 	"autoload": {
 		"psr-4": {
-			"Syscodes\\Controller\\": ""
+			"Syscodes\\Components\\Controller\\": ""
 		}
 	},
 	"minimum-stability": "dev",
