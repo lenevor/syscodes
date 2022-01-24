@@ -19,7 +19,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Syscodes\\Dotenv\\": ""
+			"Syscodes\\Components\\Dotenv\\": ""
 		}
 	},
 	"minimum-stability": "dev",
