@@ -16,11 +16,11 @@
 	],
 	"require": {
 		"php": "^7.4|^8.0",
-		"syscodes/support": "^0.7.6"
+		"syscodes/support": "^0.7.8"
 	},
 	"autoload": {
 		"psr-4": {
-			"Syscodes\\Redis\\": ""
+			"Syscodes\\Components\\Redis\\": ""
 		}
 	},
 	"suggest": {
