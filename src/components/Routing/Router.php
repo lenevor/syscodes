@@ -43,9 +43,9 @@ class Router implements Routable
 {
 	use Concerns\RouteMap,
 	    Concerns\RouteResolver,
-        Macroable {
-			__call as macroCall;
-		}
+	    Macroable {
+		    __call as macroCall;
+	    }
 
 	/**
 	 * The registered route value binders.
