@@ -1,0 +1,33 @@
+{
+	"name": "syscodes/routing",
+	"description": "The Syscodes Routing package.",
+	"keywords": ["lenevor","routing"],
+	"license": "BSD-3-Clause",
+	"homepage": "https://lenevor.com",
+	"support": {
+		"issues": "https://github.com/lenevor/syscodes/issues",
+        "source": "https://github.com/lenevor/syscodes"
+	},
+	"authors": [
+		{
+			"name": "Alexander Campo",
+			"email": "jalexcam@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^7.4|^8.0",
+		"syscodes/container": "^0.7.8",
+		"syscodes/contracts": "^0.7.8",
+		"syscodes/controller": "^0.7.8",
+		"syscodes/core": "^0.7.8",
+		"syscodes/http": "^0.7.8",
+		"syscodes/support": "^0.7.8"
+	},
+	"autoload": {
+		"psr-4": {
+			"Syscodes\\Components\\Routing\\": ""
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
