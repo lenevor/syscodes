@@ -237,7 +237,7 @@ trait Date
      */
     public function toLocalizedFormatter(?string $format = null)
     {
-        $format = $format ?? $this->$toStringFormat;
+        $format = $format ?? $this->toStringFormat;
 
         return IntlDateFormatter::formatObject($this->toDateTime(), $format, $this->locale);
     }
@@ -257,7 +257,7 @@ trait Date
      */
     public function humanize()
     {
-        $now     = IntlCalendar::fromDateTime(static::now($this->timezone)->toDateTimeString());
+        $now     = IntlCalendar::fromDateTime(static::now($this->timezone,)->toDateTimeString());
         $time    = $this->getCalendar()->getTime();
         $years   = $now->fieldDifference($time, IntlCalendar::FIELD_YEAR);
         $months  = $now->fieldDifference($time, IntlCalendar::FIELD_MONTH);
