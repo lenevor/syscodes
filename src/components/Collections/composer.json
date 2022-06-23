@@ -20,7 +20,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Syscodes\\Components\\Collections\\": ""
+			"Syscodes\\Components\\Support\\": ""
 		},
 		"files": [
             "helpers.php"
