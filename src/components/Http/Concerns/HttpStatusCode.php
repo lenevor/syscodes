@@ -20,28 +20,31 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
  
-namespace Syscodes\Components\Http\Contributors;
+namespace Syscodes\Components\Http\Concerns;
+
+use BadMethodCallException;
+use InvalidArgumentException;
 
 /**
- * This class is responsible for loading the different HTTP status codes existing. 
+ * This trait is responsible for loading the different HTTP status codes existing. 
  * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class Status 
+trait HttpStatusCode
 {
 	/**
 	 * The HTTP status code.
 	 *
-	 * @var int $status
+	 * @var int $statusCode
 	 */
-	protected $status = 200;
+	protected $statusCode = 200;
 
 	/**
 	 * An array of status codes and messages.
 	 *
-	 * @var array $statusCode
+	 * @var array $statusCodeTexts
 	 */
-	public $statusCodes = [
+	public static $statusCodeTexts = [
 		// 1xx: Informational
 		100 => 'Continue',
 		101 => 'Switching Protocols',
@@ -121,4 +124,117 @@ class Status
 	 * @var string $statusText
 	 */
 	protected $statusText;
+
+	/**
+	 * Gets the response status code.
+	 *
+	 * The status code is a 3-digit code to specify server response results to the browser.
+	 *
+	 * @return int
+	 *
+	 * @throws \BadMethodCallException
+	 */
+	public function getStatusCode(): int
+	{
+		if (empty($this->statusCode)) {
+			throw new BadMethodCallException('HTTP Response is missing a status code.');
+		}
+
+		return $this->statusCode;
+	}
+
+	/**
+	* Sets the response status code.
+	*
+	* @param  int  $code  The status code
+	* @param  string|null  $text  The status text
+	*
+	* @return self
+	*
+	* @throws \InvalidArgumentException
+	*/
+	public function setStatusCode(int $code, $text = null): self
+	{
+		$this->statusCode = $code; 
+
+		// Valid range?
+		if ($this->isInvalid()) {
+			throw new InvalidArgumentException(__('response.statusCodeNotValid', ['code' => $code]));			
+		}
+
+		// Check if you have an accepted status code if not shows to a message of unknown status
+		if (null === $text) {
+			$this->statusText = self::$statusCodeTexts[$code] ?? __('response.UnknownStatus');
+
+			return $this;
+		}
+
+		if (false === $text) {
+			$this->statusText = '';
+
+			return $this;
+		}
+
+		$this->statusText = $text;
+
+		return $this;
+	}
+
+	/**
+	 * Is response invalid?
+	 * 
+	 * @final
+	 * 
+	 * @return bool
+	 */
+	public function isInvalid(): bool
+	{
+		return $this->statusCode < 100 || $this->statusCode >= 600;
+	}
+
+	/**
+	 * Is response informative?
+	 * 
+	 * @final
+	 * 
+	 * @return bool
+	 */
+	public function isInformational(): bool
+	{
+		return $this->statusCode >= 100 && $this->statusCode < 200;
+	}
+	
+	/**
+	 * Is the response a redirect?
+	 * 
+	 * @final
+	 * 
+	 * @return void
+	 */
+	public function isRedirection(): bool
+	{
+		return $this->statusCode >= 300 && $this->statusCode < 400;
+	}
+	
+	/**
+	 * Is the response empty?
+	 * 
+	 * @final
+	 * 
+	 * @return bool
+	 */
+	public function isEmpty(): bool
+	{
+		return in_array($this->statusCode, [204, 304]);
+	}
+	
+	/**
+	 * Is the response a redirect of some form?
+	 * 
+	 * @return bool
+	 */
+	public function isRedirect(): bool
+	{
+		return in_array($this->statusCode, [301, 302, 303, 307, 308]);
+	}
 }
