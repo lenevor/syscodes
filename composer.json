@@ -23,7 +23,7 @@
             "src/components/Support/Helpers.php"
         ],
         "psr-4": {
-            "Syscodes\\": "src/components/"
+            "Syscodes\\Components": "src/components/"
         }
     },
     "extra": {
