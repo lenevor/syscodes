@@ -20,41 +20,32 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Components\Hashing;
-
-use Syscodes\Components\Support\ServiceProvider;
-use Syscodes\Components\Contracts\Support\Deferrable;
+namespace Syscodes\Components\Hashing\Drivers;
 
 /**
- * For loading the hash class from the container of services.
+ * Allows get the information and verifiy of the given hashed value.
  * 
  * @author Alexander Campo <jalexcam@gmail.com>
  */
-class HashServiceProvider extends ServiceProvider implements Deferrable
+abstract class AbstractHasher
 {
     /**
-     * Register the service provider.
-     * 
-     * @return void
+     * {@inheritdoc}
      */
-    public function register()
+    public function info($hashedValue): array
     {
-        $this->app->singleton('hash', function ($app) {
-            return new HashManager($app);
-        });
-        
-        $this->app->singleton('hash.driver', function ($app) {
-            return $app['hash']->driver();
-        });
+        return password_get_info($hashedValue);
     }
-    
+
     /**
-     * Get the services provided by the provider.
-     * 
-     * @return array
+     * {@inheritdoc}
      */
-    public function provides()
+    public function check($value, $hashedValue, array $options = []): bool
     {
-        return ['hash', 'hash.driver'];
+        if (strlen($hashedValue) === 0) {
+            return false;
+        }
+        
+        return password_verify($value, $hashedValue);
     }
 }

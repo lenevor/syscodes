@@ -20,41 +20,32 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Components\Hashing;
-
-use Syscodes\Components\Support\ServiceProvider;
-use Syscodes\Components\Contracts\Support\Deferrable;
+namespace Syscodes\Components\Support\Facades;
 
 /**
- * For loading the hash class from the container of services.
+ * Initialize the Hash class facade.
  * 
  * @author Alexander Campo <jalexcam@gmail.com>
+ * 
+ * @method static array info(string $hashedValue)
+ * @method static bool check(string $value, string $hashedValue, array $options = [])
+ * @method static bool needsRehash(string $hashedValue, array $options = [])
+ * @method static string make(string $value, array $options = [])
+ * @method static \Syscodes\Components\Hashing\HashManager extend($driver, \Closure $callback)
+ * 
+ * @see \Syscodes\Components\Hashing\HashManager
  */
-class HashServiceProvider extends ServiceProvider implements Deferrable
+class Hash extends Facade
 {
     /**
-     * Register the service provider.
+     * Get the registered name of the component.
      * 
-     * @return void
-     */
-    public function register()
-    {
-        $this->app->singleton('hash', function ($app) {
-            return new HashManager($app);
-        });
-        
-        $this->app->singleton('hash.driver', function ($app) {
-            return $app['hash']->driver();
-        });
-    }
-    
-    /**
-     * Get the services provided by the provider.
+     * @return string
      * 
-     * @return array
+     * @throws \RuntimeException
      */
-    public function provides()
+    protected static function getFacadeAccessor(): string
     {
-        return ['hash', 'hash.driver'];
+        return 'hash';
     }
 }
