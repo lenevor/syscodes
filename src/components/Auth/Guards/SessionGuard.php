@@ -36,7 +36,79 @@ use Syscodes\Components\Auth\Concerns\GuardAuthenticationUser;
 class SessionGuard implements StateGuard, SupportedBasicAuth
 {
     use GuardAuthenticationUser,
-        Macroable;
+        Macroable;    
+    
+    /**
+     * The name of the guard. Typically "web".
+     *
+     * Corresponds to guard name in authentication configuration.
+     *
+     * @var string
+     */
+    protected $name;
+
+    /**
+     * The user we last attempted to retrieve.
+     *
+     * @var \Syscodes\Components\Contracts\Auth\Authenticatable
+     */
+    protected $lastAttempted;
+
+    /**
+     * Indicates if the user was authenticated via a recaller cookie.
+     *
+     * @var bool
+     */
+    protected $viaRemember = false;
+
+    /**
+     * The number of minutes that the "remember me" cookie should be valid for.
+     *
+     * @var int
+     */
+    protected $rememberDuration = 2628000;
+
+    /**
+     * The session used by the guard.
+     *
+     * @var \Syscodes\Components\Contracts\Session\Session
+     */
+    protected $session;
+
+    /**
+     * The component cookie creator service.
+     *
+     * @var \Syscodes\Components\Contracts\Cookie\QueueingFactory
+     */
+    protected $cookie;
+
+    /**
+     * The request instance.
+     *
+     * @var \Syscodes\Component\Http\Request
+     */
+    protected $request;
+
+    /**
+     * The event dispatcher instance.
+     *
+     * @var \Syscodes\Components\Contracts\Events\Dispatcher
+     */
+    protected $events;
+
+    /**
+     * Indicates if the logout method has been called.
+     *
+     * @var bool
+     */
+    protected $loggedOut = false;
+
+    /**
+     * Indicates if a token user retrieval has been attempted.
+     *
+     * @var bool
+     */
+    protected $recallAttempted = false;
 
     /**
      * {@inheritdoc}
