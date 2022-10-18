@@ -26,7 +26,12 @@ use Syscodes\Components\Support\Manager;
 use Syscodes\Components\Contracts\Hashing\Hasher;
 use Syscodes\Components\Hashing\Drivers\BcryptHasher;
 
-class hashManager extends Manager implements Hasher
+/**
+ * The Lenevor hash system for encrypted.
+ * 
+ * @author Alexander Campo <jalexcam@gmail.com>
+ */
+class HashManager extends Manager implements Hasher
 {
     /**
      * Create an instance of the Bcrypt hash Driver.
