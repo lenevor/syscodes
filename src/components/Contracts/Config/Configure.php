@@ -24,8 +24,6 @@ namespace Syscodes\Components\Contracts\Config;
 
 /**
  * Sets functions for the config item.
- * 
- * @author Alexander Campo <jalexcam@gmail.com>
  */
 interface Configure
 {
@@ -44,8 +42,6 @@ interface Configure
 	 * @param  string  $key  A (dot notated) config key
 	 * 
 	 * @return array|bool
-	 * 
-	 * @uses   \Syscodes\Components\Collections\Arr::erase
 	 */	
 	public function erase(string $key);
 
@@ -56,8 +52,6 @@ interface Configure
 	 * @param  mixed  $default  The default value
 	 *
 	 * @return mixed
-	 *
-	 * @uses    \Syscodes\Components\Collections\Arr::get
 	 */
 	public function get(string $key, $default = null);
 	
@@ -68,8 +62,6 @@ interface Configure
 	 * @param  mixed  $value  The default value
 	 *
 	 * @return mixed
-	 *
-	 * @uses  \Syscodes\Components\Collections\Arr::set
 	 */
 	public function set(string $key, $value);
 
