@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2023 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -28,7 +28,7 @@ use Syscodes\Components\Contracts\Console\Output\Output as OutputInterface;
  * <ConsoleOutput> is the interface implemented by ConsoleOutput class.
  * This adds information about stderr and output stream.
  */
-interface ConsoleOutput extends Output
+interface ConsoleOutput extends OutputInterface
 {
     /**
      * Gets the Output interface for errors.
