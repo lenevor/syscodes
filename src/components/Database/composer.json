@@ -15,11 +15,11 @@
 		}
 	],
 	"require": {
-		"php": "^7.4|^8.0",
-		"syscodes/collections" : "^0.8.0",
-		"syscodes/contracts" : "^0.8.0",
-		"syscodes/core" : "^0.8.0",
-		"syscodes/support" : "^0.8.0"
+		"php": "^8.0.2",
+		"syscodes/collections" : "^0.8.2",
+		"syscodes/contracts" : "^0.8.2",
+		"syscodes/core" : "^0.8.2",
+		"syscodes/support" : "^0.8.2"
 	},
 	"autoload": {
 		"psr-4": {
