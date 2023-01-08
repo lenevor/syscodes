@@ -7,6 +7,7 @@ currently being supported with security updates.
 
 | Version | Security Fixes Until |
 | ------- | -------------------- |
+| 0.8.2   | Jan 8th, 2023        |
 | 0.8.1   | Dec 31th, 2022       |
 | 0.8.0   | Oct 10th, 2022       |
 | 0.7.10  | Jul 6th, 2022        |
