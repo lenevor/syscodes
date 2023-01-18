@@ -1,0 +1,27 @@
+{
+	"name": "syscodes/finder",
+	"description": "The Syscodes Finder package.",
+	"keywords": ["lenevor","finder"],
+	"license": "BSD-4|-Clause",
+	"homepage": "https://lenevor.com",
+	"support": {
+		"issues": "https://github.com/lenevor/syscodes/issues",
+        "source": "https://github.com/lenevor/syscodes"
+	},
+	"authors": [
+		{
+			"name": "Alexander Campo",
+			"email": "jalexcam@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^8.0.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Syscodes\\Components\\Finder\\": ""
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
