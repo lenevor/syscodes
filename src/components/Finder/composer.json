@@ -2,7 +2,7 @@
 	"name": "syscodes/finder",
 	"description": "The Syscodes Finder package.",
 	"keywords": ["lenevor","finder"],
-	"license": "BSD-4|-Clause",
+	"license": "BSD-3-Clause",
 	"homepage": "https://lenevor.com",
 	"support": {
 		"issues": "https://github.com/lenevor/syscodes/issues",
