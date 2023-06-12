@@ -250,7 +250,7 @@ class Router implements Routable
 		
 		return $this->addRoute('GET', "{{$placeholder}}", $action)
 		            ->where($placeholder, '.*')
-					->fallback();
+		            ->fallback();
 	}
 
 	/**
@@ -266,7 +266,7 @@ class Router implements Routable
 	{
 		return $this->any($uri, '\Syscodes\Components\Routing\Controllers\RedirectController')
 		            ->defaults('destination', $destination)
-					->defaults('status', $status);
+		            ->defaults('status', $status);
 	}
 	
 	/**
@@ -297,11 +297,11 @@ class Router implements Routable
 	{
 		return $this->match(['GET', 'HEAD'], $uri, '\Syscodes\Components\Routing\Controllers\ViewController')
 		            ->setDefaults([
-						'view' => $view,
-						'data' => $data,
-						'status' => is_array($status) ? 200 : $status,
-						'headers' => is_array($status) ? $status : $headers,
-					]);
+		                'view' => $view,
+		                'data' => $data,
+		                'status' => is_array($status) ? 200 : $status,
+		                'headers' => is_array($status) ? $status : $headers,
+		            ]);
 	}
 
 	/**
@@ -322,10 +322,10 @@ class Router implements Routable
 		}
 
 		$route = $this->newRoute(
-				$method,
-				$this->prefix($route),
-				$action
-		);
+		              $method,
+		              $this->prefix($route),
+		              $action
+		         );
 
 		if ($this->hasGroupStack()) {
 			$this->mergeGroupAttributesIntoRoute($route);			
@@ -558,9 +558,9 @@ class Router implements Routable
 	public function gatherRouteMiddleware(Route $route): array
 	{
 		$middleware = array_map(
-			                fn ($name) => MiddlewareResolver::resolve($name, $this->middleware, $this->middlewareGroups),
-							$route->gatherMiddleware()
-					  );
+		                    fn ($name) => MiddlewareResolver::resolve($name, $this->middleware, $this->middlewareGroups),
+		                    $route->gatherMiddleware()
+		              );
 		
 		return Arr::flatten($middleware);
 	}
