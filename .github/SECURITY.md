@@ -1,5 +1,7 @@
 # Security Policy
 
+**PLEASE DON'T DISCLOSE SECURITY-RELATED ANY TYPE ISSUES PUBLICLY, [SEE BELOW](#reporting-a-vulnerability).**
+
 ## Supported Versions
 
 Use this section to tell people about which versions of your project are
@@ -7,6 +9,8 @@ currently being supported with security updates.
 
 | Version | Security Fixes Until |
 | ------- | -------------------- |
+| 0.8.5   | Jun 9th, 2023        |
+| 0.8.4   | Apr 29th, 2023       |
 | 0.8.3   | Feb 15th, 2023       |
 | 0.8.2   | Jan 8th, 2023        |
 | 0.8.1   | Dec 31th, 2022       |
