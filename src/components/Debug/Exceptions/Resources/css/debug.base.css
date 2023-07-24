@@ -1340,10 +1340,13 @@ header nav ul li a {
 .section-details .sidebar nav ul li h2 a,
 .section-details .sidebar nav ul li h2 a:hover {
     color: var(--gray-600);
-    font-size: var(--font-size-small-xxxx);
+    font-size: var(--font-size-small-xxx);
     font-weight: 700;
-    letter-spacing: 0.4px;
-    margin-top: 10px;
+}
+
+.dark-mode .section-details .sidebar nav ul li h2 a,
+.dark-mode .section-details .sidebar nav ul li h2 a:hover {
+    color: var(--dark-gray-600);
 }
 
 .section-details .sidebar nav ul li:nth-child(4) h2 a,
@@ -1367,38 +1370,35 @@ header nav ul li a {
 
 .dark-mode .section-details .sidebar nav ul li a {
     color: var(--dark-gray-800);
-    font-weight: 500;
 }
 
-.section-details .sidebar nav ul li a.active svg {
-    height: 27px;
-    margin-top: 10px;
-    stroke: var(--gray-600);
-    width: 26px;
+.section-details .sidebar nav ul li a.active svg  {
+    height: 25px;
+    stroke: var(--purple-500);
+    width: 25px;
 }
 
 .dark-mode .section-details .sidebar nav ul li a.active svg {
     fill: var(--dark-magenta-200);
-    stroke: var(--dark-blue-300);
+    stroke: var(--dark-blue-600);
 }
 
 .section-details .sidebar nav ul li a.active {
-    color: var(--gray-700);
+    color: var(--purple-500);
     padding: 0;
 }
 
 .dark-mode .section-details .sidebar nav ul li a.active {
-    color: var(--dark-blue-500);
+    color: var(--dark-blue-600);
 }
 
 .section-details .sidebar nav ul li a:hover {
     background: transparent !important;
-    color: var(--blue-400);
+    color: var(--purple-500);
 }
 
 .dark-mode .section-details .sidebar nav ul li a:hover {
-    background: var(--dark-black-130);
-    color: var(--dark-gray-700);
+    color: var(--dark-blue-500);
 }
 
 .section-details .sidebar nav ul li svg {
@@ -1408,19 +1408,34 @@ header nav ul li a {
 }
 
 .dark-mode .section-details .sidebar nav ul li svg {
-    fill: var(--dark-magenta-200);
-    stroke: var(--dark-gray-200);
+    fill: var(--dark-magenta-100);
+    stroke: var(--dark-gray-500);
+}
+
+.section-details .sidebar nav ul li:nth-child(2) svg {
+    margin-top: 10px;
 }
 
 .section-details .sidebar nav ul li:hover:nth-child(2) svg,
 .section-details .sidebar nav ul li:hover:nth-child(5) svg,
 .section-details .sidebar nav ul li:hover:nth-child(6) svg,
 .section-details .sidebar nav ul li:hover:nth-child(8) svg {
-    stroke: var(--blue-500);
+    stroke: var(--purple-500);
+}
+
+.dark-mode .section-details .sidebar nav ul li:hover:nth-child(2) svg,
+.dark-mode .section-details .sidebar nav ul li:hover:nth-child(5) svg,
+.dark-mode .section-details .sidebar nav ul li:hover:nth-child(6) svg,
+.dark-mode .section-details .sidebar nav ul li:hover:nth-child(8) svg {
+    stroke: var(--dark-blue-500);
 }
 
 .section-details .sidebar nav ul li:hover:nth-child(3) svg {
-    fill: var(--blue-500);
+    fill: var(--purple-500);
+}
+
+.dark-mode .section-details .sidebar nav ul li:hover:nth-child(3) svg {
+    fill: var(--dark-blue-500);
 }
 
 .section-details .sidebar nav ul li:nth-child(3) svg {
@@ -1439,8 +1454,13 @@ header nav ul li a {
 
 .section-details .sidebar nav ul li:nth-child(6) svg {
     fill: var(--gray-100);
-    margin-top: 2px;
+    margin-right: 2px;
     stroke: var(--gray-700);
+}
+
+.dark-mode .section-details .sidebar nav ul li:nth-child(6) svg {
+    fill: var(--dark-magenta-200);
+    stroke: var(--dark-gray-500);
 }
 
 .section-details .sidebar nav ul li:nth-child(8) svg {
@@ -1450,6 +1470,11 @@ header nav ul li a {
     width: 26px;
 }
 
+.dark-mode .section-details .sidebar nav ul li:nth-child(8) svg {
+    fill: var(--dark-gray-700);
+    stroke: var(--dark-white);
+}
+
 /* TABLE */
 
 @media (max-width: 1100px) and (min-width: 720px)
@@ -1457,6 +1482,19 @@ header nav ul li a {
     .section-details .sidebar nav {
         display: inline-block;
         margin-right: 58px;
+        width: 100%;
+    }
+
+    .section-details .sidebar nav ul li:nth-child(2) svg {
+        height: 28px;
+        margin-right: -2px;
+        width: 28px;
+    }
+
+    .section-details .sidebar nav ul li:nth-child(3) svg {
+        height: 23px;
+        margin-right: 6px;
+        width: 21px;
     }
 }
 
@@ -1484,8 +1522,15 @@ header nav ul li a {
         width: 30px;
     }
 
+    .section-details .sidebar nav ul li:nth-child(2) svg {
+        height: 28px;
+        margin-right: 2px;
+        width: 30px;
+    }
+
     .section-details .sidebar nav ul li:nth-child(3) svg {
         height: 25px;
+        margin-right: 7px;
         width: 25px;
     }
 
@@ -1512,6 +1557,12 @@ header nav ul li a {
     position: relative;
 }
 
+.dark-mode .section-details .section-detail-context {
+    background: var(--dark-magenta-300);
+    box-shadow: 0 10px 18px -15px var(--dark-magenta-100),
+                0 0 16px -14px var(--dark-magenta-100);
+}
+
 .section-details .section-detail-context .section-info-request {
     padding: 1.1rem;
     padding-top: 2.5rem;
@@ -1519,9 +1570,13 @@ header nav ul li a {
 
 .section-details .section-detail-context .section-info-request .info-request-title h2 {
     color: var(--gray-600);
-    font-size: var(--font-size-small-x);
+    font-size: var(--font-size-small);
     font-weight: 700;
     letter-spacing: 0.5px;
+}
+
+.dark-mode .section-details .section-detail-context .section-info-request .info-request-title h2 {
+    color: var(--dark-gray-500);
 }
 
 .section-details .section-detail-context .info-url-method {
@@ -1540,6 +1595,12 @@ header nav ul li a {
     color: var(--blue-400);
 }
 
+.dark-mode .section-details .section-detail-context .info-url-method .url,
+.dark-mode .section-details .section-detail-context .info-url-method .method,
+.dark-mode .section-details .section-detail-context .section-info-request .info-header-title h2 {
+    color: var(--dark-blue-500);
+}
+
 .section-details .section-detail-context .info-url-method .method {
     border: 1px solid var(--blue-400);
     border-radius: 2px;
@@ -1548,6 +1609,10 @@ header nav ul li a {
     letter-spacing: 0.5px;
     margin-left: 5px;
     padding: 0.1rem 0.375rem;
+}
+
+.dark-mode .section-details .section-detail-context .info-url-method .method {
+    border: 1px solid var(--dark-blue-400);
 }
 
 .section-details .section-detail-context .section-info-request .info-header-title {
@@ -1587,8 +1652,6 @@ header nav ul li a {
 }
 
 .section-details .section-detail-context .section-info-request .info-header-title .data-table td:first-child {
-    align-items: stretch;
-    display: flex;
     font-size: var(--font-size-initial);   
     margin-left: -1px;
     margin-right: 35px;
@@ -1608,9 +1671,18 @@ header nav ul li a {
     word-break: break-all;
 }
 
+.dark-mode .section-details .section-detail-context .section-info-request .info-header-title .data-table td:last-child {
+    background: var(--dark-magenta-250);
+}
+
 .section-details .section-detail-context .section-info-request .info-header-title .data-table td:first-child,
 .section-details .section-detail-context .section-info-request .info-header-title .data-table td:last-child {   
     color: var(--gray-800);
+}
+
+.dark-mode .section-details .section-detail-context .section-info-request .info-header-title .data-table td:first-child,
+.dark-mode .section-details .section-detail-context .section-info-request .info-header-title .data-table td:last-child {   
+    color: var(--dark-gray-700);
 }
 
 /* TABLE */
@@ -1644,7 +1716,7 @@ header nav ul li a {
         text-overflow: ellipsis;
         transition: 0.2s linear;
         white-space: pre;
-        width: 40%;
+        width: 35%;
     }
 
     .section-details .section-detail-context .section-info-request .info-header-title .data-table tr:hover:nth-child(7) td:first-child {
