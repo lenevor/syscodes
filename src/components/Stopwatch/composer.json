@@ -1,0 +1,27 @@
+{
+	"name": "syscodes/stopwatch",
+	"description": "The Syscodes Stopwatch package.",
+	"keywords": ["lenevor","stopwatch"],
+	"license": "BSD-3-Clause",
+	"homepage": "https://lenevor.com",
+	"support": {
+		"issues": "https://github.com/lenevor/syscodes/issues",
+        "source": "https://github.com/lenevor/syscodes"
+	},
+	"authors": [
+		{
+			"name": "Alexander Campo",
+			"email": "jalexcam@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^8.0.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Syscodes\\Components\\Stopwatch\\": ""
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
