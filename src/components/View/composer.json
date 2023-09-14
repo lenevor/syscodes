@@ -1,7 +1,7 @@
 {
-	"name": "syscodes/view",
-	"description": "The Syscodes View package.",
-	"keywords": ["lenevor","view"],
+	"name": "syscodes/translation",
+	"description": "The Syscodes Translation package.",
+	"keywords": ["lenevor","translation"],
 	"license": "BSD-3-Clause",
 	"homepage": "https://lenevor.com",
 	"support": {
@@ -16,14 +16,11 @@
 	],
 	"require": {
 		"php": "^8.0.2",
-		"syscodes/collections": "^0.8.7",
-		"syscodes/contracts": "^0.8.7",
-		"syscodes/filesystem": "^0.8.7",
-		"syscodes/support": "^0.8.7"
+		"syscodes/support": "^0.8.8"		
 	},
 	"autoload": {
 		"psr-4": {
-			"Syscodes\\Components\\View\\": ""
+			"Syscodes\\Components\\Translation\\": ""
 		}
 	},
 	"minimum-stability": "dev",
