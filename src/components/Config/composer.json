@@ -16,8 +16,8 @@
 	],
 	"require": {
 		"php": "^8.0.2",
-		"syscodes/collections": "^0.8.8",
-		"syscodes/contracts": "^0.8.8"
+		"syscodes/collections": "^0.8.9",
+		"syscodes/contracts": "^0.8.9"
 	},
 	"autoload": {
 		"psr-4": {
