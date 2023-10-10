@@ -9,6 +9,7 @@ currently being supported with security updates.
 
 | Version | Security Fixes Until |
 | ------- | -------------------- |
+| 0.8.9   | Oct 10th, 2023       |
 | 0.8.8   | Sep 12th, 2023       |
 | 0.8.7   | Aug 2th, 2023        |
 | 0.8.6   | Jun 22th, 2023       |
@@ -28,7 +29,7 @@ currently being supported with security updates.
 | 0.7.3   | Jan 8th, 2021        |
 | 0.7.2   | Aug 1th, 2020        |
 | 0.7.1   | Jun 22th, 2020       |
-| 0.7.0   | Jul 7th, 2020        |
+| 0.7.0   | Jun 7th, 2020        |
 
 ## Reporting a Vulnerability
 
