@@ -1,0 +1,27 @@
+{
+	"name": "syscodes/pagination",
+	"description": "The Syscodes Pagination package.",
+	"keywords": ["lenevor","pagination"],
+	"license": "BSD-3-Clause",
+	"homepage": "https://lenevor.com",
+	"support": {
+		"issues": "https://github.com/lenevor/syscodes/issues",
+        "source": "https://github.com/lenevor/syscodes"
+	},
+	"authors": [
+		{
+			"name": "Alexander Campo",
+			"email": "jalexcam@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^8.0.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Syscodes\\Components\\Pagination\\": ""
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
