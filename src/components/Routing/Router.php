@@ -583,6 +583,16 @@ class Router implements Routable
 	}
 
 	/**
+	 * Get all of the defined middleware groups.
+	 * 
+	 * @return array
+	 */
+	public function getMiddlewareGroups(): array
+	{
+		return $this->middlewareGroups;
+	}
+
+	/**
 	 * Register a group of middleware.
 	 * 
 	 * @param  string  $name
