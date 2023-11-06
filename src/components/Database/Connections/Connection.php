@@ -368,7 +368,7 @@ class Connection implements ConnectionInterface
 
             $statement->execute();
 
-            ($count = $statement->rowCount()) > 0;
+            $count = $statement->rowCount() > 0;
 
             return $count;
         });
@@ -450,7 +450,7 @@ class Connection implements ConnectionInterface
      * 
      * @throws \Syscodes\Components\Database\Exceptions\QueryException
      */
-    protected function run(string $query, array $bindings, Closure $callback)
+    protected function run(string $query, array $bindings, Closure $callback): mixed
     {
         $result = '';
         
@@ -484,7 +484,7 @@ class Connection implements ConnectionInterface
      * 
      * @throws \Syscodes\Components\Database\Exceptions\QueryException
      */
-    protected function runQueryCallback(string $query, array $bindings, Closure $callback)
+    protected function runQueryCallback(string $query, array $bindings, Closure $callback): mixed
     {
         try {
             return $callback($query, $bindings);
@@ -628,7 +628,7 @@ class Connection implements ConnectionInterface
      * 
      * @return float
      */
-    protected function getElapsedTime(int $start): float
+    protected function getElapsedTime($start)
     {
         return round((microtime(true) - $start) * 1000, 2);
     }
