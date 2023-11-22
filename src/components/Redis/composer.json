@@ -1,7 +1,7 @@
 {
-	"name": "syscodes/redis",
-	"description": "The Syscodes Redis package.",
-	"keywords": ["lenevor","redis"],
+	"name": "syscodes/pipeline",
+	"description": "The Syscodes Pipeline package.",
+	"keywords": ["lenevor","pipeline"],
 	"license": "BSD-3-Clause",
 	"homepage": "https://lenevor.com",
 	"support": {
@@ -16,16 +16,12 @@
 	],
 	"require": {
 		"php": "^8.1",
-		"syscodes/support": "^0.8.10"
+		"syscodes/contracts": "^0.8.11"
 	},
 	"autoload": {
 		"psr-4": {
-			"Syscodes\\Components\\Redis\\": ""
+			"Syscodes\\Components\\Pipeline\\": ""
 		}
-	},
-	"suggest": {
-		"ext-redis": "Required to use the phpredis connector (^4.0|^5.0).",
-		"predis/predis": "Required to use the predis connector (^1.1.2)."
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true
