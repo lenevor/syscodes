@@ -1,0 +1,27 @@
+{
+	"name": "syscodes/mail",
+	"description": "The Syscodes mail package.",
+	"keywords": ["lenevor","mail"],
+	"license": "BSD-3-Clause",
+	"homepage": "https://lenevor.com",
+	"support": {
+		"issues": "https://github.com/lenevor/syscodes/issues",
+        "source": "https://github.com/lenevor/syscodes"
+	},
+	"authors": [
+		{
+			"name": "Alexander Campo",
+			"email": "jalexcam@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^8.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Syscodes\\Components\\Mail\\": ""
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
