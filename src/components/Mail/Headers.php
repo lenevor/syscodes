@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2023 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2024 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -54,13 +54,13 @@ class Headers implements Header
      * @var array $address
      */
     protected array $address;
-
+    
     /**
-	 * An array of HTTP headers.
-	 * 
-	 * @var array $herders
-	 */
-	protected array $headers = [];
+     * An array of HTTP headers.
+     * 
+     * @var array $headers
+     */
+    protected array $headers = [];
     
     /**
      * Get the line length of a message.
@@ -77,29 +77,29 @@ class Headers implements Header
     protected string $name;
 
     /**
-	 * Constructor. Create a new Headers class instance.
-	 * 
+     * Constructor. Create a new Headers class instance.
+     * 
      * @param array  $address
-	 * @param  array  $headers
-	 * 
-	 * @return void
-	 */
-	public function __construct(array $address = [], array $headers = [])
-	{
-		foreach ($headers as $header) {
-			$this->add($header);
-		}
-
+     * @param  array  $headers
+     * 
+     * @return void
+     */
+    public function __construct(array $address = [], array $headers = [])
+    {
+        foreach ($headers as $header) {
+            $this->add($header);
+        }
+        
         $this->setAddress($address);
-	}
-
+    }
+    
     /**
-	 * Adds multiple header.
-	 * 
-	 * @param  string  $headers  The header name
-	 * 
-	 * @return static
-	 */
+     * Adds multiple header.
+     * 
+     * @param  string  $headers  The header name
+     * 
+     * @return static
+     */
     public function add(string $headers): static
     {
         $this->setMaxLineLength($this->lineLength);
@@ -241,12 +241,12 @@ class Headers implements Header
     }
     
     /**
-	 * Removes a header.
-	 * 
-	 * @param  string  $name  The header name
-	 * 
-	 * @return void
-	 */
+     * Removes a header.
+     * 
+     * @param  string  $name  The header name
+     * 
+     * @return void
+     */
     public function remove(string $name): void
     {
         unset($this->headers[strtolower($name)]);

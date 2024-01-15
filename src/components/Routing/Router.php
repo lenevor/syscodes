@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2023 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2024 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -581,7 +581,7 @@ class Router implements Routable
 
 		return $this;
 	}
-
+	
 	/**
 	 * Get all of the defined middleware groups.
 	 * 
@@ -606,7 +606,19 @@ class Router implements Routable
 
 		return $this;
 	}
-
+	
+	/**
+	 * Flush the router's middleware groups.
+	 * 
+	 * @return static
+	 */
+	public function flushMiddlewareGroups(): static
+	{
+		$this->middlewareGroups = [];
+		
+		return $this;
+	}
+	
 	/**
 	 * Check if a route with the given name exists.
 	 * 
