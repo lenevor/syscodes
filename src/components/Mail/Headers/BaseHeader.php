@@ -106,7 +106,7 @@ abstract class BaseHeader
     {
         return preg_split('~(\r\n)~', $token, -1, PREG_SPLIT_DELIM_CAPTURE);
     }
-
+    
     /**
      * Generate a list of all tokens in the final header.
      * 
@@ -117,22 +117,23 @@ abstract class BaseHeader
     protected function toTokens(?string $string = null): array
     {
         $string = $tring ?? $this->getBodyAsString();
-
+        
         $tokens = [];
-
+        
         foreach (preg_split('~(?=[ \t])~', $string) as $token) {
             $newTokens = $this->generateTokenLines($token);
+            
             foreach ($newTokens as $newToken) {
                 $tokens[] = $newToken;
             }
         }
-
+        
         return $tokens;
     }
-
+    
     /**
      * Takes an array of tokens which appear in the header.
-     *
+     * 
      * @param string[] $tokens
      * 
      * @return string
@@ -143,20 +144,20 @@ abstract class BaseHeader
         $headerLines = [];
         $headerLines[] = $this->name.': ';
         $currentLine = &$headerLines[$lineCount++];
-
+        
         foreach ($tokens as $i => $token) {
-            if (("\r\n" === $token)
-                || ($i > 0 && strlen($currentLine.$token) > $this->lineLength)
-                && '' !== $currentLine) {
+            if (("\r\n" === $token) || 
+                ($i > 0 && strlen($currentLine.$token) > $this->lineLength) && 
+                '' !== $currentLine) {
                 $headerLines[] = '';
                 $currentLine = &$headerLines[$lineCount++];
             }
-
+            
             if ("\r\n" !== $token) {
                 $currentLine .= $token;
             }
         }
-
+        
         return implode("\r\n", $headerLines);
     }
 }
