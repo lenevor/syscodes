@@ -140,10 +140,10 @@ abstract class BaseHeader
      */
     private function tokensToString(array $tokens): string
     {
-        $lineCount = 0;
-        $headerLines = [];
-        $headerLines[] = $this->name.': ';
-        $currentLine = &$headerLines[$lineCount++];
+        $lineCount     = 0;
+        $headerLines   = [];
+        $headerLines[] = $this->getName().': ';
+        $currentLine   = &$headerLines[$lineCount++];
         
         foreach ($tokens as $i => $token) {
             if (("\r\n" === $token) || 
