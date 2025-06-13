@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -26,10 +26,8 @@ use Throwable;
 
 /**
  * Handler outputing plaintext error messages.
- * 
- * @author Alexander Campo <jalexcam@gmail.com>
  */
-class PlainTextHandler extends MainHandler
+class PlainTextHandler extends Handler
 {
     /**
      * The way in which the data sender (usually the server) can tell the recipient 
@@ -51,14 +49,13 @@ class PlainTextHandler extends MainHandler
      */
     protected function getResponse(Throwable $exception): string
     {
-        return sprintf(
-            "%s: %s in file %s on line %d%s\n",
-            get_class($exception),
-            $exception->getMessage(),
-            $exception->getFile(),
-            $exception->getLine(),
-            $this->getTraceOutput()
-        );
+        return sprintf("%s: %s in file %s on line %d%s\n",
+                    get_class($exception),
+                    $exception->getMessage(),
+                    $exception->getFile(),
+                    $exception->getLine(),
+                    $this->getTraceOutput()
+               );
     }
 
     /**
@@ -84,14 +81,13 @@ class PlainTextHandler extends MainHandler
                 $template = "\n%3d. %s%s() %s:%d";
             }
 
-            $response .= sprintf(
-                $template,
-                $line,
-                $class,
-                $frame->getFunction(),
-                $frame->getFile(),
-                $frame->getLine()
-            );
+            $response .= sprintf($template,
+                            $line,
+                            $class,
+                            $frame->getFunction(),
+                            $frame->getFile(),
+                            $frame->getLine()
+                       );
 
             $line--;
         }
@@ -104,12 +100,12 @@ class PlainTextHandler extends MainHandler
      * 
      * @return int
      */
-    public function handle(): int
+    public function handle()
     {        
         $response = $this->getResponse($this->getException());
 
         echo $response;
 
-        return MainHandler::QUIT;
+        return Handler::QUIT;
     }
 }

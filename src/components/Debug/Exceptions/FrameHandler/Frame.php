@@ -16,18 +16,16 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
 namespace Syscodes\Components\Debug\FrameHandler;
 
-use Serializable;
+use Syscodes\Components\Contracts\Support\Serializable;
 
 /**
  * Returns the content of an exception through a trace.
- * 
- * @author Alexander Campo <jalexcam@gmail.com>
  */
 class Frame implements Serializable
 {
@@ -150,9 +148,7 @@ class Frame implements Serializable
         $comments = $this->comments;
 
         if ($filter !== null) {
-            $comments = array_filter($comments, function ($comment) use ($filter) {
-                return $comment['context'] == $filter;
-            });
+            $comments = array_filter($comments, fn ($comment) => $comment['context'] == $filter);
         }
 
         return $comments;
@@ -165,13 +161,11 @@ class Frame implements Serializable
     */
 
     /**
-     * Implements the Serializable interface.
-     * 
-     * @see    Serializable::serialize
+     * String representation of object.
      * 
      * @return string
      */
-    public function serialize()
+    final public function serialize(): string
     {
         $frame = $this->frame;
 
@@ -179,16 +173,15 @@ class Frame implements Serializable
     }
 
     /**
-     * Unserializes the frame data.
+     * Constructs the object.
      * 
-     * @see    Serializable::unserialize 
-     * @param  string  $frame
-     *  
+     * @param  string  $serialized
+     * 
      * @return void
      */
-    public function unserialize($frame)
+    final public function unserialize(string $serialized): void
     {
-        $frame = unserialize($frame);
+        $frame = unserialize($serialized);
 
         $this->frame = $frame;
     }

@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -24,11 +24,10 @@ namespace Syscodes\Components\Debug\FrameHandler;
 
 use Throwable;
 use ErrorException;
+use Syscodes\Components\Debug\Util\Misc;
 
 /**
  * Loads the frames to identify a possible exception.
- * 
- * @author Alexander Campo <jalexcam@gmail.com>
  */
 class Supervisor
 {
@@ -116,7 +115,7 @@ class Supervisor
 		return [
 			'file'  => $exception->getFile(),
 			'line'  => $exception->getLine(),
-			'class' => get_class($exception),
+			'class' => getClass($exception),
 			'code'  => $exception->getCode(),
 			'args'  => [
 				$exception->getMessage(),
@@ -151,7 +150,7 @@ class Supervisor
 	 */
 	public function getExceptionName()
 	{
-		return getClass($this->exception);
+		return getClass($this->exception, true);
 	}
 	
 	/**
@@ -169,8 +168,12 @@ class Supervisor
 			return $traces;
 		}
 
-		if ( ! extension_loaded('xdebug') || ! xdebug_is_enabled()) {
-			return [];
+		if ( ! Misc::isFatalError($exception->getSeverity())) {
+			return $traces;
+		}
+
+		if ( ! extension_loaded('xdebug') || ! function_exists('xdebug_is_enabled') || ! xdebug_is_enabled()) {
+			return $traces;
 		}
 		
 		// Use xdebug to get the full stack trace and remove the shutdown handler stack trace

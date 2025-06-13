@@ -1,12 +1,9 @@
 <?php foreach ($frames as $index => $frame) : ?>	
 <div class="code-source clearfix <?= ($index == 0) ? 'active' : '' ?>" data-frame=<?= $index ?>>
-    <div class="title">
-        
+    <div class="title">        
         <div class="title-line-number">
-            <h4><?= $frame->getFile() ?></h4>
-            <span> : <?= $frame->getLine() ?></span>
-        </div>
-        
+            <h4><?= $frame->getFile() ?> : <?= $frame->getLine() ?></h4>
+        </div>        
     <?php if ($frame->getFile() && $editorHref = $handler->getEditorAtHref($frame->getFile(), (int) $frame->getLine())): ?>
         <a href="<?= $editorHref ?>">
             <div class="iconlist">                
@@ -26,11 +23,7 @@
     </div>
     <div class="source">
         <code>
-<<<<<<< Updated upstream:src/components/Debug/Exceptions/Resources/views/code_source.php
-            <?= $template->highlightFile($frame->getFile(), $frame->getLine(), 33); ?>
-=======
             <?= $template->highlightFile($frame->getFile(), $frame->getLine(), 32); ?>
->>>>>>> Stashed changes:src/components/Debug/Resources/views/partials/codes/code_source.php
         </code>
     </div>
 </div>

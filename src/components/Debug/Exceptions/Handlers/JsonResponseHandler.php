@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -26,10 +26,8 @@ use Syscodes\Components\Debug\FrameHandler\Formatter;
 
 /**
  * Catches an exception and converts it to a JSON response.
- * 
- * @author Alexander Campo <jalexcam@gmail.com>
  */
-class JsonResponseHandler extends MainHandler
+class JsonResponseHandler extends Handler
 {
     /**
      * The way in which the data sender (usually the server) can tell the recipient 
@@ -57,6 +55,6 @@ class JsonResponseHandler extends MainHandler
 
         echo json_encode($response, defined('JSON_PARTIAL_OUTPUT_ON_ERROR') ? JSON_PARTIAL_OUTPUT_ON_ERROR : 0)."\n";
 
-        return MainHandler::QUIT;
+        return Handler::QUIT;
     }
 }

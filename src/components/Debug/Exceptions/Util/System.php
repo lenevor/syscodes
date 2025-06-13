@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2021 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -24,8 +24,6 @@ namespace Syscodes\Components\Debug\Util;
 
 /**
  * Activates the loading of PHP functions to capture user-generated exceptions.
- * 
- * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  */
 class System 
 {
@@ -53,7 +51,7 @@ class System
     public function setErrorHandler(callable $handler, $types = 'use-php-defaults') 
     {
         if ($types === 'use-php-defaults') {
-            $types = E_ALL | E_STRICT;
+            $types = E_ALL | 2048;
         }
 
         return set_error_handler($handler, $types);

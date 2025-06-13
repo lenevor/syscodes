@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2021 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -26,8 +26,6 @@ use Syscodes\Components\Contracts\Debug\Table;
 
 /**
  * Gets an associated label with its respective data array.
- * 
- * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  */
 class ArrayTable implements Table
 {
@@ -43,19 +41,21 @@ class ArrayTable implements Table
     /**
      * Contructor. Get an associated label with its respective data array.
      * 
-     * @param  string  $label
      * @param  array   $data
+     * @param  string  $label
      * 
      * @return void
      */
-    public function __construct($label, array $data)
+    public function __construct(array $data = [], string $label = '')
     {
-        $this->label = $label;
         $this->data  = $data;
+        $this->label = $label;
     }
 
     /**
-     * {@inheritdoc}
+     * Returns data as associative array.
+     * 
+     * @return array
      */
     public function getData(): array
     {

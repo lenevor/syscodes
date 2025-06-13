@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -27,8 +27,6 @@ use Syscodes\Components\Debug\Util\TemplateHandler;
 /**
  * Returns all basic information about the exception in a simple array and
  * in a plain text.
- * 
- * @author Alexander Campo <jalexcam@gmail.com>
  */
 class Formatter
 {

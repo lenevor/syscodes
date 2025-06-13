@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -36,10 +36,8 @@ use Syscodes\Components\Debug\FrameHandler\Formatter;
 
 /**
  * Generates exceptions in mode of graphic interface.
- * 
- * @author Alexander Campo <jalexcam@gmail.com>
  */
-class PleasingPageHandler extends MainHandler
+class PleasingPageHandler extends Handler
 {
 	/**
 	 * The brand main of handler.
@@ -64,9 +62,13 @@ class PleasingPageHandler extends MainHandler
 	 */
 	protected $editors = [
 		"vscode"   => "vscode://file/%file:%line",
+		"netbeans" => "netbeans://open/?f=%file:%line",
+		"idea"     => "idea://open?file=%file&line=%line",
 		"sublime"  => "subl://open?url=file://%file&line=%line",
 		"phpstorm" => "phpstorm://open?file://%file&line=%line",
 		"textmate" => "txmt://open?url=file://%file&line=%line",
+		"emacs"    => "emacs://open?url=file://%file&line=%line",
+        "macvim"   => "mvim://open/?url=file://%file&line=%line",
 		"atom"     => "atom://core/open/file?filename=%file&line=%line",
 	];
 	
@@ -75,7 +77,7 @@ class PleasingPageHandler extends MainHandler
 	 * 
 	 * @var string $pageTitle
 	 */
-	protected $pageTitle = 'Lenevor Debug! There was an error.';
+	protected $pageTitle = 'Lenevor Debug! There was an error';
 	
 	/**
 	 * Fast lookup cache for known resource locations.
@@ -97,6 +99,13 @@ class PleasingPageHandler extends MainHandler
 	 * @var array $tables
 	 */
 	protected $tables = [];
+
+	/**
+	 * Gets the theme default.
+	 * 
+	 * @var string $theme
+	 */
+	protected $theme;
 	
 	/**
 	 * The template handler system.
@@ -113,7 +122,7 @@ class PleasingPageHandler extends MainHandler
 	public function __construct()
 	{
 		$this->template      = new TemplateHandler;
-		$this->searchPaths[] = dirname(__DIR__).DIRECTORY_SEPARATOR.'Resources';
+		$this->searchPaths[] = dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.'Resources';
 	}
 
 	/**
@@ -152,30 +161,41 @@ class PleasingPageHandler extends MainHandler
 	protected function collectionVars(): array
 	{
 		$supervisor = $this->getSupervisor();
-		$style      = file_get_contents($this->getResource('css/debug.base.css'));
-		$jscript    = file_get_contents($this->getResource('js/debug.base.js'));
-		$tables     = array_merge($this->getDefaultTables(), $this->tables);
+		$style      = file_get_contents($this->getResource('compiled/css/debug.base.css'));
+		$jscript    = file_get_contents($this->getResource('compiled/js/debug.base.js'));
+		$servers    = array_merge($this->getDefaultServers(), $this->tables);
+		$routing    = array_merge($this->getDefaultRouting(), $this->tables);
+		$databases  = array_merge($this->getDefaultDatabase(), $this->tables);
+		$context    = array_merge($this->getDefaultContext(), $this->tables);
 		
 		return [ 
-			'class'             => explode('\\', $supervisor->getExceptionName()),
-			'stylesheet'        => preg_replace('#[\r\n\t ]+#', ' ', $style),
-			'javascript'        => preg_replace('#[\r\n\t ]+#', ' ', $jscript),
-			'header'            => $this->getResource('views/header.php'),
-			'sidebar'           => $this->getResource('views/sidebar.php'),
-			'frame_description' => $this->getResource('views/frame_description.php'),
-			'frame_list'        => $this->getResource('views/frame_list.php'),
-			'details_panel'     => $this->getResource('views/details_panel.php'),
-			'code_source'       => $this->getResource('views/code_source.php'),
-			'details_content'   => $this->getResource('views/details_content.php'),
-			'footer'            => $this->getResource('views/footer.php'),
-			'plain_exception'   => Formatter::formatExceptionAsPlainText($this->getSupervisor()),
-			'handler'           => $this,
-			'handlers'          => $this->getDebug()->getHandlers(),
-			'debug'             => $this->getDebug(),
-			'code'              => $this->getExceptionCode(),
-			'message'           => $supervisor->getExceptionMessage(),
-			'frames'            => $this->getExceptionFrames(),
-			'tables'            => $this->getProcessTables($tables),
+			'class' => explode('\\', $supervisor->getExceptionName()),
+			'stylesheet' => preg_replace('#[\r\n\t ]+#', ' ', $style),
+			'javascript' => preg_replace('#[\r\n\t ]+#', ' ', $jscript),
+			'header' => $this->getResource('views/partials/header.php'),
+			'footer' => $this->getResource('views/partials/footer.php'),
+			'info_exception' => $this->getResource('views/partials/info/info_exception.php'),
+			'section_stack_exception' => $this->getResource('views/partials/section_stack_exception.php'),
+			'section_frame' => $this->getResource('views/partials/section_frame.php'),
+			'frame_description' => $this->getResource('views/partials/frames/frame_description.php'),
+			'frame_list' => $this->getResource('views/partials/frames/frame_list.php'),
+			'section_code' => $this->getResource('views/partials/section_code.php'),
+			'code_source' => $this->getResource('views/partials/codes/code_source.php'),
+			'request_info' => $this->getResource('views/partials/request_info.php'),
+			'navigation' => $this->getResource('views/components/navBar.php'),
+			'settings' => $this->getResource('views/components/settingsDropdown.php'),
+			'section_detail_context' => $this->getResource('views/partials/details/section_detail_context.php'),
+			'plain_exception' => Formatter::formatExceptionAsPlainText($this->getSupervisor()),
+			'handler' => $this,
+			'handlers' => $this->getDebug()->getHandlers(),
+			'debug' => $this->getDebug(),
+			'code' => $this->getExceptionCode(),
+			'message' => $supervisor->getExceptionMessage(),
+			'frames' => $this->getExceptionFrames(),
+			'servers' => $this->getProcessTables($servers),
+			'routes' => $this->getProcessTables($routing),
+			'databases' => $this->getProcessTables($databases),
+			'contexts' => $this->getProcessTables($context),
 		];
 	}
 	
@@ -201,21 +221,83 @@ class PleasingPageHandler extends MainHandler
 	}
 
 	/**
-	 * Returns the default tables.
+	 * Returns the default servers.
 	 * 
 	 * @return \Syscodes\Components\Contracts\Debug\Table[]
 	 */
-	protected function getDefaultTables()
+	protected function getDefaultServers()
 	{
-		return [
-			new ArrayTable('GET Data', $_GET),
-			new ArrayTable('POST Data', $_POST),
-			new ArrayTable('Files', $_FILES),
-			new ArrayTable('Cookie', $_COOKIE),
-			new ArrayTable('Session', isset($_SESSION) ? $_SESSION : []),
-			new ArrayTable('Server/Request Data', $_SERVER),
-			new ArrayTable(__('exception.environmentVars'), $_ENV),
+		$server = [
+			'host' => $_SERVER['HTTP_HOST'], 
+			'user-agent' => $_SERVER['HTTP_USER_AGENT'], 
+			'accept' => $_SERVER['HTTP_ACCEPT'], 
+			'accept-language' => $_SERVER['HTTP_ACCEPT_LANGUAGE'], 
+			'accept-encoding' => $_SERVER['HTTP_ACCEPT_ENCODING'],
+			'connection' => $_SERVER['HTTP_CONNECTION'],
+			'upgrade-insecure-requests' => $_SERVER['HTTP_UPGRADE_INSECURE_REQUESTS'], 
+			'sec-fetch-dest' => $_SERVER['HTTP_SEC_FETCH_DEST'],
+			'sec-fetch-mode' => $_SERVER['HTTP_SEC_FETCH_MODE'],
+			'sec-fetch-site' => $_SERVER['HTTP_SEC_FETCH_SITE'],
+			'sec-fetch-user' => $_SERVER['HTTP_SEC_FETCH_USER'],
 		];
+
+		return [new ArrayTable($server)];
+	}
+
+	/**
+	 * Returns the default routing.
+	 * 
+	 * @return \Syscodes\Components\Contracts\Debug\Table[]
+	 */
+	protected function getDefaultRouting()
+	{
+		$action = 'Closure' ?? app('request')->route()->parseControllerCallback()[0];
+
+		$index = match (true) {
+			array_key_exists('web', app('router')->getMiddlewareGroups()) => 0,
+			array_key_exists('api', app('router')->getMiddlewareGroups()) => 1,
+		};
+
+		$routing = [
+			'Controller' => $action,
+			'Middleware' => array_keys(app('router')->getMiddlewareGroups())[$index],
+		];
+
+		return [new ArrayTable($routing)];
+	}
+
+	/**
+	 * Returns the default database.
+	 * 
+	 * @return \Syscodes\Components\Contracts\Debug\Table[]
+	 */
+	protected function getDefaultDatabase()
+	{
+		$query = [
+			'Sql' => null,
+			'Time' => null,
+			'Connection name' => null,
+		];
+
+		return [new ArrayTable($query)];
+	}
+
+	/**
+	 * Returns the default context data.
+	 * 
+	 * @return \Syscodes\Components\Contracts\Debug\Table[]
+	 */
+	protected function getDefaultContext()
+	{
+		$context = [
+			'Php Version' => PHP_VERSION,
+			'Lenevor Version' => app()->version(),
+			'Lenevor Locale' => config('app.locale'),
+			'App Debug' => (1 == env('APP_DEBUG') ? 'true' : 'false'),
+			'App Env' => env('APP_ENV'),
+		];
+
+		return [new ArrayTable($context)];
 	}
 
 	/**
@@ -258,7 +340,7 @@ class PleasingPageHandler extends MainHandler
 	}
 
 	/**
-	 * Processes an array of tables making sure everything is allright.
+	 * Processes an array of tables making sure everything is all right.
 	 * 
 	 * @param  \Syscodes\Components\Contracts\Debug\Table[]  $tables
 	 * 
@@ -272,11 +354,11 @@ class PleasingPageHandler extends MainHandler
 			if ( ! $table instanceof Table) {
 				continue;
 			}
-
+			
 			$label = $table->getLabel();
 
 			try {
-				$data = $table->getData();
+				$data = (array) $table->getData();
 
 				if ( ! (is_array($data) || $data instanceof Traversable)) {
 					$data = [];
@@ -329,7 +411,7 @@ class PleasingPageHandler extends MainHandler
 	 */
 	public function handle()
 	{	
-		$templatePath = $this->getResource('debug.layout.php');
+		$templatePath = $this->getResource('views/layout.php');
 
 		$vars = $this->collectionVars();
 		
@@ -338,7 +420,7 @@ class PleasingPageHandler extends MainHandler
 		$this->template->setVariables($vars);
 		$this->template->render($templatePath);
 		
-		return MainHandler::QUIT;
+		return Handler::QUIT;
 	}
 
 	/**
@@ -442,6 +524,16 @@ class PleasingPageHandler extends MainHandler
 	{
 		return $this->editor;
 	}
+
+	/**
+	 * Get the theme default.
+	 * 
+	 * @return string
+	 */
+	public function getTheme(): string
+	{
+		return $this->theme = config('gdebug.theme');
+	}
 	
 	/**
 	 * Sets the brand of project.
@@ -450,7 +542,7 @@ class PleasingPageHandler extends MainHandler
 	 * 
 	 * @return void
 	 */
-	public function setBrand($brand): void
+	public function setBrand(string $brand): void
 	{
 		$this->brand = (string) $brand;
 	}
@@ -462,8 +554,20 @@ class PleasingPageHandler extends MainHandler
 	 * 
 	 * @return void
 	 */
-	public function setPageTitle($title): void
+	public function setPageTitle(string $title): void
 	{
 		$this->pageTitle = (string) $title;
+	}
+
+	/**
+	 * Set the theme manually.
+	 * 
+	 * @param  string  $theme
+	 * 
+	 * @return void
+	 */
+	public function setTheme(string $theme): void
+	{
+		$this->theme = (string) $theme;
 	}
 }

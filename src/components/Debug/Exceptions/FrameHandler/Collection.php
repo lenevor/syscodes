@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -32,8 +32,6 @@ use IteratorAggregate;
 /**
  * Exposes a fluent interface for dealing with an ordered list
  * of stack-trace frames.
- * 
- * @author Alexander Campo <jalexcam@gmail.com>
  */
 class Collection implements ArrayAccess, IteratorAggregate, Countable
 {
@@ -47,13 +45,11 @@ class Collection implements ArrayAccess, IteratorAggregate, Countable
      * 
      * @param  array  $frames
      * 
-     * @return array
+     * @return void
      */
     public function __construct(array $frames)
     {
-        $this->frames = array_map(function ($frame) {
-            return new Frame($frame);
-        }, $frames);
+        $this->frames = array_map(fn ($frame) => new Frame($frame), $frames);
     }
 
     /**
@@ -93,7 +89,7 @@ class Collection implements ArrayAccess, IteratorAggregate, Countable
      * 
      * @return bool
      */
-    public function offsetExists($offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->frames[$offset]);
     }
@@ -106,7 +102,7 @@ class Collection implements ArrayAccess, IteratorAggregate, Countable
      * 
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->frames[$offset];
     }
@@ -121,7 +117,7 @@ class Collection implements ArrayAccess, IteratorAggregate, Countable
      * 
      * @throws \Exception
      */
-    public function offsetSet($offset, $value): void
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         throw new Exception(__CLASS__.' is read only');
     }
@@ -134,7 +130,7 @@ class Collection implements ArrayAccess, IteratorAggregate, Countable
      * 
      * @throws \Exception
      */
-    public function offsetUnset($offset): void
+    public function offsetUnset(mixed $offset): void
     {
         throw new Exception(__CLASS__.' is read only');
     }

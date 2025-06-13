@@ -16,19 +16,17 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2021 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
 namespace Syscodes\Components\Debug\Util;
 
 use Exception;
-use Syscodes\Components\Debug\Benchmark;
+use Syscodes\Components\Stopwatch\Benchmark;
 
 /**
  * Exposes useful tools for working with/in templates.
- * 
- * @author Javier Alexander Campo M. <jalexcam@gmail.com>
  */
 class TemplateHandler
 {
@@ -166,11 +164,12 @@ class TemplateHandler
 
 		// Set our highlight colors:
 		if (function_exists('ini_set')) {
-			ini_set('highlight.comment', '#C5C5C5');
-			ini_set('highlight.default', '#5399BA');
-			ini_set('highlight.html', '#06B');
-			ini_set('highlight.keyword', '#7081A5;');
-			ini_set('highlight.string', '#d8A134');
+			ini_set('highlight.bg', '#000');
+			ini_set('highlight.comment', '#757575');
+			ini_set('highlight.default', '#717DE8');
+			ini_set('highlight.html', '#2d70a6ff');
+			ini_set('highlight.keyword', '#fc9356ff');
+			ini_set('highlight.string', '#90ec52ff');
 		}
 
 		try {
@@ -214,7 +213,7 @@ class TemplateHandler
 						implode('', $tags[0])
 				);
 			} else {
-				$out .= sprintf('<span class="number">'.$format.'</span> %s <span class="line">', $n + $start +1, $row) ."\n";
+				$out .= sprintf('<span class="number">'.$format.'</span> %s <span class="line">', $n + $start + 1, $row) ."\n";
 			}
 		}
 

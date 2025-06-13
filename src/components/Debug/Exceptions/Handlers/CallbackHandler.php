@@ -16,7 +16,7 @@
  * @package     Lenevor
  * @subpackage  Base
  * @link        https://lenevor.com
- * @copyright   Copyright (c) 2019 - 2022 Alexander Campo <jalexcam@gmail.com>
+ * @copyright   Copyright (c) 2019 - 2025 Alexander Campo <jalexcam@gmail.com>
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
@@ -28,10 +28,8 @@ use InvalidArgumentException;
  * Wrapper for Closures passed as handlers. Can be used directly, 
  * or will be instantiated automagically by Debug\GDebug if passed 
  * to GDebug::pushHandler.
- * 
- * @author Alexander Campo <jalexcam@gmail.com>
  */
-class CallbackHandler extends MainHandler
+class CallbackHandler extends Handler
 {
     /**
      * The contents of a variable can be called as a function.
