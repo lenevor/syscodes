@@ -16,10 +16,10 @@
 	],
 	"require": {
 		"php": "^8.2",
-		"syscodes/support": "^0.8.13", 
-		"syscodes/collections": "^0.8.13",
-		"syscodes/translation": "^0.8.13",
-		"syscodes/contracts": "^0.8.13"		
+		"syscodes/support": "^0.8.14", 
+		"syscodes/collections": "^0.8.14",
+		"syscodes/translation": "^0.8.14",
+		"syscodes/contracts": "^0.8.14"		
 	},
 	"autoload": {
 		"psr-4": {
