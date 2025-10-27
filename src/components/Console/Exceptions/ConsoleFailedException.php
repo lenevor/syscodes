@@ -20,31 +20,11 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Components\Http\Exceptions;
+namespace Syscodes\Components\Console\Exceptions;
 
-use Throwable;
-use LogicException;
+use RuntimeException;
 
 /**
- * SessionNotFoundException.
+ * Displays errors in the console.
  */
-class SessionNotFoundException extends LogicException
-{
-    /**
-     * Initialize constructor.
-     * 
-     * @param  string  $message
-     * @param  int  $code
-     * @param  \Throwable  $previous
-     * 
-     * @return void 
-     */    
-    public function __construct(string $message = '', int $code = 0, ?Throwable $previous = null)
-    {
-        if ($message === '') {
-            $message = 'There is currently no session available';
-        }
-
-        parent::__construct($message, $code, $previous);
-    }
-}
+class ConsoleFailedException extends RuntimeException {}
