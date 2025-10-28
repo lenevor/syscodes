@@ -27,4 +27,4 @@ use RuntimeException;
 /**
  * Displays errors in the console.
  */
-class ConsoleFailedException extends RuntimeException {}
+class ConsoleFailedException extends RuntimeException {} 
