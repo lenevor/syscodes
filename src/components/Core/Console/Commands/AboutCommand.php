@@ -53,7 +53,7 @@ class AboutCommand extends Command
      * 
      * @return void
      */
-    protected function configure()
+    protected function define()
     {
         $this->setHelp(<<<'EOT'
              The <comment>%command-name%</> command displays information about the current Lenevor project.
