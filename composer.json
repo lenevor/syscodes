@@ -1,34 +1,38 @@
 {
-    "name": "lenevor/syscodes",
-    "description": "The Lenevor Framework.",
-    "keywords": ["syscodes","lenevor"],
-    "license": "BSD-3-Clause",
-    "homepage": "https://lenevor.com",
-    "support": {
-        "source": "https://github.com/lenevor"
-    },
-    "authors": [
-        {
-            "name": "Alexander Campo",
-            "email": "jalexcam@gmail.com"
-        }
-    ],
-    "require": {
-        "php": "^8.2",
-        "psr/container": "^1.1.1|^2.0.1",
-        "psr/log": "^1.0|^2.0|^3.0",
-        "symfony/error-handler": "^7.2.0",
-        "symfony/http-foundation": "^7.2.0",
-        "symfony/http-kernel": "^7.2.0",
-        "symfony/process": "^7.2.0",
-        "symfony/routing": "^7.2.0",
-        "symfony/var-dumper": "^7.2.0"
-    },
-    "autoload": {
+	"name": "lenevor/syscodes",
+	"type": "project",
+	"description": "The Lenevor Framework.",
+	"keywords": ["syscodes","lenevor"],
+	"license": "BSD-3-Clause",
+	"homepage": "https://lenevor.com",
+	"support": {
+		"wiki": "https://github.com/lenevor/lenevor/wiki",
+		"source": "https://github.com/lenevor"
+	},
+	"authors": [
+		{
+			"name": "Alexander Campo",
+			"email": "jalexcam@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^8.2",
+		"psr/container": "^1.1.1|^2.0.2",
+		"psr/log": "^1.0|^2.0|^3.0",
+		"symfony/error-handler": "^7.2.0",
+		"symfony/http-foundation": "^7.2.0",
+		"symfony/http-kernel": "^7.2.0",
+		"symfony/process": "^7.2.0",
+		"symfony/routing": "^7.2.0",
+		"symfony/var-dumper": "^7.2.0"
+	},
+	"autoload": {
         "files": [
             "src/components/Collections/Helpers.php",
             "src/components/Core/Helpers.php",
-            "src/components/Support/Helpers.php"
+			"src/components/Filesystem/functions.php",
+            "src/components/Support/Helpers.php",
+			"src/components/Support/functions.php"			
         ],
         "psr-4": {
             "Syscodes\\Components\\": "src/components/"
@@ -39,6 +43,6 @@
             "dev-master": "0.8.x-dev"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
