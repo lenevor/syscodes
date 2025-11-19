@@ -27,15 +27,16 @@
 		"symfony/var-dumper": "^7.2.0"
 	},
 	"autoload": {
-        "files": [
-            "src/components/Collections/Helpers.php",
-            "src/components/Core/Helpers.php",
+		"files": [
+			"src/components/Collections/Helpers.php",
+			"src/components/Collections/functions.php",
+			"src/components/Core/Helpers.php",
 			"src/components/Filesystem/functions.php",
-            "src/components/Support/Helpers.php",
-			"src/components/Support/functions.php"			
-        ],
-        "psr-4": {
-            "Syscodes\\Components\\": "src/components/"
+			"src/components/Support/Helpers.php",
+			"src/components/Support/functions.php"
+		],
+		"psr-4": {
+			"Syscodes\\Components\\": "src/components/"
         }
     },
     "extra": {
