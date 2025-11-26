@@ -16,8 +16,9 @@
 	],
 	"require": {
 		"php": "^8.2",
-		"syscodes/contracts": "^0.8.14",
-		"syscodes/routing": "^0.8.14"
+		"syscodes/contracts": "^0.8.15",
+		"syscodes/routing": "^0.8.15",
+		"symfony/console": "^7.2.0"
 	},
 	"autoload": {
 		"psr-4": {
