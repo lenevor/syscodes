@@ -16,6 +16,7 @@
 	],
 	"require": {
 		"php": "^8.2",
+		"nunomaduro/termwind": "^2.0",
 		"syscodes/contracts": "^0.8.15",
 		"syscodes/core": "^0.8.15",
 		"syscodes/support": "^0.8.15",
