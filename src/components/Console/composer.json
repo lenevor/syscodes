@@ -17,10 +17,10 @@
 	"require": {
 		"php": "^8.2",
 		"nunomaduro/termwind": "^2.0",
-		"syscodes/contracts": "^0.8.15",
-		"syscodes/core": "^0.8.15",
-		"syscodes/support": "^0.8.15",
-		"syscodes/version": "^0.8.15",
+		"syscodes/contracts": "^0.8.16",
+		"syscodes/core": "^0.8.16",
+		"syscodes/support": "^0.8.16",
+		"syscodes/version": "^0.8.16",
 		"psr/container": "^1.1.1|^2.0.2",
 		"symfony/console": "^7.2.0"
 	},
