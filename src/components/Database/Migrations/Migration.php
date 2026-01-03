@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /**
  * Lenevor Framework
@@ -20,31 +20,12 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause New BSD license or see https://lenevor.com/license or see /license.md
  */
 
-namespace Syscodes\Components\Http\Exceptions;
-
-use Throwable;
-use LogicException;
+namespace Syscodes\Components\Database\Migrations;
 
 /**
- * SessionNotFoundException.
+ * 
  */
-class SessionNotFoundException extends LogicException
+class Migration
 {
-    /**
-     * Initialize constructor.
-     * 
-     * @param  string  $message
-     * @param  int  $code
-     * @param  \Throwable  $previous
-     * 
-     * @return void 
-     */    
-    public function __construct(string $message = '', int $code = 0, ?Throwable $previous = null)
-    {
-        if ($message === '') {
-            $message = 'There is currently no session available';
-        }
 
-        parent::__construct($message, $code, $previous);
-    }
 }
