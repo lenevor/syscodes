@@ -361,6 +361,7 @@ class MiddlewareBootstrap
         $aliases = [
             'auth' => \Syscodes\Components\Auth\Middleware\Authenticate::class,
             'auth.basic' => \Syscodes\Components\Auth\Middleware\AuthenticateWithBasicAuth::class,
+            //'auth.session' => \Syscodes\Components\Session\Middleware\AuthenticateSession::class,
             'can' => \Syscodes\Components\Auth\Middleware\Authorize::class,
             'guest' => \Syscodes\Components\Auth\Middleware\RedirectIfAuthenticated::class,
             'signed' => \Syscodes\Components\Routing\Middleware\ValidateSignature::class,
