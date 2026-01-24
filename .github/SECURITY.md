@@ -9,6 +9,9 @@ currently being supported with security updates.
 
 | Version | Security Fixes Until |
 | ------- | -------------------- |
+| 0.8.16  | Jan 5th, 2026        |
+| 0.8.15  | Nov 26th, 2025       |
+| 0.8.14  | Jul 23th, 2025       |
 | 0.8.13  | Jan 31th, 2025       |
 | 0.8.12  | Apr 1th, 2024        |
 | 0.8.11  | Nov 21th, 2023       |
