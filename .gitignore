@@ -1,0 +1,8 @@
+.DS_Store
+/.fleet
+/.idea
+/.vscode
+/vendor
+composer.phar
+composer.lock
+Thumbs.db
