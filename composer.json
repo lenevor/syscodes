@@ -16,18 +16,37 @@
 		}
 	],
 	"require": {
-		"php": "^8.2",
+		"php": "^8.3",
+		"ext-ctype": "*",
+		"ext-filter": "*",
+		"ext-hash": "*",
+		"ext-mbstring": "*",
+		"ext-openssl": "*",
+		"ext-session": "*",
+		"ext-tokenizer": "*",
 		"nunomaduro/termwind": "^2.0",
-		"psr/container": "^1.1.1|^2.0.2",
-		"psr/log": "^1.0|^2.0|^3.0",
-		"symfony/error-handler": "^7.2.0",
-		"symfony/http-foundation": "^7.2.0",
-		"symfony/http-kernel": "^7.2.0",
-		"symfony/process": "^7.2.0",
-		"symfony/routing": "^7.2.0",
-		"symfony/var-dumper": "^7.2.0"
+		"psr/container": "^1.1.1 || ^2.0.1",
+		"psr/log": "^1.0 || ^2.0 || ^3.0",
+		"symfony/console": "^7.4.0 || ^8.0.0",
+		"symfony/error-handler": "^7.4.0 || ^8.0.0",
+		"symfony/http-foundation": "^7.4.0 || ^8.0.0",
+		"symfony/http-kernel": "^7.4.0 || ^8.0.0",
+		"symfony/process": "^7.4.0 || ^8.0.0",
+		"symfony/routing": "^7.4.0 || ^8.0.0",
+		"symfony/var-dumper": "^7.4.0 || ^8.0.0"
 	},
+	"require-dev": {
+        "ext-gmp": "*",
+        "predis/predis": "^2.3 || ^3.0"
+    },
 	"autoload": {
+		"psr-4": {
+			"Syscodes\\Components\\": "src/components/",
+			"Syscodes\\Components\\Support\\": [
+				"src/Components/Macroable/",
+				"src/Components/Collections/"
+			]
+		},
 		"files": [
 			"src/components/Collections/Helpers.php",
 			"src/components/Collections/functions.php",
@@ -35,14 +54,11 @@
 			"src/components/Filesystem/functions.php",
 			"src/components/Support/Helpers.php",
 			"src/components/Support/functions.php"
-		],
-		"psr-4": {
-			"Syscodes\\Components\\": "src/components/"
-        }
+		]
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.8.x-dev"
+            "dev-master": "0.9.x-dev"
         }
     },
 	"minimum-stability": "dev",
