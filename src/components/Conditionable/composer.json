@@ -1,0 +1,27 @@
+{
+	"name": "syscodes/conditionable",
+	"description": "The Syscodes Conditionable package.",
+	"keywords": ["lenevor","conditionable"],
+	"license": "BSD-3-Clause",
+	"homepage": "https://lenevor.com",
+	"support": {
+		"issues": "https://github.com/lenevor/syscodes/issues",
+        "source": "https://github.com/lenevor/syscodes"
+	},
+	"authors": [
+		{
+			"name": "Alexander Campo",
+			"email": "jalexcam@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^8.3"
+	},
+	"autoload": {
+		"psr-4": {
+			"Syscodes\\Components\\Conditionable\\": ""
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
