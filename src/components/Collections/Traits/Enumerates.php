@@ -75,7 +75,9 @@ trait Enumerates
         'reverse',
         'shift',
         'unique',
+        'unless',
         'values',
+        'when',
     ];
 
     /**
@@ -607,7 +609,7 @@ trait Enumerates
             };
         }, $this->all());
     }
-    
+
     /**
      * Indicate that the model's string representation should be escaped when __toString is invoked.
      * 
@@ -678,7 +680,7 @@ trait Enumerates
     public function __toString(): string
     {
         return $this->escapeWhenLoadingToString
-                    ? e($this->toJson())
-                    : $this->toJson();
+            ? e($this->toJson())
+            : $this->toJson();
     }    
 }
