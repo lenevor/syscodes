@@ -15,13 +15,25 @@
 		}
 	],
 	"require": {
-		"php": "^8.2"
+		"php": "^8.3",
+		"psr/log": "^1.0 || ^2.0 || ^3.0",
+		"syscodes/contracts": "^0.9.0",
+		"syscodes/core": "^0.9.0",
+		"syscodes/events": "^0.9.0",
+		"syscodes/support": "^0.9.0"
 	},
 	"autoload": {
 		"psr-4": {
 			"Syscodes\\Components\\Mail\\": ""
 		}
 	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.9.x-dev"
+        }
+    },
+	"config": {
+		"sort-packages": true
+	},
+	"minimum-stability": "dev"
 }
