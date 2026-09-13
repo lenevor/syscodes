@@ -15,20 +15,34 @@
 		}
 	],
 	"require": {
-		"php": "^8.2",
+		"php": "^8.3",
+		"ext-filter": "*",
+        "ext-hash": "*",
+		"symfony/console": "^7.2.0",
+		"symfony/http-foundation": "^7.2.0",
+		"symfony/routing": "^7.2.0",
 		"syscodes/container": "^0.9.0",
 		"syscodes/contracts": "^0.9.0",
 		"syscodes/controller": "^0.9.0",
+		"syscodes/console": "^0.9.0",
 		"syscodes/core": "^0.9.0",
 		"syscodes/http": "^0.9.0",
-		"syscodes/support": "^0.9.0",
-		"symfony/routing": "^7.2.0"
+		"syscodes/macroable": "^0.9.0",
+		"syscodes/pipeline": "^0.9.0",
+		"syscodes/support": "^0.9.0"
 	},
 	"autoload": {
 		"psr-4": {
 			"Syscodes\\Components\\Routing\\": ""
 		}
 	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.9.x-dev"
+        }
+    },
+	"config": {
+		"sort-packages": true
+	},
+	"minimum-stability": "dev"
 }

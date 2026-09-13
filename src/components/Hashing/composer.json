@@ -15,7 +15,7 @@
 		}
 	],
 	"require": {
-		"php": "^8.2",
+		"php": "^8.3",
 		"syscodes/contracts" : "^0.9.0",
 		"syscodes/support" : "^0.9.0"
 	},
@@ -24,6 +24,13 @@
 			"Syscodes\\Components\\Hashing\\": ""
 		}
 	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.9.x-dev"
+        }
+    },
+	"config": {
+		"sort-packages": true
+	},
+	"minimum-stability": "dev"
 }

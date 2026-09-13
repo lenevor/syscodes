@@ -22,6 +22,13 @@
 			"Syscodes\\Components\\Conditionable\\": ""
 		}
 	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.9.x-dev"
+        }
+    },
+	"config": {
+		"sort-packages": true
+	},
+	"minimum-stability": "dev"
 }

@@ -15,17 +15,27 @@
 		}
 	],
 	"require": {
-		"php": "^8.2",
-		"syscodes/contracts": "^0.9.0"
+		"php": "^8.3",
+		"syscodes/conditionable": "^0.9.0",
+		"syscodes/contracts": "^0.9.0",
+		"syscodes/macroable": "^0.9.0"
 	},
 	"autoload": {
 		"psr-4": {
 			"Syscodes\\Components\\Support\\": ""
 		},
 		"files": [
+			"functions.php",
             "helpers.php"
         ]
 	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.9.x-dev"
+        }
+    },
+	"config": {
+		"sort-packages": true
+	},
+	"minimum-stability": "dev"
 }

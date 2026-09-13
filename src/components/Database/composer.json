@@ -15,10 +15,13 @@
 		}
 	],
 	"require": {
-		"php": "^8.2",
+		"php": "^8.3",
+		"ext-pdo": "*",
+		"symfony/http-foundation": "^7.4.0 || ^8.0.0",
 		"syscodes/collections" : "^0.9.0",
 		"syscodes/contracts" : "^0.9.0",
 		"syscodes/core" : "^0.9.0",
+		"syscodes/macroable": "^0.9.0",
 		"syscodes/support" : "^0.9.0"
 	},
 	"autoload": {
@@ -26,6 +29,23 @@
 			"Syscodes\\Components\\Database\\": ""
 		}
 	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+	"suggest": {
+        "ext-filter": "Required to use the Postgres database driver.",
+        "jalexcam/fibber": "Required to use the Erostrine factory builder (*).",
+        "syscodes/console": "Required to use the database commands (^0.9.0).",
+        "syscodes/events": "Required to use the observers with Erostrine (^0.9.0).",
+        "syscodes/filesystem": "Required to use the migrations (^0.9.0).",
+        "syscodes/http": "Required to convert Erostrine models to API resources (^0.9.0).",
+        "syscodes/pagination": "Required to paginate the result set (^0.9.0).",
+        "symfony/finder": "Required to use Erostrine model factories (^7.4 || ^8.0)."
+    },
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.9.x-dev"
+        }
+    },
+	"config": {
+		"sort-packages": true
+	},
+	"minimum-stability": "dev"
 }
