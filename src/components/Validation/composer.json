@@ -19,11 +19,11 @@
 		"ext-filter": "*",
         "ext-mbstring": "*",
 		"egulias/email-validator": "^4.0",
-		"symfony/http-foundation": "^7.2",		
-		"syscodes/support": "^0.9.0", 
-		"syscodes/collections": "^0.9.0",
-		"syscodes/translation": "^0.9.0",
-		"syscodes/contracts": "^0.9.0"
+		"symfony/http-foundation": "^7.4.0 || ^8.0.0",		
+		"syscodes/support": "^0.9.1", 
+		"syscodes/collections": "^0.9.1",
+		"syscodes/translation": "^0.9.1",
+		"syscodes/contracts": "^0.9.1"
 	},
 	"autoload": {
 		"psr-4": {
@@ -36,7 +36,7 @@
         }
     },
 	"suggest": {
-		"syscodes/database": "Required to use the database presence verifier (^0.9.0).",
+		"syscodes/database": "Required to use the database presence verifier (^0.9.1).",
 		"ramsey/uuid": "Required to use Validator::validateUuid() (^4.7)."
 	},
 	"config": {

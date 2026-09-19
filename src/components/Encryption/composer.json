@@ -19,8 +19,8 @@
 		"ext-hash": "*",
 		"ext-mbstring": "*",
 		"ext-openssl": "*",
-		"syscodes/contracts": "^0.9.0",
-		"syscodes/support": "^0.9.0"
+		"syscodes/contracts": "^0.9.1",
+		"syscodes/support": "^0.9.1"
 	},
 	"autoload": {
 		"psr-4": {

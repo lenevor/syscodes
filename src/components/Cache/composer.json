@@ -17,10 +17,10 @@
 	"require": {
 		"php": "^8.3",
 		"psr/simple-cache": "^1.0 || ^2.0 || ^3.0",
-		"syscodes/contracts": "^0.9.0",
-		"syscodes/core": "^0.9.0",
-		"syscodes/macroable": "^0.9.0",
-		"syscodes/support": "^0.9.0"
+		"syscodes/contracts": "^0.9.1",
+		"syscodes/core": "^0.9.1",
+		"syscodes/macroable": "^0.9.1",
+		"syscodes/support": "^0.9.1"
 	},
 	"provide": {
         "psr/simple-cache-implementation": "1.0 || 2.0 || 3.0"
@@ -28,9 +28,9 @@
     "suggest": {
         "ext-apcu": "Required to use the APC cache driver.",
         "ext-memcached": "Required to use the memcache cache driver.",
-        "syscodes/database": "Required to use the database cache driver (^0.9.0).",
-        "syscodes/filesystem": "Required to use the file cache driver (^0.9.0).",
-        "syscodes/redis": "Required to use the redis cache driver (^0.9.0)."
+        "syscodes/database": "Required to use the database cache driver (^0.9.1).",
+        "syscodes/filesystem": "Required to use the file cache driver (^0.9.1).",
+        "syscodes/redis": "Required to use the redis cache driver (^0.9.1)."
     },
 	"autoload": {
 		"psr-4": {

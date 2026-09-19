@@ -16,16 +16,21 @@
 	],
 	"require": {
 		"php": "^8.3",
+		"ext-mbstring": "*",
 		"nunomaduro/termwind": "^2.0",
 		"psr/container": "^1.1.1|^2.0.2",
-		"symfony/console": "^7.2.0",
-		"syscodes/contracts": "^0.9.0",
-		"syscodes/core": "^0.9.0",
-		"syscodes/macroable": "^0.9.0",
-		"syscodes/support": "^0.9.0",
-		"syscodes/version": "^0.9.0",
-		"syscodes/view": "^0.9.0"
+		"symfony/console": "^7.4.0 || ^8.0.0",
+		"syscodes/contracts": "^0.9.1",
+		"syscodes/core": "^0.9.1",
+		"syscodes/macroable": "^0.9.1",
+		"syscodes/support": "^0.9.1",
+		"syscodes/version": "^0.9.1",
+		"syscodes/view": "^0.9.1"
 	},
+	"suggest": {
+        "syscodes/container": "Required to use the scheduler (^0.9.1).",
+        "syscodes/filesystem": "Required to use the generator command (^0.9.1)."
+    },
 	"autoload": {
 		"psr-4": {
 			"Syscodes\\Components\\Console\\": ""
