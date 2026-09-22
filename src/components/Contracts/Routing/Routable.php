@@ -26,7 +26,7 @@ namespace Syscodes\Components\Contracts\Routing;
  * All Lenevor routes are defined in your route files, which are located in the routes 
  * directory and called depending on the HTTP verbs used by the user.
  */
-interface Routable
+interface Routable 
 {
 	/**
 	 * Add a route for all posible methods.
