@@ -25,7 +25,7 @@ namespace Syscodes\Components\Contracts\Routing;
 /**
  * Allows make the binding register.
  */
-interface BindingRoutable
+interface BindingRoutable 
 {
     /**
      * Add a new route parameter binder.
