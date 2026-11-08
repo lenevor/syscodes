@@ -18,10 +18,10 @@
 		"php": "^8.3",
 		"ext-hash": "*",
 		"symfony/http-foundation": "^7.4.0 || ^8.0.0",
-		"syscodes/collections": "^0.9.1",
-		"syscodes/contracts": "^0.9.1",
-		"syscodes/http": "^0.9.1",
-		"syscodes/support": "^0.9.1"
+		"syscodes/collections": "^0.9.2",
+		"syscodes/contracts": "^0.9.2",
+		"syscodes/http": "^0.9.2",
+		"syscodes/support": "^0.9.2"
 	},
 	"autoload": {
 		"psr-4": {

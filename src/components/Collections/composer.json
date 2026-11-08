@@ -16,9 +16,9 @@
 	],
 	"require": {
 		"php": "^8.3",
-		"syscodes/conditionable": "^0.9.1",
-		"syscodes/contracts": "^0.9.1",
-		"syscodes/macroable": "^0.9.1"
+		"syscodes/conditionable": "^0.9.2",
+		"syscodes/contracts": "^0.9.2",
+		"syscodes/macroable": "^0.9.2"
 	},
 	"autoload": {
 		"psr-4": {

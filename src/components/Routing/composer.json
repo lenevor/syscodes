@@ -21,17 +21,17 @@
 		"symfony/console": "^7.4.0 || ^8.0.0",
 		"symfony/http-foundation": "^7.4.0 || ^8.0.0",
 		"symfony/routing": "^7.4.0 || ^8.0.0",
-		"syscodes/container": "^0.9.1",
-		"syscodes/contracts": "^0.9.1",
-		"syscodes/controller": "^0.9.1",
-		"syscodes/core": "^0.9.1",
-		"syscodes/http": "^0.9.1",
-		"syscodes/macroable": "^0.9.1",
-		"syscodes/pipeline": "^0.9.1",
-		"syscodes/support": "^0.9.1"
+		"syscodes/container": "^0.9.2",
+		"syscodes/contracts": "^0.9.2",
+		"syscodes/controller": "^0.9.2",
+		"syscodes/core": "^0.9.2",
+		"syscodes/http": "^0.9.2",
+		"syscodes/macroable": "^0.9.2",
+		"syscodes/pipeline": "^0.9.2",
+		"syscodes/support": "^0.9.2"
 	},
 	"suggest": {
-        "syscodes/console": "Required to use the make commands (^0.9.1)."
+        "syscodes/console": "Required to use the make commands (^0.9.2)."
     },
 	"autoload": {
 		"psr-4": {

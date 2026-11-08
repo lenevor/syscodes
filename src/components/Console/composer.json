@@ -20,16 +20,16 @@
 		"nunomaduro/termwind": "^2.0",
 		"psr/container": "^1.1.1|^2.0.2",
 		"symfony/console": "^7.4.0 || ^8.0.0",
-		"syscodes/contracts": "^0.9.1",
-		"syscodes/core": "^0.9.1",
-		"syscodes/macroable": "^0.9.1",
-		"syscodes/support": "^0.9.1",
-		"syscodes/version": "^0.9.1",
-		"syscodes/view": "^0.9.1"
+		"syscodes/contracts": "^0.9.2",
+		"syscodes/core": "^0.9.2",
+		"syscodes/macroable": "^0.9.2",
+		"syscodes/support": "^0.9.2",
+		"syscodes/version": "^0.9.2",
+		"syscodes/view": "^0.9.2"
 	},
 	"suggest": {
-        "syscodes/container": "Required to use the scheduler (^0.9.1).",
-        "syscodes/filesystem": "Required to use the generator command (^0.9.1)."
+        "syscodes/container": "Required to use the scheduler (^0.9.2).",
+        "syscodes/filesystem": "Required to use the generator command (^0.9.2)."
     },
 	"autoload": {
 		"psr-4": {
