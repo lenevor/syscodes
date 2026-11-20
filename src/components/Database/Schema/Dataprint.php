@@ -32,6 +32,9 @@ use Syscodes\Components\Database\Schema\Grammars\Grammar;
 use Syscodes\Components\Support\Collection;
 use Syscodes\Components\Support\Flowing;
 use Syscodes\Components\Support\Traits\Macroable;
+use Syscodes\Components\Database\Schema\Grammars\MySqlGrammar;
+
+use function Syscodes\Components\Support\enum_value;
 
 /**
  * Extracts the column names to using in creating migrations.
@@ -230,20 +233,32 @@ class Dataprint
      * 
      * @return void
      */
-    protected function addFlowingIndexes(): void
+    protected function addFlowingIndexes()
     {
         foreach ($this->columns as $column) {
             foreach (['primary', 'unique', 'index', 'fulltext', 'fullText', 'spatialIndex'] as $index) {
+                // If the column is supposed to be changed to an auto increment column and
+                // the specified index is primary, there is no need to add a command on
+                // MySQL.
+                if ($index === 'primary' && $column->autoIncrement && $column->change && $this->grammar instanceof MySqlGrammar) {
+                    continue 2;
+                }
+                
+                // If the index has been specified on the given column, but is simply equal
+                // to "true" (boolean), no name has been specified for this index so the
+                // index method.
                 if ($column->{$index} === true) {
                     $this->{$index}($column->name);
 
-                    $column->{$index} = false;
+                    $column->{$index} = null;
                     
                     continue 2;
                 } elseif (isset($column->{$index})) {
+                    // If the index has been specified on the given column, and it has a string
+                    // value.
                     $this->{$index}($column->name, $column->{$index});
 
-                    $column->{$index} = false;
+                    $column->{$index} = null;
                     
                     continue 2;
                 }
@@ -260,7 +275,7 @@ class Dataprint
     {
         foreach ($this->columns as $column) {
             foreach ($this->grammar->getFlowingCommands() as $commandName) {
-                $this->addCommand($commandName, compact('column'));
+                $this->addCommand($commandName, ['column' => $column]);
             }
         }
     }
@@ -358,7 +373,7 @@ class Dataprint
     {
         $columns = is_array($columns) ? $columns : func_get_args();
         
-        return $this->addCommand('dropColumn', compact('columns'));
+        return $this->addCommand('dropColumn', ['columns' => $columns]);
     }
     
     /**
@@ -370,7 +385,7 @@ class Dataprint
      */
     public function renameColumn($from, $to)
     {
-        return $this->addCommand('renameColumn', compact('from', 'to'));
+        return $this->addCommand('renameColumn', ['from' => $from, 'to' => $to]);
     }
     
     /**
@@ -438,13 +453,27 @@ class Dataprint
     {
         return $this->dropIndexCommand('dropForeign', 'foreign', $index);
     }
+
+    /**
+     * Indicate that the given column and foreign key should be dropped.
+     *
+     * @param  string  $column
+     * @return \Syscodes\Components\Support\Flowing
+     */
+    public function dropConstrainedForeignId($column)
+    {
+        $this->dropForeign([$column]);
+
+        return $this->dropColumn($column);
+    }
+
     
     /**
      * Indicate that the timestamp columns should be dropped.
      * 
      * @return void
      */
-    public function dropTimestamps(): void
+    public function dropTimestamps()
     {
         $this->dropColumn('created_at', 'updated_at');
     }
@@ -454,7 +483,7 @@ class Dataprint
      * 
      * @return void
      */
-    public function dropTimestampsTz(): void
+    public function dropTimestampsTz()
     {
         $this->dropTimestamps();
     }
@@ -465,9 +494,20 @@ class Dataprint
      * @param  string  $column 
      * @return void
      */
-    public function dropSoftDeletes($column = 'deleted_at'): void
+    public function dropSoftDeletes($column = 'deleted_at')
     {
         $this->dropColumn($column);
+    }
+    
+    /**
+     * Indicate that the soft delete column should be dropped.
+     *
+     * @param  string  $column
+     * @return void
+     */
+    public function dropSoftDeletesTz($column = 'deleted_at')
+    {
+        $this->dropSoftDeletes($column);
     }
 
     /**
@@ -475,7 +515,7 @@ class Dataprint
      *
      * @return void
      */
-    public function dropRememberToken(): void
+    public function dropRememberToken()
     {
         $this->dropColumn('remember_token');
     }
@@ -488,7 +528,7 @@ class Dataprint
      */
     public function rename($to)
     {
-        return $this->addCommand('rename', compact('to'));
+        return $this->addCommand('rename', ['to' => $to]);
     }
     
     /**
@@ -500,7 +540,7 @@ class Dataprint
      */
     public function renameIndex($from, $to)
     {
-        return $this->addCommand('renameIndex', compact('from', 'to'));
+        return $this->addCommand('renameIndex', ['from' => $from, 'to' => $to]);
     }
 
     /**
@@ -685,7 +725,7 @@ class Dataprint
     {
         $length = ! is_null($length) ? $length : Builder::$defaultStringLength;
         
-        return $this->addColumn('char', $column, compact('length'));
+        return $this->addColumn('char', $column, ['length' => $length]);
     }
     
     /**
@@ -699,7 +739,7 @@ class Dataprint
     {
         $length = $length ?: Builder::$defaultStringLength;
         
-        return $this->addColumn('string', $column, compact('length'));
+        return $this->addColumn('string', $column, ['length' => $length]);
     }
     
     /**
@@ -756,7 +796,7 @@ class Dataprint
      */
     public function integer($column, $autoIncrement = false, $unsigned = false)
     {
-        return $this->addColumn('integer', $column, compact('autoIncrement', 'unsigned'));
+        return $this->addColumn('integer', $column, ['autoIncrement' => $autoIncrement, 'unsigned' => $unsigned]);
     }
     
     /**
@@ -769,7 +809,7 @@ class Dataprint
      */
     public function tinyInteger($column, $autoIncrement = false, $unsigned = false)
     {
-        return $this->addColumn('tinyInteger', $column, compact('autoIncrement', 'unsigned'));
+        return $this->addColumn('tinyInteger', $column, ['autoIncrement' => $autoIncrement, 'unsigned' => $unsigned]);
     }
     
     /**
@@ -782,7 +822,7 @@ class Dataprint
      */
     public function smallInteger($column, $autoIncrement = false, $unsigned = false)
     {
-        return $this->addColumn('smallInteger', $column, compact('autoIncrement', 'unsigned'));
+        return $this->addColumn('smallInteger', $column, ['autoIncrement' => $autoIncrement, 'unsigned' => $unsigned]);
     }
     
     /**
@@ -795,7 +835,7 @@ class Dataprint
      */
     public function mediumInteger($column, $autoIncrement = false, $unsigned = false)
     {
-        return $this->addColumn('mediumInteger', $column, compact('autoIncrement', 'unsigned'));
+        return $this->addColumn('mediumInteger', $column, ['autoIncrement' => $autoIncrement, 'unsigned' => $unsigned]);
     }
     
     /**
@@ -808,7 +848,7 @@ class Dataprint
      */
     public function bigInteger($column, $autoIncrement = false, $unsigned = false)
     {
-        return $this->addColumn('bigInteger', $column, compact('autoIncrement', 'unsigned'));
+        return $this->addColumn('bigInteger', $column, ['autoIncrement' => $autoIncrement, 'unsigned' => $unsigned]);
     }
     
     /**
@@ -891,28 +931,23 @@ class Dataprint
      * Create a new float column on the table.
      * 
      * @param  string  $column
-     * @param  int  $total
-     * @param  int  $places
-     * @param  bool  $unsigned 
+     * @param  int  $precision
      * @return \Syscodes\Components\Database\Schema\ColumnDefinition
      */
-    public function float($column, $total = 8, $places = 2, $unsigned = false)
+    public function float($column, $precision = 53)
     {
-        return $this->addColumn('float', $column, compact('total', 'places', 'unsigned'));
+        return $this->addColumn('float', $column, ['precision' => $precision]);
     }
     
     /**
      * Create a new double column on the table.
      * 
      * @param  string  $column
-     * @param  int|null  $total
-     * @param  int|null  $places
-     * @param  bool  $unsigned 
      * @return \Syscodes\Components\Database\Schema\ColumnDefinition
      */
-    public function double($column, $total = null, $places = null, $unsigned = false)
+    public function double($column)
     {
-        return $this->addColumn('double', $column, compact('total', 'places', 'unsigned'));
+        return $this->addColumn('double', $column);
     }
     
     /**
@@ -920,39 +955,35 @@ class Dataprint
      * 
      * @param  string  $column
      * @param  int  $total
-     * @param  int  $places
-     * @param  bool  $unsigned 
+     * @param  int  $places 
      * @return \Syscodes\Components\Database\Schema\ColumnDefinition
      */
-    public function decimal($column, $total = 8, $places = 2, $unsigned = false)
+    public function decimal($column, $total = 8, $places = 2)
     {
-        return $this->addColumn('decimal', $column, compact('total', 'places', 'unsigned'));
+        return $this->addColumn('decimal', $column, ['total' => $total, 'places' => $places]);
     }
     
     /**
      * Create a new unsigned float column on the table.
      * 
      * @param  string  $column
-     * @param  int  $total
-     * @param  int  $places 
+     * @param  int  $precision 
      * @return \Syscodes\Components\Database\Schema\ColumnDefinition
      */
-    public function unsignedFloat($column, $total = 8, $places = 2)
+    public function unsignedFloat($column, $precision = 53)
     {
-        return $this->float($column, $total, $places, true);
+        return $this->float($column, $precision);
     }
     
     /**
      * Create a new unsigned double column on the table.
      * 
      * @param  string  $column
-     * @param  int  $total
-     * @param  int  $places 
      * @return \Syscodes\Components\Database\Schema\ColumnDefinition
      */
-    public function unsignedDouble($column, $total = null, $places = null)
+    public function unsignedDouble($column)
     {
-        return $this->double($column, $total, $places, true);
+        return $this->double($column);
     }
     
     /**
@@ -965,7 +996,7 @@ class Dataprint
      */
     public function unsignedDecimal($column, $total = 8, $places = 2)
     {
-        return $this->decimal($column, $total, $places, true);
+        return $this->decimal($column, $total, $places);
     }
     
     /**
@@ -988,7 +1019,9 @@ class Dataprint
      */
     public function enum($column, array $allowed)
     {
-        return $this->addColumn('enum', $column, compact('allowed'));
+        $allowed = array_map(fn ($value) => enum_value($value), $allowed);
+
+        return $this->addColumn('enum', $column, ['allowed' => $allowed]);
     }
     
     /**
@@ -1000,7 +1033,7 @@ class Dataprint
      */
     public function set($column, array $allowed)
     {
-        return $this->addColumn('set', $column, compact('allowed'));
+        return $this->addColumn('set', $column, ['allowed' => $allowed]);
     }
     
     /**
@@ -1045,7 +1078,9 @@ class Dataprint
      */
     public function dateTime($column, $precision = 0)
     {
-        return $this->addColumn('dateTime', $column, compact('precision'));
+        $precision ??= $this->defaultTimePrecision();
+
+        return $this->addColumn('dateTime', $column, ['precision' => $precision]);
     }
     
     /**
@@ -1057,7 +1092,9 @@ class Dataprint
      */
     public function dateTimeTz($column, $precision = 0)
     {
-        return $this->addColumn('dateTimeTz', $column, compact('precision'));
+        $precision ??= $this->defaultTimePrecision();
+
+        return $this->addColumn('dateTimeTz', $column, ['precision' => $precision]);
     }
     
     /**
@@ -1069,7 +1106,9 @@ class Dataprint
      */
     public function time($column, $precision = 0)
     {
-        return $this->addColumn('time', $column, compact('precision'));
+        $precision ??= $this->defaultTimePrecision();
+
+        return $this->addColumn('time', $column, ['precision' => $precision]);
     }
     
     /**
@@ -1081,7 +1120,9 @@ class Dataprint
      */
     public function timeTz($column, $precision = 0)
     {
-        return $this->addColumn('timeTz', $column, compact('precision'));
+        $precision ??= $this->defaultTimePrecision();
+
+        return $this->addColumn('timeTz', $column, ['precision' => $precision]);
     }
     
     /**
@@ -1093,7 +1134,9 @@ class Dataprint
      */
     public function timestamp($column, $precision = 0)
     {
-        return $this->addColumn('timestamp', $column, compact('precision'));
+        $precision ??= $this->defaultTimePrecision();
+
+        return $this->addColumn('timestamp', $column, ['precision' => $precision]);
     }
     
     /**
@@ -1105,20 +1148,23 @@ class Dataprint
      */
     public function timestampTz($column, $precision = 0)
     {
-        return $this->addColumn('timestampTz', $column, compact('precision'));
+        $precision ??= $this->defaultTimePrecision();
+
+        return $this->addColumn('timestampTz', $column, ['precision' => $precision]);
     }
     
     /**
      * Add nullable creation and update timestamps to the table.
      * 
      * @param  int|null  $precision 
-     * @return void
+     * @return \Syscodes\Components\Support\Collection<int, \Syscodes\Components\Database\Schema\ColumnDefinition>
      */
-    public function timestamps($precision = 0): void
+    public function timestamps($precision = null)
     {
-        $this->timestamp('created_at', $precision)->nullable();
-        
-        $this->timestamp('updated_at', $precision)->nullable();
+        return new Collection([
+            $this->timestamp('created_at', $precision)->nullable(),
+            $this->timestamp('updated_at', $precision)->nullable(),
+        ]);
     }
     
     /**
@@ -1129,22 +1175,23 @@ class Dataprint
      * @param  int|null  $precision
      * @return void
      */
-    public function nullableTimestamps($precision = 0): void
+    public function nullableTimestamps($precision = null)
     {
-        $this->timestamps($precision);
+        return $this->timestamps($precision);
     }
     
     /**
      * Add creation and update timestampTz columns to the table.
      * 
      * @param  int|null  $precision 
-     * @return void
+     * @return \Syscodes\Components\Support\Collection<int, \Syscodes\Components\Database\Schema\ColumnDefinition>
      */
-    public function timestampsTz($precision = 0): void
+    public function timestampsTz($precision = null)
     {
-        $this->timestampTz('created_at', $precision)->nullable();
-        
-        $this->timestampTz('updated_at', $precision)->nullable();
+        return new Collection([
+            $this->timestampTz('created_at', $precision)->nullable(),
+            $this->timestampTz('updated_at', $precision)->nullable(),
+        ]);
     }
     
     /**
@@ -1154,7 +1201,7 @@ class Dataprint
      * @param  int|null  $precision
      * @return \Syscodes\Components\Database\Schema\ColumnDefinition
      */
-    public function softDeletes($column = 'deleted_at', $precision = 0)
+    public function softDeletes($column = 'deleted_at', $precision = null)
     {
         return $this->timestamp($column, $precision)->nullable();
     }
@@ -1166,9 +1213,21 @@ class Dataprint
      * @param  int|null  $precision 
      * @return \Syscodes\Components\Database\Schema\ColumnDefinition
      */
-    public function softDeletesTz($column = 'deleted_at', $precision = 0)
+    public function softDeletesTz($column = 'deleted_at', $precision = null)
     {
         return $this->timestampTz($column, $precision)->nullable();
+    }
+
+    /**
+     * Add a "deleted at" datetime column to the table.
+     *
+     * @param  string  $column
+     * @param  int|null  $precision
+     * @return \Syscodes\Components\Database\Schema\ColumnDefinition
+     */
+    public function softDeletesDatetime($column = 'deleted_at', $precision = null)
+    {
+        return $this->dateTime($column, $precision)->nullable();
     }
     
     /**
@@ -1185,12 +1244,14 @@ class Dataprint
     /**
      * Create a new binary column on the table.
      * 
-     * @param  string  $column 
+     * @param  string  $column
+     * @param  int|null  $length
+     * @param  bool  $fixed
      * @return \Syscodes\Components\Database\Schema\ColumnDefinition
      */
-    public function binary($column)
+    public function binary($column, $length = null, $fixed = false)
     {
-        return $this->addColumn('binary', $column);
+        return $this->addColumn('binary', $column, ['length' => $length, 'fixed' => $fixed]);
     }
     
     /**
@@ -1204,7 +1265,71 @@ class Dataprint
         return $this->addColumn('uuid', $column);
     }
 
-     /**
+    /**
+     * Create a new UUID foreign ID column on the table.
+     *
+     * @param  string  $column
+     * @return \Syscodes\Components\Database\Schema\ForeignIdColumnDefinition
+     */
+    public function foreignUuid($column)
+    {
+        return $this->addColumnDefinition(new ForeignIdColumnDefinition($this, [
+            'type' => 'uuid',
+            'name' => $column,
+        ]));
+    }
+
+    /**
+     * Create a new ULID column on the table.
+     *
+     * @param  string  $column
+     * @param  int|null  $length
+     * @return \Syscodes\Components\Database\Schema\ColumnDefinition
+     */
+    public function ulid($column = 'ulid', $length = 26)
+    {
+        return $this->char($column, $length);
+    }
+
+    /**
+     * Create a new ULID foreign ID column on the table.
+     *
+     * @param  string  $column
+     * @param  int|null  $length
+     * @return \Syscodes\Components\Database\Schema\ForeignIdColumnDefinition
+     */
+    public function foreignUlid($column, $length = 26)
+    {
+        return $this->addColumnDefinition(new ForeignIdColumnDefinition($this, [
+            'type' => 'char',
+            'name' => $column,
+            'length' => $length,
+        ]));
+    }
+
+    /**
+     * Create a new IP address column on the table.
+     *
+     * @param  string  $column
+     * @return \Syscodes\Components\Database\Schema\ColumnDefinition
+     */
+    public function ipAddress($column = 'ip_address')
+    {
+        return $this->addColumn('ipAddress', $column);
+    }
+
+    /**
+     * Create a new MAC address column on the table.
+     *
+     * @param  string  $column
+     * @return \Syscodes\Components\Database\Schema\ColumnDefinition
+     */
+    public function macAddress($column = 'mac_address')
+    {
+        return $this->addColumn('macAddress', $column);
+    }
+
+    /**
      * Add the `remember_token` column to the table.
      *
      * @return \Syscodes\Components\Database\Schema\ColumnDefinition
@@ -1213,6 +1338,30 @@ class Dataprint
     {
         return $this->string('remember_token', 100)->nullable();
     }
+
+    /**
+     * Create a new custom column on the table.
+     *
+     * @param  string  $column
+     * @param  string  $definition
+     * @return \Syscodes\Components\Database\Schema\ColumnDefinition
+     */
+    public function rawColumn($column, $definition)
+    {
+        return $this->addColumn('raw', $column, ['definition' => $definition]);
+    }
+
+    /**
+     * Add a comment to the table.
+     *
+     * @param  string  $comment
+     * @return \Syscodes\Components\Support\Flowing
+     */
+    public function comment($comment)
+    {
+        return $this->addCommand('tableComment', ['comment' => $comment]);
+    }
+
     
     /**
      * Create a new drop index command on the data print.
@@ -1332,6 +1481,8 @@ class Dataprint
     public function removeColumn($name): static
     {
         $this->columns = array_values(array_filter($this->columns, fn ($column) => $column['name'] != $name));
+
+        $this->commands = array_values(array_filter($this->commands, fn ($column) => ! $column instanceof ColumnDefinition || $column['name'] != $name));
         
         return $this;
     }
@@ -1359,7 +1510,7 @@ class Dataprint
      */
     protected function createCommand($name, array $parameters = [])
     {
-        return new Flowing(array_merge(compact('name'), $parameters));
+        return new Flowing(array_merge(['name' => $name], $parameters));
     }
     
     /**
@@ -1371,13 +1522,26 @@ class Dataprint
     {
         return $this->table;
     }
+
+    /**
+     * Get the table prefix.
+     *
+     * @deprecated Use DB::getTablePrefix()
+     *
+     * @return string
+     */
+    public function getPrefix()
+    {
+        return $this->connection->getTablePrefix();
+    }
+
     
     /**
      * Get the columns that should be added.
      * 
-     * @return array
+     * @return \Syscodes\Components\Database\Schema\ColumnDefinition[]
      */
-    public function getColumns(): array
+    public function getColumns()
     {
         return $this->columns;
     }
@@ -1385,9 +1549,9 @@ class Dataprint
     /**
      * Get the commands on the data print.
      * 
-     * @return array
+     * @return \Syscodes\Components\Support\Flowing[]
      */
-    public function getCommands(): array
+    public function getCommands()
     {
         return $this->commands;
     }
