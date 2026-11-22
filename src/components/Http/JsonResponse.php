@@ -118,6 +118,8 @@ class JsonResponse extends BaseJsonResponse
     #[\Override]
     public function setData($data = []): static
     {
+        $this->original = $data;
+        
         json_decode('[]');
         
         $this->data = match(true) {
