@@ -48,6 +48,7 @@ use Syscodes\Components\Support\Traits\Macroable;
 use Syscodes\Components\Version;
 
 use function Syscodes\Components\Filesystem\join_paths;
+use function Syscodes\Components\Support\enum_value;
 
 /**
  * Allows the loading of service providers and functions to activate 
@@ -715,10 +716,10 @@ class Application extends Container implements ApplicationContract
         if (count($environments) > 0) {
             $patterns = is_array($environments[0]) ? $environments[0] : $environments;
 
-            return Str::is($patterns, $this->env);
+            return Str::is(array_map(enum_value(...), $patterns), $this['env']);
         }
 
-        return $this->env;
+        return $this['env'];
     }
 
     /**
@@ -729,7 +730,7 @@ class Application extends Container implements ApplicationContract
      */
     public function detectEnvironment(Closure $callback)
     {
-        return $this->env = (new EnvironmentDetector)->detect($callback);
+        return $this['env'] = (new EnvironmentDetector)->detect($callback);
     }
     
     /**
@@ -739,7 +740,7 @@ class Application extends Container implements ApplicationContract
      */
     public function isLocal(): bool
     {
-        return $this->env === 'local';
+        return $this['env'] === 'local';
     }
     
     /**
@@ -749,7 +750,7 @@ class Application extends Container implements ApplicationContract
      */
     public function isProduction(): bool
     {
-        return $this->env === 'production';
+        return $this['env'] === 'production';
     }
     
     /**
@@ -759,7 +760,7 @@ class Application extends Container implements ApplicationContract
      */
     public function isUnitTests(): bool
     {
-        return $this->env === 'testing';
+        return $this['env'] === 'testing';
     }
 
     /**
