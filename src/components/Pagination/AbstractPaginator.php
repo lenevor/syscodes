@@ -329,9 +329,9 @@ abstract class AbstractPaginator implements ArrayAccess, IteratorAggregate, CanB
     /**
      * Get the number of the last item in the slice.
      * 
-     * @return int
+     * @return int|null
      */
-    public function lastItem(): int|null
+    public function lastItem()
     {
         return count($this->items) > 0 ? $this->firstItem() + $this->count() - 1 : null;
     }

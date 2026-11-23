@@ -88,7 +88,7 @@ trait Enumerates
      * @param  mixed  $args 
      * @return static
      */
-    public static function make($items = [], ...$args): static
+    public static function make($items = [], ...$args)
     {
         return new static($items, ...$args);
     }
@@ -124,7 +124,7 @@ trait Enumerates
      * @param  mixed  $args 
      * @return static
      */
-    public static function empty(...$args): static
+    public static function empty(...$args)
     {
         return new static([], ...$args);
     }
@@ -139,7 +139,7 @@ trait Enumerates
      * @param  iterable  ...$args
      * @return static<int, TTimesValue>
      */
-    public static function times($number, ?callable $callback = null, ...$args): static
+    public static function times($number, ?callable $callback = null, ...$args)
     {
         if ($number < 1) {
             return new static([], ...$args);
@@ -177,7 +177,7 @@ trait Enumerates
      * @param  mixed  ...$args 
      * @return static
      */
-    public function dump(...$args): static
+    public function dump(...$args)
     {
         dump($this->all(), ...$args);
         
@@ -190,7 +190,7 @@ trait Enumerates
      * @param  callable  $callback 
      * @return static
      */
-    public function each(callable $callback): static
+    public function each(callable $callback)
     {
         foreach ($this as $key => $item) {
             if ($callback($item, $key) === false) {
@@ -233,7 +233,7 @@ trait Enumerates
      * @param  callable  $callback 
      * @return static
      */
-    public function flatMap(callable $callback): static
+    public function flatMap(callable $callback)
     {
         return $this->map($callback)->collapse();
     }
@@ -259,7 +259,7 @@ trait Enumerates
      * @param  mixed  $value 
      * @return static
      */
-    public function where($key, $operator = null, $value = null): static
+    public function where($key, $operator = null, $value = null)
     {
         return $this->filter($this->operatorCallback(...func_get_args()));
     }
@@ -270,7 +270,7 @@ trait Enumerates
      * @param  string|null  $key 
      * @return static
      */
-    public function whereNull($key = null): static
+    public function whereNull($key = null)
     {
         return $this->whereStrict($key, null);
     }
@@ -281,7 +281,7 @@ trait Enumerates
      * @param  string|null  $key 
      * @return static
      */
-    public function whereNotNull($key = null): static
+    public function whereNotNull($key = null)
     {
         return $this->where($key, '!==', null);
     }
@@ -293,7 +293,7 @@ trait Enumerates
      * @param  mixed  $value 
      * @return static
      */
-    public function whereStrict($key, $value): static
+    public function whereStrict($key, $value)
     {
         return $this->where($key, '===', $value);
     }
@@ -306,7 +306,7 @@ trait Enumerates
      * @param  bool  $strict 
      * @return static
      */
-    public function whereIn($key, $values, $strict = false): static
+    public function whereIn($key, $values, $strict = false)
     {
         $values = $this->getArrayableItems($values);
 
@@ -320,7 +320,7 @@ trait Enumerates
      * @param  \Syscodes\Components\Contracts\Support\Arrayable|iterable  $values 
      * @return static
      */
-    public function whereInStrict($key, $values): static
+    public function whereInStrict($key, $values)
     {
         return $this->whereIn($key, $values, true);
     }
@@ -332,7 +332,7 @@ trait Enumerates
      * @param  \Syscodes\Components\Contracts\Support\Arrayable|iterable  $values 
      * @return static
      */
-    public function whereBetween($key, $values): static
+    public function whereBetween($key, $values)
     {
         return $this->where($key, '>=', reset($values))->where($key, '<=', end($values));
     }
@@ -344,7 +344,7 @@ trait Enumerates
      * @param  \Syscodes\Components\Contracts\Support\Arrayable|iterable  $values 
      * @return static
      */
-    public function whereNotBetween($key, $values): static
+    public function whereNotBetween($key, $values)
     {
         return $this->filter(
             fn ($item) => data_get($item, $key) < reset($values) || data_get($item, $key) > end($values)
@@ -359,7 +359,7 @@ trait Enumerates
      * @param  bool  $strict 
      * @return static
      */
-    public function whereNotIn($key, $values, $strict = false): static
+    public function whereNotIn($key, $values, $strict = false)
     {
         $values = $this->getArrayableItems($values);
 
@@ -373,7 +373,7 @@ trait Enumerates
      * @param  \Syscodes\Components\Contracts\Support\Arrayable|iterable  $values 
      * @return static
      */
-    public function whereNotInStrict($key, $values): static
+    public function whereNotInStrict($key, $values)
     {
         return $this->whereNotIn($key, $values, true);
     }
@@ -451,7 +451,7 @@ trait Enumerates
      * @param callable|bool  $callback 
      * @return static
      */
-    public function reject($callback = true): static
+    public function reject($callback = true)
     {
         $useAsCallable = $this->useAsCallable($callback);
 
@@ -500,7 +500,7 @@ trait Enumerates
      * @param  int  $perPage
      * @return static
      */
-    public function forPage(int $page, int $perPage): static
+    public function forPage(int $page, int $perPage)
     {
         $offset = max(0, ($page - 1) * $perPage);
         
@@ -515,7 +515,7 @@ trait Enumerates
      * @param  mixed  $value 
      * @return static
      */
-    public function partition($key, $operator = null, $value = null): static
+    public function partition($key, $operator = null, $value = null)
     {
         $callback = func_num_args() === 1
             ? $this->valueRetriever($key)
@@ -533,7 +533,7 @@ trait Enumerates
      * @param  callable|null  $default 
      * @return static
      */
-    public function whenEmpty(callable $callback, ?callable $default = null): static
+    public function whenEmpty(callable $callback, ?callable $default = null)
     {
         return $this->when($this->isEmpty(), $callback, $default);
     }
@@ -545,7 +545,7 @@ trait Enumerates
      * @param  callable|null  $default 
      * @return static
      */
-    public function whenNotEmpty(callable $callback, ?callable $default = null): static
+    public function whenNotEmpty(callable $callback, ?callable $default = null)
     {
         return $this->when($this->isNotEmpty(), $callback, $default);
     }
@@ -557,7 +557,7 @@ trait Enumerates
      * @param  callable|null  $default 
      * @return static
      */
-    public function unlessEmpty(callable $callback, ?callable $default = null): static
+    public function unlessEmpty(callable $callback, ?callable $default = null)
     {
         return $this->whenNotEmpty($callback, $default);
     }
@@ -569,7 +569,7 @@ trait Enumerates
      * @param  callable|null  $default 
      * @return static
      */
-    public function unlessNotEmpty(callable $callback, ?callable $default = null): static
+    public function unlessNotEmpty(callable $callback, ?callable $default = null)
     {
         return $this->whenEmpty($callback, $default);
     }
