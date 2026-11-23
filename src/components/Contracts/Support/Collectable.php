@@ -34,17 +34,17 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
     /**
      * Create a new instance with no items.
      * 
-     * @return static
+     * @return $this
      */
-    public static function empty(): static;
+    public static function empty();
 
     /**
      * Create a new collection instance if the value isn't one already.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public static function make($items = []): static;
+    public static function make($items = []);
 
     /**
      * Add a method to the list of proxied methods.
@@ -61,9 +61,9 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * @param  int  $to
      * @param  int  $step
      * @param  iterable  ...$args
-     * @return static<int, int>
+     * @return $this<int, int>
      */
-    public static function range($from, $to, $step = 1, ...$args): static;
+    public static function range($from, $to, $step = 1, ...$args);
 
     /**
      * Wrap the given value in a collection if applicable.
@@ -86,9 +86,9 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * Add an item in the collection.
      * 
      * @param  mixed  $item 
-     * @return static
+     * @return $this
      */
-    public function add(mixed $item): static;
+    public function add(mixed $item);
 
     /**
      * Get all of the items in the collection.
@@ -100,9 +100,9 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
     /**
      * Collapse the collection items into a single array.
      * 
-     * @return static
+     * @return $this
      */
-    public function collapse(): static;
+    public function collapse();
 
     /**
      * Collect the values into a collection.
@@ -116,9 +116,9 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * keys and other its values.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function combine(mixed $items): static;
+    public function combine(mixed $items);
 
     /**
      * Determine if an item exists in the collection.
@@ -144,17 +144,24 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * Chunk the underlying collection array.
      * 
      * @param  int  $size 
-     * @return static
+     * @return $this
      */
-    public function chunk(int $size): static;
+    public function chunk(int $size);
+
+    /**
+     * Count the number of items in the collection.
+     * 
+     * @return int
+     */
+    public function count(): int;
 
     /**
      * Diff the collection with the given items.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function diff(mixed $items): static;
+    public function diff(mixed $items);
 
     /**
      * Returns the items in a collection that are not present 
@@ -162,18 +169,18 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * 
      * @param  mixed  $items
      * @param  callable  $callback 
-     * @return static
+     * @return $this
      */
-    public function diffUsing(mixed $items, callable $callback): static;
+    public function diffUsing(mixed $items, callable $callback);
 
      /**
      * Returns the items in the collection when the keys and values 
      * are not present in the given items.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function diffAssoc(mixed $items): static;
+    public function diffAssoc(mixed $items);
 
     /**
      * Returns the items in the collection when the keys and values 
@@ -181,18 +188,18 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * 
      * @param  mixed  $items
      * @param  callable  $callback 
-     * @return static
+     * @return $this
      */
-    public function diffAssocUsing(mixed $items, callable $callback): static;
+    public function diffAssocUsing(mixed $items, callable $callback);
 
     /**
      * Returns the items in the collection when the keys 
      * are not present in the given items.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function diffKeys(mixed $items): static;
+    public function diffKeys(mixed $items);
 
     /**
      * Returns the items in the collection when the keys are 
@@ -200,49 +207,49 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * 
      * @param  mixed  $items
      * @param  callable  $callback 
-     * @return static
+     * @return $this
      */
-    public function diffKeyUsing(mixed $items, callable $callback): static;
+    public function diffKeyUsing(mixed $items, callable $callback);
 
     /**
      * Execute a callback over each item.
      * 
      * @param  callable  $callback 
-     * @return static
+     * @return $this
      */
-    public function each(callable $callback): static;
+    public function each(callable $callback);
 
     /**
      * Remove an item from the collection by key.
      * 
      * @param  string|array  $keys 
-     * @return static
+     * @return $this
      */
-    public function erase($keys): static;
+    public function erase($keys);
 
     /**
      * Indicate that the model's string representation should be escaped when __toString is invoked.
      * 
      * @param  bool  $escape 
-     * @return static
+     * @return $this
      */
-    public function escapeWhenLoadingToString($escape = true): static;
+    public function escapeWhenLoadingToString($escape = true);
 
     /**
      * Get all items exceptions with the specified keys.
      * 
      * @param  mixed  $keys
-     * @return static
+     * @return $this
      */
-    public function except(mixed $keys): static;
+    public function except(mixed $keys);
 
     /**
      * Run a filter over each of the items.
      * 
      * @param  callable|null  $callback 
-     * @return static
+     * @return $this
      */
-    public function filter(?callable $callback = null): static;
+    public function filter(?callable $callback = null);
     
     /**
      * Get the first item from the collection.
@@ -256,16 +263,16 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
     /**
      * Flip the items in the collection.
      * 
-     * @return static
+     * @return $this
      */
-    public function flip(): static;
+    public function flip();
 
     /**
      * Get a flattened array of the items in the collection.
      * 
-     * @return static
+     * @return $this
      */
-    public function flatten(): static;
+    public function flatten();
 
     /**
      * Get an item from the collection.
@@ -297,17 +304,17 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * Intersect the collection with the given items.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function intersect(mixed $items): static;
+    public function intersect(mixed $items);
 
     /**
      * Intersect the collection with the given items by key.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function intersectKey(mixed $items): static;
+    public function intersectKey(mixed $items);
 
     /**
      * Determine if the collection is empty or not.
@@ -326,9 +333,9 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
     /**
      * Reset the keys of the collection.
      * 
-     * @return static
+     * @return $this
      */
-    public function keys(): static;
+    public function keys();
 
     /**
      * Get the last item from the collection.
@@ -343,59 +350,59 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * Run a map over each of the items.
      * 
      * @param  callable  $callback 
-     * @return static
+     * @return $this
      */
-    public function map(callable $callback): static;
+    public function map(callable $callback);
 
     /**
      * Run an associative map over each of the items.
      * 
      * @param  callable  $callback 
-     * @return static
+     * @return $this
      */
-    public function mapKeys(callable $callback): static;
+    public function mapKeys(callable $callback);
 
     /**
      * Merge the collection with the given items.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function merge(array $items): static;
+    public function merge(array $items);
 
     /**
      * Recursively Merge the collection with the given items.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function mergeRecursive($items): static;
+    public function mergeRecursive($items);
 
     /**
      * Get the items with the specified keys.
      * 
      * @param  mixed  $keys 
-     * @return static
+     * @return $this
      */
-    public function only(mixed $keys): static;
+    public function only(mixed $keys);
 
     /**
      * Pad collection to the specified length with a value.
      * 
      * @param  int  $size
      * @param  mixed  $value 
-     * @return static
+     * @return $this
      */
-    public function pad(int $size, mixed $value): static;
+    public function pad(int $size, mixed $value);
 
     /**
      * Get the values of a given key.
      * 
      * @param  string|array|int|null  $value
      * @param  string|null  $key 
-     * @return static
+     * @return $this
      */
-    public function pluck($value, ?string $key = null): static;
+    public function pluck($value, ?string $key = null);
 
     /**
      * Get and remove the last item from the collection.
@@ -403,15 +410,6 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * @return mixed
      */
     public function pop(): mixed;
-
-    /**
-     * Push an item onto the beginning of the collection.
-     * 
-     * @param  mixed  $value
-     * @param  mixed|null  $key 
-     * @return array
-     */
-    public function prepend(mixed $value, mixed $key = null);
 
     /**
      * Get and remove an item from the collection.
@@ -423,21 +421,13 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
     public function pull(mixed $key, mixed $default = null);
 
     /**
-     * Push an item onto the end of the collection.
-     * 
-     * @param  mixed  $values  [optional] 
-     * @return static
-     */
-    public function push(...$values): static;
-
-    /**
      * Put an item in the collection by key.
      * 
      * @param  mixed  $key
      * @param  mixed  $value 
-     * @return static
+     * @return $this
      */
-    public function put(mixed $key, mixed $value): static;
+    public function put(mixed $key, mixed $value);
 
     /**
      * Reduce the collection to a single value.
@@ -452,24 +442,24 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * Replace the collection items with the given items.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function replace(mixed $items): static;
+    public function replace(mixed $items);
 
     /**
      * Recursively replace the collection items with the given items.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function replaceRecursive(mixed $items): static;
+    public function replaceRecursive(mixed $items);
 
     /**
      * Reverse items order.
      * 
-     * @return static
+     * @return $this
      */
-    public function reverse(): static;
+    public function reverse();
 
     /**
      * Search the collection for a given value and return the corresponding key if successful.
@@ -499,59 +489,59 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * Skip the first {$count} items.
      * 
      * @param  int  $count 
-     * @return static
+     * @return $this
      */
-    public function skip(int $count): static;
+    public function skip(int $count);
 
     /**
      * Slice the underlying collection array.
      * 
      * @param  int  $offset
      * @param  int|null  $length 
-     * @return static
+     * @return $this
      */
-    public function slice(int $offset, ?int $length = null): static;
+    public function slice(int $offset, ?int $length = null);
 
     /**
      * Sort through each item.
      * 
      * @param  callable|int|null  $callback 
-     * @return static
+     * @return $this
      */
-    public function sort($callback = null): static;
+    public function sort($callback = null);
 
     /**
      * Sort items in descending order.
      * 
      * @param  int  $options 
-     * @return static
+     * @return $this
      */
-    public function sortDesc(int $options = SORT_REGULAR): static;
+    public function sortDesc(int $options = SORT_REGULAR);
 
     /**
      * Sort the collection keys.
      * 
      * @param  int  $options
      * @param  bool  $descending 
-     * @return static
+     * @return $this
      */
-    public function sortKeys(int $options = SORT_REGULAR, bool $descending = false): static;
+    public function sortKeys(int $options = SORT_REGULAR, bool $descending = false);
 
     /**
      * Sort the collection keys in descending order.
      * 
      * @param  int  $options 
-     * @return static
+     * @return $this
      */
-    public function sortKeysDesc(int $options =  SORT_REGULAR): static;
+    public function sortKeysDesc(int $options =  SORT_REGULAR);
 
     /**
      * Sort the collection keys using a callback.
      * 
      * @param  callable  $callback
-     * @return static
+     * @return $this
      */
-    public function sortKeysUsing(callable $callback): static;
+    public function sortKeysUsing(callable $callback);
 
     /**
      * Splice portion of the underlying collection array.
@@ -559,47 +549,47 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * @param  int  $offset
      * @param  int|null  $length
      * @param  mixed  $replacement 
-     * @return static
+     * @return $this
      */
-    public function splice(int $offset, ?int $length = null, mixed $replacement = []): static;
+    public function splice(int $offset, ?int $length = null, mixed $replacement = []);
 
     /**
      * Take the first or last {$limit} items.
      * 
      * @param  int  $limit 
-     * @return static
+     * @return $this
      */
-    public function take(int $limit): static;
+    public function take(int $limit);
 
     /**
      * Transform each item in the collection.
      * 
      * @param  callable  $callback 
-     * @return static
+     * @return $this
      */
-    public function transform(callable $callback): static;
+    public function transform(callable $callback);
 
     /**
      * Union the collection with the given items.
      * 
      * @param  mixed  $items 
-     * @return static
+     * @return $this
      */
-    public function union(mixed $items): static;
+    public function union(mixed $items);
 
     /**
      * Return only unique items from the collection array.
      * 
-     * @return static
+     * @return $this
      */
-    public function unique(): static;
+    public function unique();
 
     /**
      * Reset the keys on the underlying array.
      * 
-     * @return static
+     * @return $this
      */
-    public function values(): static;
+    public function values();
     
     /**
      * Get the collection of items as a plain array.
@@ -616,25 +606,25 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      * @param  callable|null  $default 
      * @return $this
      */
-    public function when($value = null, ?callable $callback = null, ?callable $default = null): static;
+    public function when($value = null, ?callable $callback = null, ?callable $default = null);
 
     /**
      * Apply the callback if the collection is empty.
      *
      * @param  callable|null  $callback
      * @param  callable|null  $default 
-     * @return static
+     * @return $this
      */
-    public function whenEmpty(callable $callback, ?callable $default = null): static;
+    public function whenEmpty(callable $callback, ?callable $default = null);
 
     /**
      * Apply the callback if the collection is not empty.
      *
      * @param  callable|null  $callback
      * @param  callable|null  $default 
-     * @return static
+     * @return $this
      */
-    public function whenNotEmpty(callable $callback, ?callable $default = null): static;
+    public function whenNotEmpty(callable $callback, ?callable $default = null);
 
     /**
      * Apply the callback if the given "value" is (or resolves to) falsy.
@@ -651,18 +641,18 @@ interface Collectable extends Arrayable, Countable, IteratorAggregate, Jsonable,
      *
      * @param  callable  $callback
      * @param  callable|null  $default 
-     * @return static
+     * @return $this
      */
-    public function unlessEmpty(callable $callback, ?callable $default = null): static;
+    public function unlessEmpty(callable $callback, ?callable $default = null);
 
     /**
      * Apply the callback unless the collection is not empty.
      *
      * @param  callable  $callback
      * @param  callable|null  $default 
-     * @return static
+     * @return $this
      */
-    public function unlessNotEmpty(callable $callback, ?callable $default = null): static;
+    public function unlessNotEmpty(callable $callback, ?callable $default = null);
 
     /**
      * Magic method.
