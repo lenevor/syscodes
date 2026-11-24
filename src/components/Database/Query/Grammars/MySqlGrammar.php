@@ -208,7 +208,6 @@ class MySqlGrammar extends Grammar
         return 'cast('.$value.' as json)';
     }
 
-
     /**
      * Compile the random statement into SQL.
      * 
@@ -343,7 +342,6 @@ class MySqlGrammar extends Grammar
 
         return parent::prepareBindingsForUpdate($bindings, $values);
     }
-
 
     /**
      * Compile an delete statement without joins into SQL.
