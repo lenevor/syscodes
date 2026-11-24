@@ -2009,7 +2009,7 @@ class Builder implements BuilderContract
      * 
      * @return array
      */
-    public function runOnSelectStatement(): array
+    public function runOnSelectStatement()
     {
         return $this->connection->select(
             $this->toSql(), $this->getBindings(), ! $this->useWritePdo
@@ -2893,7 +2893,7 @@ class Builder implements BuilderContract
      * @param  mixed  $result 
      * @return mixed
      */
-    public function applyAfterQueryCallbacks($result): mixed
+    public function applyAfterQueryCallbacks($result)
     {
         foreach ($this->afterQueryCallbacks as $afterQueryCallback) {
             $result = $afterQueryCallback($result) ?: $result;
