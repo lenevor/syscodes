@@ -87,8 +87,6 @@ class Paginator extends AbstractPaginator implements Arrayable, Jsonable, JsonSe
     protected function setItems($items): void
     {
         $this->items = $items instanceof Collection ? $items : new Collection($items);
-
-        $this->items = $this->items();
     }
     
     /**
@@ -216,9 +214,8 @@ class Paginator extends AbstractPaginator implements Arrayable, Jsonable, JsonSe
             'from' => $this->firstItem(),
             'last_page' => $this->lastPage(),
             'last_page_url' => $this->url($this->lastPage()),
-            'links' => $this->linkCollection()->toArray(),
             'next_page_url' => $this->nextPageUrl(),
-            'path' => $this->path(),
+            'path' => $this->getPath(),
             'per_page' => $this->perPage(),
             'prev_page_url' => $this->previousPageUrl(),
             'to' => $this->lastItem(),
@@ -229,9 +226,9 @@ class Paginator extends AbstractPaginator implements Arrayable, Jsonable, JsonSe
     /**
      * Convert the object into something JSON serializable.
      * 
-     * @return mixed
+     * @return array
      */
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }
@@ -242,7 +239,7 @@ class Paginator extends AbstractPaginator implements Arrayable, Jsonable, JsonSe
      * @param  int  $options 
      * @return string
      */
-    public function toJson($options = 0): string
+    public function toJson($options = 0)
     {
         return json_encode($this->jsonSerialize(), $options);
     }

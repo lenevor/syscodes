@@ -449,7 +449,7 @@ class Arr
 	/**
 	 * Get the underlying array of items from the given argument.
 	 * 
-	 * @param  array|iterable|Collectable|Arrayable|Traversable|Jsonable|JsonSerializable|object  $items 
+	 * @param  array|Collectable|Arrayable|Traversable|Jsonable|JsonSerializable|object  $items 
 	 * @return list|array
 	 * 
 	 * @throws \InvalidArgumentException
